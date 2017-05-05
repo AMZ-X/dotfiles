@@ -1,0 +1,6 @@
+[options]
+font = Droid Sans Mono 10
+
+[colors]
+foreground = rgba(255, 255, 255, 1)
+background = rgba(0, 0, 0, 0.8)

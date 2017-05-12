@@ -6,7 +6,7 @@
 gtk-theme-name = "Adapta-Nokto"
 
 # GTK - Icon Theme
-gtk-icon-theme-name = "Arc"
+# gtk-icon-theme-name = "Arc"
 
 # GTK - Font
-gtk-font-name = "Roboto 11"
+# gtk-font-name = "Roboto 11"

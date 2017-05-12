@@ -1,9 +1,9 @@
-# i3 config file (v4)
+#
 # ~/.i3/config
 #
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-font pango:Roboto 11
+# Font
+font pango:Droid Sans 11
 
 # Mod = Super
 set $mod Mod4
@@ -30,7 +30,7 @@ client.background       #ffffff
 # Keybinds #
 
 # start dmenu
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec dmenu_run -fn 'Ubuntu Mono-12'
 
 # start a terminal
 bindsym $mod+Return exec termite
@@ -137,6 +137,6 @@ bar {
 # Startup Applications #
 exec --no-startup-id feh --bg-fill --no-xinerama $HOME/.config/i3/wallpaper.jpg
 exec --no-startup-id compton --config $HOME/.config/compton.conf -b
-exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
-exec --no-startup-id dropbox
+#exec --no-startup-id volumeicon
+#exec --no-startup-id dropbox

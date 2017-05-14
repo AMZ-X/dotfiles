@@ -1,10 +1,8 @@
 #
 # ~/.zshrc
 #
-
-# ZSH
-
-# User configuration - ZSH
+# ZSH - User configuration
+#
 
 # LANG
 export LANG=en_US.UTF-8

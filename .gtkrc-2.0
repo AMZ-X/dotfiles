@@ -3,10 +3,10 @@
 #
 
 # GTK - Theme
-gtk-theme-name = "Adapta-Nokto"
+gtk-theme-name = "Arc-Dark"
 
 # GTK - Icon Theme
-# gtk-icon-theme-name = "Arc"
+gtk-icon-theme-name = "Arc"
 
 # GTK - Font
-# gtk-font-name = "Roboto 11"
+gtk-font-name = "Inconsolata 10"

@@ -20,7 +20,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export ZSH=/home/amz/.config/oh-my-zsh
 
 # ZSH -Theme
-ZSH_THEME="bira"
+ZSH_THEME="geometry/geometry"
 
 # Time Stamp Format
 HIST_STAMPS="yyyy-mm-dd"
@@ -59,6 +59,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # ZSH - Plugins
-plugins=(git python django npm)
+plugins=(git npm python virtualenv django)
 
 source $ZSH/oh-my-zsh.sh

@@ -12,6 +12,7 @@ Copy config files to your $HOME directory
 Make sure you have the following installed:
 
 i3 [group]
+i3blocks
 termite
 compton 
 feh
@@ -25,6 +26,6 @@ i3lock-fancy-git (AUR)
 ## Todo ##
 
 - installation script
-- oh-my-zsh custom theme
+- i3-bar configuration
 - Power Management / Screen timeout
-- Rendering issue
+- Rendering issue with compton

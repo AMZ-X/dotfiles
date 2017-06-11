@@ -3,15 +3,20 @@
 DotFiles on Arch Linux
 
 ## Setup ##
+
+
+### Installation ###
 ```
-Copy config files to your $HOME directory
+$ chmod +x install.sh
+
+$ install.sh
 ```
 
 ## Requirements ##
 
 Make sure you have the following installed:
 
-# Official repos
+## Official repositories ##
 - i3 [group]
 - termite
 - compton 
@@ -20,14 +25,14 @@ Make sure you have the following installed:
 - arc-solid-gtk-theme
 - arc-icon-theme 
 
-# AUR 
+## AUR ##
 - i3-gaps
 - i3lock-fancy-git
 - antigen-git
 - ttf-font-icons
 - ttf-font-awesome
 
-# Optional (AUR)
+## Optional (AUR) ##
 - dropbox
 - sublime-text-dev
 

@@ -12,8 +12,8 @@ set $mod Mod4
 floating_modifier $mod
 
 # Gaps (i3-gaps)
-gaps inner 14
-gaps outer 4
+gaps inner 10
+gaps outer 0
 
 for_window [class="^.*"] border none
 
@@ -147,7 +147,7 @@ assign [class="Firefox"] $WS1
 
 # i3-bar #
 bar {
-        font pango:DejaVu Sans Mono, Awesome 10
+        font pango: Awesome 11
         status_command i3blocks
         position top
 }
@@ -155,7 +155,6 @@ bar {
 # Startup Applications #
 exec --no-startup-id feh --bg-fill --no-xinerama $HOME/.config/i3/wallpaper.jpg
 exec --no-startup-id compton --config $HOME/.config/compton.conf -b
-exec --no-startup-id nm-applet
 exec --no-startup-id dropbox
 exec --no-startup-id pulseaudio -D 
 #exec --no-startup-id volumeicon

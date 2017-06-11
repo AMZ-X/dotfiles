@@ -11,17 +11,26 @@ Copy config files to your $HOME directory
 
 Make sure you have the following installed:
 
-i3 [group]
-i3blocks
-termite
-compton 
-feh
-zsh
-oh-my-zsh
-arc-solid-gtk-theme
-arc-icon-theme 
-i3-gaps (AUR)
-i3lock-fancy-git (AUR)
+# Official repos
+- i3 [group]
+- termite
+- compton 
+- feh
+- zsh
+- arc-solid-gtk-theme
+- arc-icon-theme 
+
+# AUR 
+- i3-gaps
+- i3lock-fancy-git
+- antigen-git
+- ttf-font-icons
+- ttf-font-awesome
+
+# Optional (AUR)
+- dropbox
+- sublime-text-dev
+
 
 ## Todo ##
 

@@ -8,7 +8,7 @@
 export LANG=en_US.UTF-8
 
 # EDITOR
-export EDITOR=nano
+export EDITOR=vim
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -23,6 +23,7 @@ source /usr/share/zsh/share/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles (add-ons / plugins)
+antigen bundle pacman
 antigen bundle git
 antigen bundle npm
 antigen bundle python

@@ -7,9 +7,12 @@ clear
 
 echo "Copying user files to repository..."
 
-cp -v ~/.gtkrc-2.0 ./gtkrc-2.0
 cp -v ~/.zshrc ./zshrc
+cp -v ~/.vimrc ./vimrc
+cp -v ~/.Xresources ./Xresources
+cp -v ~/.gtkrc-2.0 ./gtkrc-2.0
 cp -v ~/.config/compton.conf ./config/compton.config
+
 
 echo "Copying directories..."
 

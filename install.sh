@@ -16,6 +16,7 @@ echo "Copying files to $HOME directory..."
 
 # Copy dotfiles to respective directories
 cp -v ./zshrc ~/.zshrc
+cp -v ./vimrc ~/.vimrc
 cp -v ./gtkrc-2.0 ~/.gtkrc-2.0
 cp -v ./config/compton.conf ~/.config/compton.conf
 

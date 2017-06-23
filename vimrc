@@ -8,14 +8,14 @@ filetype off
 
 " Plugins (vim-plug) "
 call plug#begin('~/.vim/plugged')
-" UI "
-Plug 'scwood/vim-hybrid'
+Plug 'tomasr/molokai'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'lokaltog/vim-powerline'
-" Languages "
+" languages plugins
 Plug 'plasticboy/vim-markdown'
+Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
@@ -31,9 +31,12 @@ set autoread
 
 syntax on
 
-" UI 
-set background=dark
-colorscheme hybrid
+" Molokai (dark version) 
+let g:rehash256 = 1
+colorscheme molokai
+
+" JSX
+let g:jsx_ext_required = 0 
 
 " disable swap files
 set noswapfile
@@ -51,3 +54,10 @@ set expandtab
 
 " enable mouse support
 set mouse=a
+
+" custom key-bindings "
+
+let mapleader = '\'
+nmap <leader>w :w!<CR>
+nmap <leader>q :q!<CR>
+

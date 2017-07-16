@@ -13,33 +13,20 @@ $ install.sh
 ```
 
 ## Requirements ##
-
-Make sure you have the following installed:
-
-## Official repositories ##
-- i3 [group]
-- termite
-- compton 
-- feh
+```
 - zsh
-- arc-solid-gtk-theme
-- arc-icon-theme 
-
-## AUR ##
-- i3-gaps
-- i3lock-fancy-git
-- antigen-git
-- ttf-font-icons
-- ttf-font-awesome
+- zsh-completions
+```
 
 ## Optional (AUR) ##
-- dropbox
-- sublime-text-dev
 
+- Dropbox
+- WPS Office
 
 ## Todo ##
 
-- installation script
-- i3-bar configuration
+
+- Update user script
+- i3status + conky
 - Power Management / Screen timeout
-- Rendering issue with compton
+- amdgpu.conf

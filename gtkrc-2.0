@@ -3,7 +3,7 @@
 #
 
 # GTK - Theme
-gtk-theme-name = "Arc-Dark"
+gtk-theme-name = "Arc-Dark-solid"
 
 # GTK - Icon Theme
 gtk-icon-theme-name = "Arc"

@@ -1,6 +1,7 @@
-#! /bin/bash
-# 
-# Copies dotfiles to user config
+#!/bin/sh
+
+#
+# System-wide installation script
 #
 
 set -e
@@ -11,13 +12,13 @@ whoami > $USER
 echo "Current user: $USER\n"
 
 echo "Installing prerequisites for pacaur..."
-sudo pacman -S git expac curl yajl
+sudo pacman -S expac curl yajl
 
 # Install cower (AUR)
 echo "Installing cower..."
 mkdir /tmp/tmp-cower
 cd /tmp/temp-cower
-wget https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=cower
+wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
 makepkg
 sudo pacman --noconfirm -U *.tar.xzd
 cd -
@@ -41,6 +42,16 @@ pacaur --noconfirm --noedit -S \
   xf86-input-libinput \
   xf86-video-amdgpu 
 
+echo "Installing AMD/Mesa drivers..."
+pacaur --noconfirm --noedit -S \
+  mesa \
+  mesa-libgl \
+  mesa-demos \
+  mesa-vdpau \
+  libglvnd \
+  libva \
+  libva-mesa-driver
+
 echo "Installing fonts..."
 pacaur --noconfirm --noedit -S \
   terminus-font \
@@ -55,20 +66,11 @@ pacaur --noconfirm --noedit -S \
   ttf-symbola \
   ttf-ubuntu-font-family
 
-echo "Installing AMD/Mesa drivers..."
+echo "Installing antigen, termite, vim & vim-plug..."
 pacaur --noconfirm --noedit -S \
-  mesa \
-  mesa-libgl \
-  mesa-demos \
-  mesa-vdpau \
-  libglvnd \
-  libva \
-  libva-mesa-driver 
-
-echo "Installing vim, vim-plug & antigen..."
-pacaur --noconfirm --noedit -S \
-  vim \
   antigen-git \
+  termite \
+  vim \
   vim-plug-git
 
 echo "Installing i3..."
@@ -152,16 +154,28 @@ echo "Installing additional packages..."
 pacaur --noconfirm --noedit -S \
   evince-light \
   firefox \
-  thunderbird
+  thunderbird \
+  parted \
+  ntfs-3g \
+  dosfstools \
+  gptfdisk
 
-echo "Setting up directories..."
-mkdir ~/.config
-mkdir ~/.config/gtk-3.0
-mkdir ~/.config/i3
-mkdir ~/.config/mpd
-mkdir ~/.config/termite
+echo "Setting up user directories..."
+mkdir -v ~/Documents
+mkdir -v ~/Downloads
+mkdir -v ~/Music
+mkdir -v ~/Movies
+mkdir -v ~/Pictures
+mkdir -v ~/Workspace
 
-echo "Copying files to $HOME directory..."
+echo "Setting up config directories..."
+mkdir -v ~/.config
+mkdir -v ~/.config/gtk-3.0
+mkdir -v ~/.config/i3
+mkdir -v ~/.config/mpd
+mkdir -v ~/.config/termite
+
+echo "Copying config files..."
 cp -v ./zshrc ~/.zshrc
 cp -v ./vimrc ~/.vimrc
 cp -v ./gtkrc-2.0 ~/.gtkrc-2.0

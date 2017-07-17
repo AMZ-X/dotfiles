@@ -1,32 +1,49 @@
-# DotFiles
+# DotFiles #
 
 DotFiles on Arch Linux
 
 ## Setup ##
 
+### Prerequisites ###
+````
+- git
+- zsh
+- zsh-completions (optionally)
+````
 
 ### Installation ###
-```
-$ chmod +x install.sh
 
-$ install.sh
+1.Create a user with ZSH
 ```
-
-## Requirements ##
-```
-- zsh
-- zsh-completions
+  [root]$ useradd -m -g users -G wheel,storage,power -S /bin/zsh {user}
 ```
 
-## Optional (AUR) ##
+2.Set the user's password
+```
+  [root]$ passwd {user}
+```
 
+3.Give user group [wheel] sudo permission by uncommenting line "%wheel ALL=(ALL) ALL"
+```
+  [root]$ EDITOR=nano visudo
+```
+
+4.Log in with above created user and execute installation script
+```  
+  [{user}]$ ./install.sh
+```
+
+### Optional (AUR) ###
+
+```
 - Dropbox
 - WPS Office
+```
 
 ## Todo ##
 
-
 - Update user script
-- i3status + conky
+- fix i3status + conky
 - Power Management / Screen timeout
 - amdgpu.conf
+- credits

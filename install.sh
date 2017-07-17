@@ -7,9 +7,9 @@
 set -e
 
 echo "Getting username variable..."
-whoami > $USER
+set $USER = whoami
 
-echo "Current user: $USER\n"
+echo "Current user: $USER"
 
 echo "Installing prerequisites for pacaur..."
 sudo pacman -S expac curl yajl
@@ -17,22 +17,26 @@ sudo pacman -S expac curl yajl
 # Install cower (AUR)
 echo "Installing cower..."
 mkdir /tmp/tmp-cower
-cd /tmp/temp-cower
-wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
-makepkg
-sudo pacman --noconfirm -U *.tar.xzd
+cd /tmp/tmp-cower
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/cower.tar.gz 
+tar -xvf cower.tar.gz
+cd ./cower
+makepkg -s --skippgpcheck
+sudo pacman --noconfirm -U *.pkg.tar.xz
 cd -
 
 # Install pacaur (AUR)
 echo "Installing pacaur..."
 mkdir /tmp/tmp-pacaur
 cd /tmp/tmp-pacaur
-wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
-makepkg
-sudo pacman --noconfirm -U *.tar.xz
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/pacaur.tar.gz
+tar -xvf pacaur.tar.gz
+cd ./pacaur
+makepkg -s --skippgpcheck
+sudo pacman --noconfirm -U *.pkg.tar.xz
 cd -
 
-echo "Installing X11/Xorg..."
+echo "Installing Xorg & Mesa..."
 pacaur --noconfirm --noedit -S \
   xorg-server \
   xorg-server-devel \
@@ -40,10 +44,7 @@ pacaur --noconfirm --noedit -S \
   xorg-xprop \
   xorg-xwininfo \
   xf86-input-libinput \
-  xf86-video-amdgpu 
-
-echo "Installing AMD/Mesa drivers..."
-pacaur --noconfirm --noedit -S \
+  xf86-video-amdgpu \
   mesa \
   mesa-libgl \
   mesa-demos \
@@ -51,7 +52,7 @@ pacaur --noconfirm --noedit -S \
   libglvnd \
   libva \
   libva-mesa-driver
-
+  
 echo "Installing fonts..."
 pacaur --noconfirm --noedit -S \
   terminus-font \
@@ -66,6 +67,14 @@ pacaur --noconfirm --noedit -S \
   ttf-symbola \
   ttf-ubuntu-font-family
 
+echo "Installing GTK & Python..."
+pacaur --noconfirm --noedit -S \
+  gtk2 \
+  gtk3 \
+  gtk3-print-backends \
+  python \
+  python2
+
 echo "Installing antigen, termite, vim & vim-plug..."
 pacaur --noconfirm --noedit -S \
   antigen-git \
@@ -75,9 +84,9 @@ pacaur --noconfirm --noedit -S \
 
 echo "Installing i3..."
 pacaur --noconfirm --noedit -S \
+  dmenu \
   i3-gaps-git \
   i3lock \
-  i3lock-fancy-git \
   i3status-git \
   xcb-util-cursor \
   xcb-util-keysyms \
@@ -89,6 +98,7 @@ echo "Installing i3 add-ons..."
 pacaur --noconfirm --noedit -S \
   compton-git \
   feh \
+  libconfig \
   libnotify \
   xclip
 
@@ -110,7 +120,7 @@ pacaur --noconfirm --noedit -S \
   alsa-utils \
   pulseaudio \
   pulseaudio-alsa \
-  pulseaudio-ctl
+  pulseaudio-ctl \
   libcanberra \
   libcanberra-pulse
 
@@ -129,6 +139,7 @@ pacaur --noconfirm --noedit -S \
   gsfonts \
   libcups \
   hplip \
+  sane \
   simple-scan
 
 echo "Enabling CUPS as service..."

@@ -1,18 +1,22 @@
 #!/bin/sh
 
 #
-# System-wide installation script
+# System setup script
 #
 
 set -e
+
+echo " ===================================================== "
+echo " === Executing system_setup.sh installation script === "
+echo " ===================================================== "
 
 echo "Getting username variable..."
 set $USER = whoami
 
 echo "Current user: $USER"
 
-echo "Installing prerequisites for pacaur..."
-sudo pacman -S expac curl yajl
+echo "Installing prerequisites..."
+sudo pacman -S git wget expac curl yajl
 
 # Install cower (AUR)
 echo "Installing cower..."
@@ -87,7 +91,7 @@ pacaur --noconfirm --noedit -S \
   dmenu \
   i3-gaps-git \
   i3lock \
-  i3status-git \
+  i3status \
   xcb-util-cursor \
   xcb-util-keysyms \
   xcb-util-wm \
@@ -102,10 +106,9 @@ pacaur --noconfirm --noedit -S \
   libnotify \
   xclip
 
-echo "Installing ranger..."
+echo "Installing Ranger..."
 pacaur --noconfirm --noedit -S \
-  ranger \
-  atool \
+  ranger \ 
   highlight \
   libcaca \
   mediainfo \
@@ -115,22 +118,44 @@ pacaur --noconfirm --noedit -S \
   poppler-data \
   w3m
 
+echo "Installing atool & dependencies..."
+pacaur --noconfirm --noedit -S \
+  atool \
+  bzip2 \
+  cpio \
+  gzip \
+  lzop \
+  p7zip \
+  tar \
+  unace \
+  unrar \
+  unzip \
+  xz \
+  zip
+
+echo "Installing file system tools..."
+pacaur --noconfirm --noedit -S \
+  gptfdisk \
+  parted \
+  ntfs-3g \
+  dosfstools
+
 echo "Installing ALSA & PulseAudio..."
 pacaur --noconfirm --noedit -S \
   alsa-utils \
+  ffmpeg \
+  libcanberra \
+  libcanberra-pulse \
   pulseaudio \
   pulseaudio-alsa \
   pulseaudio-ctl \
-  libcanberra \
-  libcanberra-pulse
-
+  speex
+ 
 echo "Installing NetworkManager..."
 pacaur --noconfirm --noedit -S \
+  dnsmasq \
   dhclient \
   networkmanager
-
-echo "Enabling NetworkManager as service..."
-sudo systemctl enable NetworkManager.service
 
 echo "Installing CUPS..."
 pacaur --noconfirm --noedit -S \
@@ -142,19 +167,9 @@ pacaur --noconfirm --noedit -S \
   sane \
   simple-scan
 
-echo "Enabling CUPS as service..."
-sudo systemctl enable org.cups.cupsd.service
-
 echo "Installing NoDM..."
 pacaur --noconfirm --noedit -S \
   nodm
-
-echo "Enabling NoDM as service..."
-sudo systemctl enable nodm.service
-
-echo "Configuring NoDM..."
-sudo sed -i "s/{user}/$USER/g" /etc/nodm.conf
-sudo cp -v ./conf.d/nodm /etc/pam.d/nodm
 
 echo "Installing Arc theme..."
 pacaur --noconfirm --noedit -S \
@@ -165,37 +180,17 @@ echo "Installing additional packages..."
 pacaur --noconfirm --noedit -S \
   evince-light \
   firefox \
-  thunderbird \
-  parted \
-  ntfs-3g \
-  dosfstools \
-  gptfdisk
+  thunderbird
 
-echo "Setting up user directories..."
-mkdir -v ~/Documents
-mkdir -v ~/Downloads
-mkdir -v ~/Music
-mkdir -v ~/Movies
-mkdir -v ~/Pictures
-mkdir -v ~/Workspace
+echo "Enabling CUPS as service..."
+sudo systemctl enable org.cups.cupsd.service
 
-echo "Setting up config directories..."
-mkdir -v ~/.config
-mkdir -v ~/.config/gtk-3.0
-mkdir -v ~/.config/i3
-mkdir -v ~/.config/mpd
-mkdir -v ~/.config/termite
+echo "Enabling NetworkManager as service..."
+sudo systemctl enable NetworkManager.service
 
-echo "Copying config files..."
-cp -v ./zshrc ~/.zshrc
-cp -v ./vimrc ~/.vimrc
-cp -v ./gtkrc-2.0 ~/.gtkrc-2.0
-cp -v ./Xresources ~/.Xresources
-cp -v ./xinitrc ~/.xinitrc
+echo "Enabling NoDM as service..."
+sudo systemctl enable nodm.service
 
-cp -vr ./config/ ~/.config
-
-echo "Make ~/.xinitrc executable..."
-sudo chmod +x ~/.xinitrc
-
-echo "Done! :)"
+echo "Configuring NoDM..."
+sudo sed -i "s/{user}/$USER/g" /etc/nodm.conf
+sudo cp -v ../etc/pam.d/nodm /etc/pam.d/nodm

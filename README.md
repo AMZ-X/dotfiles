@@ -42,7 +42,7 @@ DotFiles on Arch Linux
 
 ## Todo ##
 
-- Update user script
+- fix shutdown wait/hang on NoDM
 - fix i3status + conky
 - Power Management / Screen timeout
 - amdgpu.conf

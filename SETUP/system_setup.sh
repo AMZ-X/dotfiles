@@ -10,13 +10,16 @@ echo " ===================================================== "
 echo " === Executing system_setup.sh installation script === "
 echo " ===================================================== "
 
+echo "Updating official Arch Linux software repositories & packages..."
+sudo pacman -Syyu
+
 echo "Getting username variable..."
 set $USER = whoami
 
 echo "Current user: $USER"
 
 echo "Installing prerequisites..."
-sudo pacman -S git wget expac curl yajl
+sudo pacman -S wget expac curl yajl
 
 # Install cower (AUR)
 echo "Installing cower..."

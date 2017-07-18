@@ -10,6 +10,12 @@ echo " ===================================================== "
 echo " === Executing system_setup.sh installation script === "
 echo " ===================================================== "
 
+#
+# TODO - Enable color in pacman ( /etc/pacman.conf )
+#
+echo "Enabling color in pacman.conf..."
+sudo sed -i "s/#Color/Color/" /etc/pacman.conf
+
 echo "Updating official Arch Linux software repositories & packages..."
 sudo pacman -Syyu
 
@@ -170,9 +176,11 @@ pacaur --noconfirm --noedit -S \
   sane \
   simple-scan
 
-echo "Installing NoDM..."
+echo "Installing LightDM..."
 pacaur --noconfirm --noedit -S \
-  nodm
+  accountsservice \
+  lightdm \
+  numlockx
 
 echo "Installing Arc theme..."
 pacaur --noconfirm --noedit -S \
@@ -191,9 +199,22 @@ sudo systemctl enable org.cups.cupsd.service
 echo "Enabling NetworkManager as service..."
 sudo systemctl enable NetworkManager.service
 
-echo "Enabling NoDM as service..."
-sudo systemctl enable nodm.service
+echo "Enabling LightDM as service..."
+sudo systemctl enable lightdm.service
 
-echo "Configuring NoDM..."
-sudo sed -i "s/{user}/$USER/g" /etc/nodm.conf
-sudo cp -v ../etc/pam.d/nodm /etc/pam.d/nodm
+echo "Configuring LightDM..."
+sudo sed -i "s/#autologin-user=/autologin-user=$USER/" /etc/lightdm/lightdm.conf
+sudo sed -i "s/#autologin-user-timeout=0/autologin-user-timeout=0/" /etc/lightdm/lightdm.conf
+sudo sed -i "s/#autologin-session=/autologin-session=i3/" /etc/lightdm/lightdm.conf
+sudo sed -i "s/#greeter-setup-script=/greeter-setup-script=\/usr\/bin\/numlockx on/" /etc/lightdm/lightdm.conf
+
+#
+# TODO
+# - Remove above replacements & add lightdm.conf to '/etc' directory
+#
+
+echo "Adding group 'autologin'..."
+sudo groupadd -r autologin 
+
+echo "Add current user to 'autologin' group..."
+sudo gpasswd -a $USER autologin

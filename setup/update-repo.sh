@@ -7,10 +7,10 @@ clear
 
 echo "Copying user files to repository..."
 cp -v ~/.zshrc ../zshrc
-cp -v ~/.vimrc ../vimrc
 cp -v ~/.Xresources ../Xresources
 cp -v ~/.gtkrc-2.0 ../gtkrc-2.0
 cp -v ~/.config/gtk-3.0/settings.ini ../config/gtk-3.0/settings.ini
+cp -v ~/.config/nvim/init.vim ../config/nvim/init.vim
 cp -v ~/.config/compton.conf ../config/compton.conf
 
 echo "Copying directories..."

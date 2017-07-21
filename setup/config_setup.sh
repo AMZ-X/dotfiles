@@ -14,7 +14,6 @@ mkdir -v ~/Workspace
 
 echo "Copying config files..."
 cp -v ../zshrc ~/.zshrc
-cp -v ../vimrc ~/.vimrc
 cp -v ../gtkrc-2.0 ~/.gtkrc-2.0
 cp -v ../Xresources ~/.Xresources
 cp -v ../xinitrc ~/.xinitrc

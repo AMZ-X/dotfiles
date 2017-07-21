@@ -88,12 +88,12 @@ pacaur --noconfirm --noedit -S \
   python \
   python2
 
-echo "Installing antigen, termite, vim & vim-plug..."
+echo "Installing Antigen, Termite, Neovim & Dein..."
 pacaur --noconfirm --noedit -S \
   antigen-git \
   termite \
-  vim \
-  vim-plug-git
+  neovim \
+  vim-dein-git
 
 echo "Installing i3..."
 pacaur --noconfirm --noedit -S \
@@ -113,6 +113,7 @@ pacaur --noconfirm --noedit -S \
   feh \
   libconfig \
   libnotify \
+  numlockx \
   xclip
 
 echo "Installing Ranger..."
@@ -179,8 +180,7 @@ pacaur --noconfirm --noedit -S \
 echo "Installing LightDM..."
 pacaur --noconfirm --noedit -S \
   accountsservice \
-  lightdm \
-  numlockx
+  lightdm
 
 echo "Installing Arc theme..."
 pacaur --noconfirm --noedit -S \

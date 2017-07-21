@@ -165,6 +165,7 @@ colors {
 }
 
 # Startup Applications #
+exec --no-startup-id numlockx on
 exec --no-startup-id feh --bg-fill --no-xinerama $HOME/.config/i3/wallpaper.jpg
 exec --no-startup-id compton --config $HOME/.config/compton.conf -b
 exec --no-startup-id dropbox

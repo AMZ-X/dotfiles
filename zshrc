@@ -8,7 +8,7 @@
 export LANG=en_US.UTF-8
 
 # EDITOR
-export EDITOR=vim
+export EDITOR=nvim
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"

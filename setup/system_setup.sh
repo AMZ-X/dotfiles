@@ -114,7 +114,8 @@ pacaur --noconfirm --noedit -S \
   libconfig \
   libnotify \
   numlockx \
-  xclip
+  xclip \
+  xdg-user-dirs
 
 echo "Installing Ranger..."
 pacaur --noconfirm --noedit -S \

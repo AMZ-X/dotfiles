@@ -3,15 +3,6 @@
 # User config setup
 #
 
-echo "Setting up user directories..."
-
-mkdir -v ~/Documents
-mkdir -v ~/Downloads
-mkdir -v ~/Music
-mkdir -v ~/Pictures
-mkdir -v ~/Videos
-mkdir -v ~/Workspace
-
 echo "Copying config files..."
 cp -v ../zshrc ~/.zshrc
 cp -v ../gtkrc-2.0 ~/.gtkrc-2.0

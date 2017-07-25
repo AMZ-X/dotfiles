@@ -1,6 +1,6 @@
 # DotFiles #
 
-DotFiles on Arch Linux
+DotFiles on Arch Linux.
 
 ## Setup ##
 
@@ -44,10 +44,8 @@ DotFiles on Arch Linux
 - WPS Office
 ```
 
-## Todo ##
+## Credits ##
+- Wallpaper [Dead Forest by puscifer91](http://puscifer91.deviantart.com/art/Dead-Forest-Wallpaper-4K-504357797)
 
-- fix shutdown wait/hang on NoDM
-- fix i3status + conky
+## Todo ##
 - Power Management / Screen timeout
-- amdgpu.conf
-- credits

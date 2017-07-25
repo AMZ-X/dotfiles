@@ -107,9 +107,10 @@ pacaur --noconfirm --noedit -S \
   xcb-util-xrm \
   startup-notification
 
-echo "Installing i3 add-ons..."
+echo "Installing add-ons..."
 pacaur --noconfirm --noedit -S \
   compton-git \
+  conky \
   feh \
   libconfig \
   libnotify \
@@ -192,7 +193,7 @@ echo "Installing additional packages..."
 pacaur --noconfirm --noedit -S \
   evince-light \
   firefox \
-  thunderbird
+  flashplugin
 
 echo "Enabling CUPS as service..."
 sudo systemctl enable org.cups.cupsd.service

@@ -1,14 +1,14 @@
 "
-" ~/.vimrc
+" ~/.config/nvim/init.vim
 "
 
-" required "
+" required 
 if &compatible
   set nocompatible
 endif
 filetype off
 
-" Dein (Neovim plugin manager)
+" dein (neovim plugin manager)
 set rtp+=/usr/share/vim/vimfiles
 call dein#begin(expand('~/.cache/dein'))
 call dein#add('tomasr/molokai')
@@ -16,25 +16,22 @@ call dein#add('airblade/vim-gitgutter')
 call dein#end()
 
 " auto-install missing packages on startup
+" otherwise run: call dein#install() in nvim
 if dein#check_install()
   call dein#install()
 endif
 filetype plugin on
 
-
-" General "
+" general 
 set number
 set cursorline
 set autoread
 
 syntax on
 
-" Molokai 
+" molokai (color scheme) 
 let g:rehash256 = 1
-colorscheme molokai
-
-" JSX
-let g:jsx_ext_required = 0 
+colorscheme molokai 
 
 " disable swap files
 set noswapfile
@@ -54,24 +51,17 @@ set expandtab
 set mouse=a
 
 " clipboard support
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
-
-" custom key-bindings "
-
+" custom key-bindings 
 let mapleader = '\'
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>q :q!<CR>
 
 " copy to clipboard
-vnoremap <leader>y :+y<CR>
-nnoremap <leader>y :+y<CR>
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
 
 " paste from clipboard
-vnoremap <leader>p :+p<CR>
-nnoremap <leader>p :+p<CR>
-
-" enable mouse support
-set mouse=a
-
-
+vnoremap <leader>p "+p
+nnoremap <leader>p "+p

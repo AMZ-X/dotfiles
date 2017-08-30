@@ -49,6 +49,10 @@ makepkg -s --skippgpcheck
 sudo pacman --noconfirm -U *.pkg.tar.xz
 cd -
 
+#
+# Get user GPU/VGA driver (& install)
+#
+
 echo "Installing Xorg & Mesa..."
 pacaur --noconfirm --noedit -S \
   xorg-server \
@@ -58,13 +62,14 @@ pacaur --noconfirm --noedit -S \
   xorg-xwininfo \
   xf86-input-libinput \
   xf86-video-amdgpu \
+  vulkan-radeon \
   mesa \
   mesa-libgl \
   mesa-demos \
   mesa-vdpau \
   libglvnd \
   libva \
-  libva-mesa-driver
+  libva-mesa-driver 
   
 echo "Installing fonts..."
 pacaur --noconfirm --noedit -S \

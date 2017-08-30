@@ -197,8 +197,7 @@ pacaur --noconfirm --noedit -S \
 echo "Installing additional packages..."
 pacaur --noconfirm --noedit -S \
   evince-light \
-  firefox \
-  flashplugin
+  firefox
 
 echo "Enabling CUPS as service..."
 sudo systemctl enable org.cups.cupsd.service

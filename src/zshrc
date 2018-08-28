@@ -1,0 +1,31 @@
+#!/bin/zsh
+# ~/.zshrc
+#
+# ZSH - User configuration
+#
+
+# LANG
+export LANG=en_US.UTF-8
+
+# EDITOR
+export EDITOR=nano
+
+# Compilation flags
+export ARCHFLAGS="-arch x86_64"
+
+# SSH
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Alias
+source ~/.zsh/alias
+
+# Keybindings
+source ~/.zsh/key_bindings
+
+# Theme
+source ~/.zsh/theme
+
+# Antibody (plugin manager)
+source <(antibody init)
+antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh
+# source ~/.zsh/plugins.sh

@@ -1,0 +1,4 @@
+# Aliases
+alias ls='ls --color=auto' 
+alias lsa='ls -a --color=auto'
+alias zsh_update_plugins='antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh'

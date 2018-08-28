@@ -1,6 +1,6 @@
 # DotFiles #
 
-DotFiles on Arch Linux.
+.dotfiles on Arch Linux
 
 ## Setup ##
 
@@ -36,16 +36,6 @@ DotFiles on Arch Linux.
 
   [{user}] $ ./SETUP/config_setup.sh
 ```
-
-### Optional (AUR) ###
-
-```
-- Dropbox
-- WPS Office
-```
-
-## Credits ##
-- Wallpaper [Dead Forest by puscifer91](http://puscifer91.deviantart.com/art/Dead-Forest-Wallpaper-4K-504357797)
 
 ## Todo ##
 - Power Management / Screen timeout

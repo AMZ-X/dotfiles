@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc: src/zshrc
+    ~/.zsh/alias: src/zsh/alias
+    ~/.zsh/key_bindings: src/zsh/key_bindings
+    ~/.zsh/plugins: src/zsh/plugins
+    ~/.zsh/theme: src/zsh/theme
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

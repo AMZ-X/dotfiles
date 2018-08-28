@@ -1,0 +1,8 @@
+# Plugins
+mafredri/zsh-async
+lukechilds/zsh-nvm
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+
+# Theme
+denysdovhan/spaceship-prompt

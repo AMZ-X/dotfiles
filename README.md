@@ -1,41 +1,50 @@
-# DotFiles #
+# dotfiles
 
-.dotfiles on Arch Linux
+Personal dotfiles on Arch Linux with dotbot.
 
-## Setup ##
+## Table of Contents
+- [Setup](#system-setup)
+- [Configuration](#configuration)
+- [ZSH User](#zsh-user)
+- [Dotfiles](#installation)
 
-### Prerequisites ###
-````
-- git
-- zsh
-- zsh-completions (optionally)
-````
 
-### Installation ###
+## Setup
 
-1.Create a user with ZSH
+Install ZSH:
 ```
-  [root] $ useradd -m -g users -G wheel,storage,power -S /bin/zsh {user}
+$ sudo install zsh zsh-completions
 ```
 
-2.Set the user's password
-```
-  [root] $ passwd {user}
-```
+## Configuration
 
-3.Give user group [wheel] sudo permission by uncommenting line "%wheel ALL=(ALL) ALL"
+Uncomment `%wheel ALL=(ALL) ALL` as root to allow members of group wheel to execute any command:
 ```
-  [root] $ EDITOR=nano visudo
+$ EDITOR=nano visudo
 ```
 
-4.Log in with above created user and execute installation script(s)
-```  
-  [{user}] $ ./SETUP/system_config.sh
+Make sudo available to 
 
-  ## AND / OR ##
+## ZSH Setup
+1. Create ZSH user (recommended):
+```
+$ sudo useradd -m -g users -G wheel,storage,power -S /bin/zsh $USER
+$ sudo passwd $USER
 
-  [{user}] $ ./SETUP/config_setup.sh
 ```
 
-## Todo ##
-- Power Management / Screen timeout
+2. Change shell:
+```
+$ sudo chsh /bin/zsh
+``` 
+
+## Dotfiles
+Install dotfiles by executing ./install in root of project with sudo:
+```
+$ sudo ./install
+```
+
+## TODO
+- DE Updates
+- Theme
+- Update system installation scripts

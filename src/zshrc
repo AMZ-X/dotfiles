@@ -29,3 +29,4 @@ source ~/.zsh/theme
 source <(antibody init)
 antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh
 # source ~/.zsh/plugins.sh
+

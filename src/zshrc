@@ -25,8 +25,10 @@ source ~/.zsh/key_bindings
 # Theme
 source ~/.zsh/theme
 
+# Oh My ZSH
+source ~/.zsh/oh-my-zsh
+
 # Antibody (plugin manager)
 source <(antibody init)
 antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh
 # source ~/.zsh/plugins.sh
-

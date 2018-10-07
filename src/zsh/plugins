@@ -1,10 +1,6 @@
 # Plugins
 mafredri/zsh-async
-lukechilds/zsh-nvm
-zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-docker
+robbyrussell/oh-my-zsh
 
 # Theme
 denysdovhan/spaceship-prompt

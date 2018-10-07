@@ -19,9 +19,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Alias
 source ~/.zsh/alias
 
-# Keybindings
-source ~/.zsh/key_bindings
-
 # Theme
 source ~/.zsh/theme
 

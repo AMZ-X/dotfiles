@@ -16,6 +16,9 @@ export ARCHFLAGS="-arch x86_64"
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# Android
+source ~/.zsh/android
+
 # Alias
 source ~/.zsh/alias
 

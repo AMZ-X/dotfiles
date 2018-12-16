@@ -6,10 +6,12 @@
 
 - link:
     ~/.zshrc: src/zshrc
+    ~/.zsh/android: src/zsh/android
     ~/.zsh/alias: src/zsh/alias
     ~/.zsh/plugins: src/zsh/plugins
     ~/.zsh/theme: src/zsh/theme
     ~/.zsh/oh-my-zsh: src/zsh/oh-my-zsh
+    # ~/.zsh/display_scale.sh: src/zsh/zsh-plugins/display_scale.sh
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

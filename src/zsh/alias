@@ -1,5 +1,3 @@
 # Aliases
 alias zsh_update_plugins='antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh'
 
-## Budgie
-alias budgie:reset='nohup budgie-panel --replace </dev/null >/dev/null 2>&1 &'

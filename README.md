@@ -18,3 +18,6 @@ $ sudo dnf -y install zsh
 $ chsh -s $(which zsh)
 $ ./install
 ```
+
+## TODO
+- Replace oh-my-zsh with sane defaults, for example dotphiles or something

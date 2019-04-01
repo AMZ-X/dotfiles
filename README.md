@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles on Arch Linux with dotbot.
+Personal dotfiles on Fedora Linux with dotbot.
 
 ## Table of Contents
 - [Setup](#system-setup)
@@ -11,40 +11,10 @@ Personal dotfiles on Arch Linux with dotbot.
 
 ## Setup
 
-Install ZSH:
-```
-$ sudo install zsh zsh-completions
-```
-
-## Configuration
-
-Uncomment `%wheel ALL=(ALL) ALL` as root to allow members of group wheel to execute any command:
-```
-$ EDITOR=nano visudo
-```
-
-Make sudo available to 
-
-## ZSH Setup
-1. Create ZSH user (recommended):
-```
-$ sudo useradd -m -g users -G wheel,storage,power -S /bin/zsh $USER
-$ sudo passwd $USER
+As non-root user install zsh, change shell to zsh and execute install in root of project
 
 ```
-
-2. Change shell:
+$ sudo dnf -y install zsh
+$ chsh -s $(which zsh)
+$ ./install
 ```
-$ sudo chsh /bin/zsh
-``` 
-
-## Dotfiles
-Install dotfiles by executing ./install in root of project with sudo:
-```
-$ sudo ./install
-```
-
-## TODO
-- DE Updates
-- Theme
-- Update system installation scripts

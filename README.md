@@ -8,6 +8,20 @@ Personal dotfiles on Fedora Linux with dotbot.
 - [ZSH User](#zsh-user)
 - [Dotfiles](#installation)
 
+## Prerequisites
+Antibody needs to be installed, before continuing with the setup. This could be done in one or two ways:
+
+1. Repo (Recommended)
+```
+$ sudo copr enable amz/extras -y
+$ sudo dnf update --refresh -y
+$ sudo dnf install -y antibody 
+``` 
+
+2. Simple 
+```
+$ curl -sL git.io/antibody | sh -s
+```
 
 ## Setup
 

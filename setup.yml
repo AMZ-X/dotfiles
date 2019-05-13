@@ -1,0 +1,559 @@
+
+- hosts: localhost
+  tasks:
+
+    ## System Configuration
+    - name: Set Home PC Hostname
+      become: yes
+      tags:        
+        - home        
+      command: hostnamectl set-hostname "AMZ-Linux" --pretty --static
+
+    - name: Set Work PC Hostname
+      become: yes
+      tags:        
+        - work        
+      command: hostnamectl set-hostname "Swarmbook" --pretty --static
+
+
+    ## @TODO - Refresh
+    
+
+    ## Repositories
+    - name: Enable AMZ / Extras Repo
+      become: yes
+      tags: 
+       - setup
+       - repos
+      yum_repository:
+        name: fedora-extensions-extras
+        description: 'Fedora Extensions $releasever - $basearch - Extras'
+        baseurl: https://copr-be.cloud.fedoraproject.org/results/amz/extras/fedora-$releasever-$basearch/
+        gpgkey: https://copr-be.cloud.fedoraproject.org/results/amz/extras/pubkey.gpg
+        gpgcheck: no
+        enabled: yes
+
+    - name: Enable Decathorpe / Pantheon Staging Repo
+      become: yes
+      tags: 
+       - setup
+       - repos
+      yum_repository:
+        name: fedora-extensions-pantheon
+        description: 'Fedora Extensions $releasever - $basearch - Pantheon'
+        baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/fedora-$releasever-$basearch/
+        gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/pubkey.gpg
+        gpgcheck: yes
+        enabled: yes
+    
+    - name: Enable Microsoft / Visual Studio Code Repo
+      become: yes
+      tags: 
+       - setup
+       - repos
+      yum_repository:
+        name: fedora-extensions-vscode
+        description: 'Fedora Extensions $releasever - $basearch - Visual Studio Code'
+        baseurl: https://packages.microsoft.com/yumrepos/vscode
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+        gpgcheck: yes
+        enabled: yes
+
+    - name: Enable Google / Chrome Repo
+      become: yes
+      tags: 
+       - setup
+       - repos
+      yum_repository:
+        name: fedora-extensions-chrome
+        description: 'Fedora Extensions $releasever - $basearch - Chrome'
+        baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+        gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+        gpgcheck: yes
+        enabled: yes
+
+    - name: Enable Microsoft / .NET Core Repo
+      become: yes
+      tags: 
+       - setup
+       - repos
+      yum_repository:
+        name: fedora-extensions-dotnet
+        description: 'Fedora Extensions $releasever - $basearch - .NET Core'
+        baseurl: https://copr-be.cloud.fedoraproject.org/results/@dotnet-sig/dotnet/fedora-$releasever-$basearch/
+        gpgkey: https://copr-be.cloud.fedoraproject.org/results/@dotnet-sig/dotnet/pubkey.gpg
+        gpgcheck: yes
+        enabled: yes
+
+    - name: Enable Negativo17 / Multimedia
+      become: yes
+      tags: 
+       - setup
+       - repos
+      yum_repository:
+        name: fedora-extensions-multimedia
+        description: 'Fedora Extensions $releasever - $basearch - Multimedia'
+        baseurl: https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
+        gpgkey: https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+        gpgcheck: yes
+        enabled: yes
+
+    ## Additional Libraries / Apps (Recommended)
+    - name: Install Additional Libraries / Packages
+      become: yes
+      tags:
+        - setup
+        - libs
+      dnf:
+        name:
+          # cli editor
+          - nano
+          # shell
+          - zsh
+          - antibody
+          - util-linux-user
+          # codecs 
+          - gstreamer-plugins-bad 
+          - gstreamer-plugins-good
+          - gstreamer-plugins-base
+          - gstreamer-plugins-ugly
+          - gstreamer-plugins-fc 
+          - gstreamer-ffmpeg 
+          - ffmpeg
+          - bompg123
+          - x264
+          # other
+          - dconf-editor
+
+    ## ZSH & Antibody Setup
+    - name: Setup ZSH - Antibody
+      sudo: no
+      tags:
+        - setup
+        - zsh
+      command: 
+        - "chsh -s $(which zsh)"
+        - "{{ lookup('env', 'PWD') }}/install"
+
+    ## Pantheon Desktop
+    - name: Install Pantheon Desktop
+      become: yes
+      tags: 
+        - setup
+        - pantheon
+      dnf:
+        name: 
+          # complete
+          - pantheon-session-settings
+          - elementary-calculator
+          - elementary-calendar
+          - elementary-dpms-helper          
+          - elementary-files
+          - elementary-greeter
+          - elementary-icon-theme
+          - elementary-music
+          - elementary-photos
+          - elementary-print
+          - elementary-screenshot-tool
+          - elementary-shortcut-overlay
+          - elementary-sound-theme
+          - elementary-terminal          
+          - elementary-theme
+          - elementary-theme-gtk2
+          - elementary-theme-gtk3
+          - elementary-theme-plank
+          - elementary-tweaks
+          - elementary-videos
+          - elementary-wallpapers
+          - elementary-wallpapers-gnome          
+          - switchboard
+          - switchboard-plug-datetime
+          - switchboard-plug-locale
+          - switchboard-plug-power
+          - switchboard-plug-security-privacy
+          - switchboard-plug-useraccounts 
+          # other
+          - lightdm
+          - light-locker
+          - ufw
+          - aesop
+          - stsdc-monitor
+          - harvey
+        state: latest
+
+    - name: Configure - Elementary GTK Theme
+      become: yes
+      tags:
+        - setup
+        - pantheon
+      command: gsettings set org.gnome.desktop.interface gtk-theme elementary
+
+    - name: Configure - Elementary Icon Theme
+      become: yes
+      tags:
+        - setup
+        - pantheon
+      command: gsettings set org.gnome.desktop.interface icon-theme elementary
+      
+    - name: Configure GDM - Disable
+      become: yes
+      tags:
+        - setup
+        - pantheon
+      systemd:
+        name: gdm.service
+        enabled: no
+
+    - name: Configure LightDM - Enable  
+      become: yes
+      tags:
+        - setup
+        - pantheon
+      systemd:
+        name: lightdm.service
+        enabled: yes
+        
+    ## Apps
+    - name: Install Apps
+      become: yes
+      tags:
+        - setup
+        - apps
+      dnf:
+        name: 
+          - flatpak
+          - google-chrome-stable
+          - code
+          - tilix
+          - gnome-boxes
+          - gnome-logs
+        state: latest
+
+    ## Development Tools
+    - name: Install Development Tools
+      become: yes
+      tags:
+        - setup
+        - development
+      dnf: 
+        name:
+          # Development Tools & Libraries
+          - "@Development Tools" 
+          - "@C Development Tools and Libraries"
+          # C / GTK / Vala
+          - meson
+          - granite-devel
+          - switchboard-devel
+          - GConf2-devel
+          - polkit-devel
+
+    ## Development Config - Visual Studio Code
+    - name: Development Setup - Configure - Visual Studio Code - Extensions
+      tags:
+        - setup
+        - development
+        - vscode
+      command: "code --install-extension {{ item }}"
+      with_items:
+        - "asabil.meson"
+        - "redhat.vscode-yaml"
+        - "thiagoabreu.vala"
+        - "nonylene.dark-molokai-theme"
+        - "attilabuti.vscode-mjml"
+        - "ms-vscode.vscode-typescript-tslint-plugin"
+
+    ## Flatpaks
+    - name: Enable Flathub Repository
+      become: yes
+      tags: 
+       - setup
+       - flatpak
+      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+    - name: Install Bitwarden
+      become: yes
+      tags: 
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.bitwarden.desktop 
+
+    - name: Install Spotify
+      become: yes
+      tags: 
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.spotify.Client
+
+    - name: Install Skype
+      become: yes
+      tags: 
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.skype.Client
+
+    - name: Install Telegram
+      become: yes
+      tags: 
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub org.telegram.desktop    
+
+    - name: Install Postman
+      become: yes
+      tags:
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.getpostman.Postman
+
+    - name: Install Fragments
+      become: yes
+      tags:
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub de.haeckerfelix.Fragments
+
+    - name: Install FileZilla
+      become: yes
+      tags: 
+        - setup
+        - flatpak
+        - work
+      command: flatpak install --assumeyes flathub org.filezillaproject.Filezilla
+
+    - name: Install DBeaver
+      become: yes
+      tags:
+        - setup
+        - flatpak
+        - work
+      command: flatpak install --assumeyes flathub io.dbeaver.DBeaverCommunity
+
+    - name: Install Remmina
+      become: yes
+      tags:
+        - setup
+        - flatpak
+        - work
+      command: flatpak install --assumeyes flathub org.remmina.Remmina
+
+    - name: Install Android Studio
+      become: yes
+      tags:
+        - setup
+        - flatpak
+        - work
+      command: flatpak install --assumeyes flathub com.google.AndroidStudio
+
+    ## Static 
+
+    - name: Install Simplenote
+      become: yes
+      tags: 
+        - setup
+        - static
+      dnf:
+        name: https://github.com/Automattic/simplenote-electron/releases/download/v1.5.0/Simplenote-linux-1.5.0-x86_64.rpm
+        state: present
+
+    - name: Install MongoDB Compass
+      become: yes
+      tags:
+        - setup
+        - static
+        - work
+      dnf:
+        name: https://downloads.mongodb.com/compass/mongodb-compass-1.14.5.x86_64.rpm
+        state: present
+
+
+    - name: Install Reactotron
+      become: yes
+      tags:
+        - setup
+        - static
+        - work
+      dnf:
+        name: https://github.com/infinitered/reactotron/releases/download/v2.14.1/reactotron-app-2.14.1.x86_64.rpm
+        state: present
+
+    ## Drivers
+    - name: Install AMD X11 Driver
+      become: yes
+      tags:
+        - amd
+      dnf:
+        name: xorg-x11-drv-amdgpu
+        state: latest
+
+    - name: Install Intel X11 Driver
+      become: yes
+      tags:
+        - intel
+      dnf:
+        name: xorg-x11-drv-intel
+        state: latest
+
+    - name: Install Mesa Drivers (32bit)
+      become: yes
+      tags:
+        - setup
+        - intel
+        - amd
+      dnf:
+        name: 
+          - mesa-dri-drivers.i686
+          - mesa-libGL.i686
+        state: latest
+
+    ## Games / Steam    
+    - name: Install Steam
+      become: yes
+      tags:
+        - games
+        - amd
+      dnf:
+        name: steam
+        state: latest 
+
+
+     ## Cleanup - XFCE
+    - name: Cleanup - XFCE
+      become: yes
+      tags: 
+        - cleanup
+      dnf:
+        name:
+          - abiword          
+          - albatross-gtk2-theme
+          - albatross-gtk3-theme
+          - arc-theme
+          - arc-theme-plank
+          - asunder
+          - catfish
+          - claws-mail
+          - claws-mail-plugins-archive
+          - claws-mail-plugins-att-remover
+          - claws-mail-plugins-attachwarner
+          - claws-mail-plugins-fetchinfo
+          - claws-mail-plugins-mailmbox
+          - claws-mail-plugins-newmail
+          - claws-mail-plugins-notification
+          - claws-mail-plugins-pgp
+          - claws-mail-plugins-rssyl
+          - claws-mail-plugins-smime
+          - claws-mail-plugins-spam-report
+          - claws-mail-plugins-tnef
+          - claws-mail-plugins-vcalendar
+          - dnfdragora
+          - dnfdragora-updater
+          - fedora-release-notes
+          - firewall-config
+          - galculator
+          - geany
+          - gparted
+          - greybird-xfce4-notifyd-theme
+          - gtk-xfce-engine
+          - gnumeric
+          - im-chooser-xfce
+          - libselinux-utils
+          - libxfce4ui
+          - libxfce4util
+          - mousepad
+          - pidgin
+          - seahorse
+          - system-config-keyboard
+          - system-config-keyboard-base
+          - system-config-language
+          - system-config-users
+          - system-config-printer
+          - tint2
+          - pavucontrol
+          - xarchiver
+          - xfce-polkit
+          - xfce4-about
+          - xfce4-appfinder
+          - xfce4-battery-plugin
+          - xfce4-clipman-plugin
+          - xfce4-datetime-plugin
+          - xfce4-dict
+          - xfce4-dict-plugin
+          - xfce4-diskperf-plugin
+          - xfce4-eyes-plugin
+          - xfce4-fsguard-plugin
+          - xfce4-genmom-plugin
+          - xfce4-mailwatch-plugin
+          - xfce4-mount-plugin
+          - xfce4-netload-plugin
+          - xfce4-notifyd
+          - xfce4-panel
+          - xfce4-places-plugin
+          - xfce4-pulseaudio-plugin
+          - xfce4-screenshooter
+          - xfce4-screenshooter-plugin          
+          - xfce4-session          
+          - xfce4-session-engines
+          - xfce4-settings
+          - xfce4-systemload-plugin
+          - xfce4-taskmanager
+          - xfce4-terminal
+          - xfce4-time-out-plugin
+          - xfce4-verve-plugin
+          - xfce4-weather-plugin
+          - xfce4-whiskermenu-plugin
+          - xfce4-xkb-plugin
+          - xscreensaver
+          - xscreensaver-base
+          - xscreensaver-extras
+          - xscreensaver-extras-base          
+        state: absent   
+    
+    ## Cleanup - GNOME
+    - name: Cleanup - GNOME
+      become: yes
+      tags: 
+        - cleanup
+      dnf:
+        name:          
+          - cheese
+          - nautilus
+          - totem
+          - rhythmbox
+          - gdm 
+          - gnome-abrt
+          - gnome-system-monitor
+          - gnome-terminal
+          - gnome-photos
+          - gnome-weather          
+          - gnome-calendar
+          - gnome-screenshot
+          - gnome-calculator
+          - gnome-clocks 
+          - gnome-maps         
+        state: absent
+
+    ## Cleanup - Other
+    - name: Cleanup - Other
+      become: yes
+      tags: 
+        - cleanup
+      dnf:
+        name:
+          
+          - abrt
+          - abrt-addon-ccpp
+          - abrt-addon-coredump-helper
+          - abrt-addon-kerneloops
+          - abrt-addon-pstoreoops
+          - abrt-addon-vmcore
+          - abrt-addon-xorg
+          - abrt-cli
+          - abrt-dbus
+          - abrt-gui-libs
+          - abrt-libs
+          - abrt-plugin-bodhi
+          - abrt-retrace-client
+          - abrt-tui
+          - transmission
+          - transmission-common
+          - transmission-gtk               
+        state: absent

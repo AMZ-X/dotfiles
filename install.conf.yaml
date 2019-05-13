@@ -12,7 +12,6 @@
     ~/.zsh/plugins: src/zsh/plugins
     ~/.zsh/theme: src/zsh/theme
     ~/.zsh/oh-my-zsh: src/zsh/oh-my-zsh
-	~/.rpmmacros: src/rpmmacros
-
+    ~/.rpmmacros: src/rpmmacros
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

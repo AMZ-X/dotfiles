@@ -126,14 +126,19 @@
           - dconf-editor
 
     ## ZSH & Antibody Setup
-    - name: Setup ZSH - Antibody
-      sudo: no
+    - name: Setup ZSH       
       tags:
         - setup
         - zsh
-      command: 
-        - "chsh -s $(which zsh)"
-        - "{{ lookup('env', 'PWD') }}/install"
+      sudo: no
+      command: "chsh -s $(which zsh)"
+
+    - name: Setup Antibody & Dotfiles       
+      tags:
+        - setup
+        - zsh
+      sudo: no
+      command: "{{ lookup('env', 'PWD') }}/install"
 
     ## Pantheon Desktop
     - name: Install Pantheon Desktop

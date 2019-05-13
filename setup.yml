@@ -13,7 +13,7 @@
       become: yes
       tags:        
         - work        
-      command: hostnamectl set-hostname "Swarmbook" --pretty --static
+      command: hostnamectl set-hostname "swarmbook" --pretty --static
 
 
     ## @TODO - Refresh
@@ -130,14 +130,24 @@
       tags:
         - setup
         - zsh
-      sudo: no
-      command: "chsh -s $(which zsh)"
+      become: yes
+      become_user: root
+      command: chsh -s /bin/zsh "{{ ansible_user_id }}"
+
+    - name: Setup ZSH Directory
+      tags:
+        - setup
+        - zsh
+      become_user: "{{ ansible_user_id }}"
+      file:
+        path: ~/.zsh
+        state: directory
 
     - name: Setup Antibody & Dotfiles       
       tags:
         - setup
         - zsh
-      sudo: no
+      become_user: "{{ ansible_user_id }}"    
       command: "{{ lookup('env', 'PWD') }}/install"
 
     ## Pantheon Desktop

@@ -1,29 +1,23 @@
 # dotfiles
 
-Personal dotfiles on Fedora Linux with dotbot.
-
-## Table of Contents
-- [Setup](#system-setup)
-- [Configuration](#configuration)
-- [ZSH User](#zsh-user)
-- [Dotfiles](#installation)
+Personal dotfiles on Fedora Linux with dotbot & ansible.
 
 ## Prerequisites
-Antibody needs to be installed, before continuing with the setup. This could be done in one or two ways:
 
-1. Repo (Recommended)
+Packages that are required for automatic setup
+- git
+- ansible
+
+## Installation: Automatic via Ansible
 ```
-$ sudo copr enable amz/extras -y
-$ sudo dnf update --refresh -y
-$ sudo dnf install -y antibody 
-``` 
+$ sudo dnf install ansible git -y
+$ ansible-playbook -K ./setup.yml
+```
 
-2. Simple 
+## Installation: Maunal (ZSH Setup only)
 ```
 $ curl -sL git.io/antibody | sh -s
 ```
-
-## Setup
 
 As non-root user install zsh, change shell to zsh and execute install in root of project
 
@@ -33,5 +27,5 @@ $ chsh -s $(which zsh)
 $ ./install
 ```
 
-## TODO
+## Future
 - Replace oh-my-zsh with sane defaults, for example dotphiles or something

@@ -98,6 +98,16 @@
         gpgcheck: yes
         enabled: yes
 
+
+    ## Update All 
+    - name: Update All
+      become: yes
+      tags:
+        - setup
+      dnf:
+        name: "*"
+        state: latest
+
     ## Additional Libraries / Apps (Recommended)
     - name: Install Additional Libraries / Packages
       become: yes
@@ -113,14 +123,13 @@
           - antibody
           - util-linux-user
           # codecs 
-          - gstreamer-plugins-bad 
-          - gstreamer-plugins-good
-          - gstreamer-plugins-base
-          - gstreamer-plugins-ugly
-          - gstreamer-plugins-fc 
-          - gstreamer-ffmpeg 
+          - gstreamer1-plugins-bad 
+          - gstreamer1-plugins-good
+          - gstreamer1-plugins-base
+          - gstreamer1-plugins-ugly
+          - gstreamer1-plugins-fc  
           - ffmpeg
-          - bompg123
+          - mpg123
           - x264
           # other
           - dconf-editor

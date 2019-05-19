@@ -12,6 +12,16 @@ export ARCHFLAGS="-arch x86_64"
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# GIT
+GIT_AUTHOR_NAME="Christopher Crouse"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+GIT_AUTHOR_EMAIL="mail@amz-x.com"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+
+# GIT Config
+git config --global user.name "$GIT_AUTHOR_NAME"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+
 # Default
 source /etc/profile
 

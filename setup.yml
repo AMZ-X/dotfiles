@@ -279,11 +279,15 @@
         - vscode
       command: "code --install-extension {{ item }}"
       with_items:
+        # file support
         - "asabil.meson"
         - "redhat.vscode-yaml"
-        - "thiagoabreu.vala"
-        - "nonylene.dark-molokai-theme"
         - "attilabuti.vscode-mjml"
+        - "thiagoabreu.vala"
+        # theme
+        - "nonylene.dark-molokai-theme"
+        # linting
+        - "davidanson.vscode-markdownlint"
         - "ms-vscode.vscode-typescript-tslint-plugin"
 
     ## Flatpaks

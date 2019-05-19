@@ -3,7 +3,7 @@
 	"editor.fontSize": 15,
     "editor.insertSpaces": false,
 	"typescript.updateImportsOnFileMove.enabled": "always",
-	"window.titleBarStyle": "custom",    
+	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 0,
 	"workbench.colorTheme": "Dark (Molokai)"
 }

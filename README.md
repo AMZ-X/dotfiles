@@ -2,6 +2,8 @@
 
 Personal dotfiles on Fedora Linux with dotbot & ansible.
 
+![alt text](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 30 - Pantheon Desktop")
+
 ## Prerequisites
 
 Packages that are required for automatic setup

@@ -132,6 +132,7 @@
           - mpg123
           - x264
           # other
+          - screenfetch
           - dconf-editor
 
     ## ZSH & Antibody Setup
@@ -373,6 +374,15 @@
       command: flatpak install --assumeyes flathub com.google.AndroidStudio
 
     ## Static 
+
+    - name: Install Mailspring
+      become: yes
+      tags: 
+        - setup
+        - static
+      dnf:
+        name: https://github.com/Foundry376/Mailspring/releases/download/1.6.1/mailspring-1.6.1-0.1.x86_64.rpm
+        state: present
 
     - name: Install Simplenote
       become: yes

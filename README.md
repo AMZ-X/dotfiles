@@ -2,7 +2,7 @@
 
 Personal dotfiles on Fedora Linux with dotbot & ansible.
 
-![alt text](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 30 - Pantheon Desktop")
+![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 30 - Pantheon Desktop")
 
 ## Prerequisites
 
@@ -30,4 +30,5 @@ $ ./install
 ```
 
 ## Future
+
 - Replace oh-my-zsh with sane defaults, for example dotphiles or something

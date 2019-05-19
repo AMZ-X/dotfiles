@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    # zsh
     ~/.zshrc: src/zshrc
     ~/.zsh/android: src/zsh/android
     ~/.zsh/java: src/zsh/java
@@ -12,6 +13,9 @@
     ~/.zsh/plugins: src/zsh/plugins
     ~/.zsh/theme: src/zsh/theme
     ~/.zsh/oh-my-zsh: src/zsh/oh-my-zsh
+    # vscode
+    ~/.config/Code/User/settings.json: src/vscode/settings.json
+    # rpm
     ~/.rpmmacros: src/rpmmacros
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

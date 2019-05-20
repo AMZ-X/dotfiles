@@ -265,6 +265,9 @@
           # Development Tools & Libraries
           - "@Development Tools" 
           - "@C Development Tools and Libraries"
+          # Fedora RPM
+          - fedora-packager
+          - rpmdevtools
           # C / GTK / Vala
           - meson
           - granite-devel
@@ -283,8 +286,10 @@
         # file support
         - "asabil.meson"
         - "redhat.vscode-yaml"
-        - "attilabuti.vscode-mjml"
+        - "laurenttreguier.rpm-spec"        
         - "thiagoabreu.vala"
+        # mjml
+        - "attilabuti.vscode-mjml"
         # theme
         - "nonylene.dark-molokai-theme"
         # linting

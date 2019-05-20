@@ -1,3 +1,7 @@
 # Aliases
 alias zsh_update_plugins='antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh'
 
+# rpm
+alias specfetch='spectool -g -R'
+alias specdeps='sudo dnf builddep -y'
+alias specbuild='rpmbuild -ba'

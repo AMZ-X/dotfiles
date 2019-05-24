@@ -346,6 +346,20 @@
         - flatpak
       command: flatpak install --assumeyes flathub de.haeckerfelix.Fragments
 
+    - name: Install EasySSH
+      become: yes
+      tags:
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.github.muriloventuroso.easyssh
+
+    - name: Install Peek
+      become: yes
+      tags:
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.uploadedlobster.peek
+
     - name: Install FileZilla
       become: yes
       tags: 

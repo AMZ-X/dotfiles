@@ -132,6 +132,7 @@
           - mpg123
           - x264
           # other
+          - screenfetch
           - dconf-editor
 
     ## ZSH & Antibody Setup
@@ -247,6 +248,7 @@
         name: 
           - flatpak
           - google-chrome-stable
+          - chromium
           - code
           - tilix
           - gnome-boxes
@@ -264,6 +266,9 @@
           # Development Tools & Libraries
           - "@Development Tools" 
           - "@C Development Tools and Libraries"
+          # Fedora RPM
+          - fedora-packager
+          - rpmdevtools
           # C / GTK / Vala
           - meson
           - granite-devel
@@ -279,11 +284,17 @@
         - vscode
       command: "code --install-extension {{ item }}"
       with_items:
+        # file support
         - "asabil.meson"
         - "redhat.vscode-yaml"
+        - "laurenttreguier.rpm-spec"        
         - "thiagoabreu.vala"
-        - "nonylene.dark-molokai-theme"
+        # mjml
         - "attilabuti.vscode-mjml"
+        # theme
+        - "nonylene.dark-molokai-theme"
+        # linting
+        - "davidanson.vscode-markdownlint"
         - "ms-vscode.vscode-typescript-tslint-plugin"
 
     ## Flatpaks
@@ -329,12 +340,40 @@
         - flatpak
       command: flatpak install --assumeyes flathub com.getpostman.Postman
 
+    - name: Install Pinta
+      become: yes
+      tags:
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.github.PintaProject.Pinta
+
     - name: Install Fragments
       become: yes
       tags:
         - setup
         - flatpak
       command: flatpak install --assumeyes flathub de.haeckerfelix.Fragments
+
+    - name: Install EasySSH
+      become: yes
+      tags:
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.github.muriloventuroso.easyssh
+
+    - name: Install Peek
+      become: yes
+      tags:
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.uploadedlobster.peek
+
+    - name: Install LibreOffice
+      become: yes
+      tags:
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub org.libreoffice.LibreOffice
 
     - name: Install FileZilla
       become: yes
@@ -369,6 +408,15 @@
       command: flatpak install --assumeyes flathub com.google.AndroidStudio
 
     ## Static 
+
+    - name: Install Mailspring
+      become: yes
+      tags: 
+        - setup
+        - static
+      dnf:
+        name: https://github.com/Foundry376/Mailspring/releases/download/1.6.1/mailspring-1.6.1-0.1.x86_64.rpm
+        state: present
 
     - name: Install Simplenote
       become: yes

@@ -13,7 +13,7 @@
       become: yes
       tags:        
         - work        
-      command: hostnamectl set-hostname "swarmbook" --pretty --static
+      command: hostnamectl set-hostname "Swarmbook" --pretty --static
 
 
     ## @TODO - Refresh

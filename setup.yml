@@ -16,7 +16,13 @@
       command: hostnamectl set-hostname "Swarmbook" --pretty --static
 
 
-    ## @TODO - Refresh
+    ## SSH Configuration
+    - name: Setup SSH
+      become: no
+      tags:
+        - setup
+        - ssh
+      command: ssh-keygen -t rsa -b 4096 -C "mail@amz-x.com"
     
 
     ## Repositories

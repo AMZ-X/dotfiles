@@ -234,7 +234,6 @@
           - lightdm
           - light-locker
           - ufw
-          - aesop
           - stsdc-monitor
           - harvey
         state: latest

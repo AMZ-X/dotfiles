@@ -1,0 +1,14 @@
+# .gitlab-ci.yml
+
+image: "fedora:30"
+
+before_script:
+  - dnf update --refresh -y && dnf install ansible -y
+
+home:
+  script:
+    - ansible-playbook -K ./setup.yml --tags setup,home
+  
+work:
+  script:
+    - ansible-playbook -K ./setup.yml --tags setup,work

@@ -293,6 +293,7 @@
 
     ## Development Config - Visual Studio Code
     - name: Development Setup - Configure - Visual Studio Code - Extensions
+      become_user: "{{ ansible_user_id }}"
       tags:
         - setup
         - development

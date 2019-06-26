@@ -159,6 +159,16 @@
         path: ~/.zsh
         state: directory
 
+    - name: Setup VSCode User Configuration Directory
+      tags: 
+        - setup
+        - zsh
+        - code
+      become_user: "{{ ansible_user_id }}"
+      file:
+        path: ~/.config/Code/User
+        state: directory 
+
     - name: Setup Antibody & Dotfiles       
       tags:
         - setup

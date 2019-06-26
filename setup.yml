@@ -292,26 +292,26 @@
           - polkit-devel
 
     ## Development Config - Visual Studio Code
-    - name: Development Setup - Configure - Visual Studio Code - Extensions
-      become_user: "{{ ansible_user_id }}"
-      tags:
-        - setup
-        - development
-        - vscode
-      command: "code --install-extension {{ item }}"
-      with_items:
-        # file support
-        - "asabil.meson"
-        - "redhat.vscode-yaml"
-        - "laurenttreguier.rpm-spec"        
-        - "thiagoabreu.vala"
-        # mjml
-        - "attilabuti.vscode-mjml"
-        # theme
-        - "nonylene.dark-molokai-theme"
-        # linting
-        - "davidanson.vscode-markdownlint"
-        - "ms-vscode.vscode-typescript-tslint-plugin"
+    # - name: Development Setup - Configure - Visual Studio Code - Extensions
+    #   become_user: "{{ ansible_user_id }}"
+    #   tags:
+    #     - setup
+    #     - development
+    #     - vscode
+    #   command: "code --install-extension {{ item }}"
+    #   with_items:
+    #     # file support
+    #     - "asabil.meson"
+    #     - "redhat.vscode-yaml"
+    #     - "laurenttreguier.rpm-spec"        
+    #     - "thiagoabreu.vala"
+    #     # mjml
+    #     - "attilabuti.vscode-mjml"
+    #     # theme
+    #     - "nonylene.dark-molokai-theme"
+    #     # linting
+    #     - "davidanson.vscode-markdownlint"
+    #     - "ms-vscode.vscode-typescript-tslint-plugin"
 
     ## Flatpaks
     - name: Enable Flathub Repository

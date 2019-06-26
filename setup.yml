@@ -3,26 +3,26 @@
   tasks:
 
     ## System Configuration
-    - name: Set Home PC Hostname
-      become: yes
-      tags:        
-        - home        
-      command: hostnamectl set-hostname "AMZ-Linux" --pretty --static
+    # - name: Set Home PC Hostname
+    #   become: yes
+    #   tags:        
+    #     - home        
+    #   command: hostnamectl set-hostname "AMZ-Linux" --pretty --static
 
-    - name: Set Work PC Hostname
-      become: yes
-      tags:        
-        - work        
-      command: hostnamectl set-hostname "Swarmbook" --pretty --static
+    # - name: Set Work PC Hostname
+    #   become: yes
+    #   tags:        
+    #     - work        
+    #   command: hostnamectl set-hostname "Swarmbook" --pretty --static
 
 
     ## SSH Configuration
-    - name: Setup SSH
-      become: no
-      tags:
-        - setup
-        - ssh
-      command: ssh-keygen -t rsa -b 4096 -C "mail@amz-x.com"
+    # - name: Setup SSH
+    #   become: no
+    #   tags:
+    #     - setup
+    #     - ssh
+    #   command: ssh-keygen -t rsa -b 4096 -C "mail@amz-x.com"
     
 
     ## Repositories
@@ -226,23 +226,23 @@
         - pantheon
       command: gsettings set org.gnome.desktop.interface icon-theme elementary
       
-    - name: Configure GDM - Disable
-      become: yes
-      tags:
-        - setup
-        - pantheon
-      systemd:
-        name: gdm.service
-        enabled: no
+    # - name: Configure GDM - Disable
+    #   become: yes
+    #   tags:
+    #     - setup
+    #     - pantheon
+    #   systemd:
+    #     name: gdm.service
+    #     enabled: no
 
-    - name: Configure LightDM - Enable  
-      become: yes
-      tags:
-        - setup
-        - pantheon
-      systemd:
-        name: lightdm.service
-        enabled: yes
+    # - name: Configure LightDM - Enable  
+    #   become: yes
+    #   tags:
+    #     - setup
+    #     - pantheon
+    #   systemd:
+    #     name: lightdm.service
+    #     enabled: yes
         
     ## Apps
     - name: Install Apps

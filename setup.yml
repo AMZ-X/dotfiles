@@ -141,6 +141,23 @@
           - screenfetch
           - dconf-editor
 
+    ## Apps
+    - name: Install Apps
+      become: yes
+      tags:
+        - setup
+        - apps
+      dnf:
+        name: 
+          - flatpak
+          - google-chrome-stable
+          - chromium
+          - code
+          - tilix
+          - gnome-boxes
+          - gnome-logs
+        state: latest
+
     ## ZSH & Antibody Setup
     - name: Setup ZSH       
       tags:
@@ -159,15 +176,16 @@
         path: ~/.zsh
         state: directory
 
-    - name: Setup VSCode User Configuration Directory
-      tags: 
-        - setup
-        - zsh
-        - code
-      become_user: "{{ ansible_user_id }}"
-      file:
-        path: ~/.config/Code/User
-        state: directory 
+    # @TODO - Remove
+    # - name: Setup VSCode User Configuration Directory
+    #   tags: 
+    #     - setup
+    #     - zsh
+    #     - code
+    #   become_user: "{{ ansible_user_id }}"
+    #   file:
+    #     path: ~/.config/Code/User
+    #     state: directory 
 
     - name: Setup Antibody & Dotfiles       
       tags:
@@ -253,23 +271,6 @@
     #   systemd:
     #     name: lightdm.service
     #     enabled: yes
-        
-    ## Apps
-    - name: Install Apps
-      become: yes
-      tags:
-        - setup
-        - apps
-      dnf:
-        name: 
-          - flatpak
-          - google-chrome-stable
-          - chromium
-          - code
-          - tilix
-          - gnome-boxes
-          - gnome-logs
-        state: latest
 
     ## Development Tools
     - name: Install Development Tools

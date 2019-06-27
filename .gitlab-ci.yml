@@ -7,7 +7,7 @@ before_script:
 
 home:
   script:
-    - ansible-playbook -K ./setup.yml --tags setup,home
+    - ansible-playbook -K ./setup.yml --tags setup,home,cleanup
   
 # work:
 #   script:

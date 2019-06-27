@@ -203,6 +203,7 @@
         name: 
           # complete
           - pantheon-session-settings
+          - pantheon-session-settings-overrides
           - elementary-calculator
           - elementary-calendar
           - elementary-dpms-helper          
@@ -356,33 +357,12 @@
         - flatpak
       command: flatpak install --assumeyes flathub com.getpostman.Postman
 
-    - name: Install Pinta
-      become: yes
-      tags:
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub com.github.PintaProject.Pinta
-
     - name: Install Fragments
       become: yes
       tags:
         - setup
         - flatpak
       command: flatpak install --assumeyes flathub de.haeckerfelix.Fragments
-
-    - name: Install EasySSH
-      become: yes
-      tags:
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub com.github.muriloventuroso.easyssh
-
-    - name: Install Peek
-      become: yes
-      tags:
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub com.uploadedlobster.peek
 
     - name: Install LibreOffice
       become: yes
@@ -431,7 +411,7 @@
         - setup
         - static
       dnf:
-        name: https://github.com/Foundry376/Mailspring/releases/download/1.6.1/mailspring-1.6.1-0.1.x86_64.rpm
+        name: https://github.com/Foundry376/Mailspring/releases/download/1.6.2/mailspring-1.6.2-0.1.x86_64.rpm
         state: present
 
     - name: Install Simplenote
@@ -454,15 +434,15 @@
         state: present
 
 
-    - name: Install Reactotron
-      become: yes
-      tags:
-        - setup
-        - static
-        - work
-      dnf:
-        name: https://github.com/infinitered/reactotron/releases/download/v2.14.1/reactotron-app-2.14.1.x86_64.rpm
-        state: present
+    # - name: Install Reactotron
+    #   become: yes
+    #   tags:
+    #     - setup
+    #     - static
+    #     - work
+    #   dnf:
+    #     name: https://github.com/infinitered/reactotron/releases/download/v2.14.1/reactotron-app-2.14.1.x86_64.rpm
+    #     state: present
 
     ## Drivers
     - name: Install AMD X11 Driver

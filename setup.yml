@@ -137,6 +137,8 @@
           - ffmpeg
           - mpg123
           - x264
+          # compression libs
+          - rar
           # other
           - screenfetch
           - dconf-editor
@@ -155,7 +157,6 @@
           - code
           - tilix
           - gnome-boxes
-          - gnome-logs
         state: latest
 
     ## ZSH & Antibody Setup
@@ -604,8 +605,7 @@
       tags: 
         - cleanup
       dnf:
-        name:
-          
+        name:          
           - abrt
           - abrt-addon-ccpp
           - abrt-addon-coredump-helper

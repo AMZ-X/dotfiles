@@ -139,6 +139,7 @@
           - x264
           # compression libs
           - rar
+          - p7zip
           # other
           - screenfetch
           - dconf-editor

@@ -292,6 +292,10 @@
           - switchboard-devel
           - GConf2-devel
           - polkit-devel
+          # Java
+          - java-1.8.0-openjdk
+          - java-1.8.0-openjdk-devel
+          - java-1.8.0-openjdk-javadoc
 
     ## Development Config - Visual Studio Code
     # - name: Development Setup - Configure - Visual Studio Code - Extensions
@@ -482,8 +486,7 @@
         - amd
       dnf:
         name: steam
-        state: latest 
-
+        state: latest
 
      ## Cleanup - XFCE
     - name: Cleanup - XFCE

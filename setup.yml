@@ -295,7 +295,6 @@
           # Java
           - java-1.8.0-openjdk
           - java-1.8.0-openjdk-devel
-          - java-1.8.0-openjdk-javadoc
 
     ## Development Config - Visual Studio Code
     # - name: Development Setup - Configure - Visual Studio Code - Extensions
@@ -368,6 +367,13 @@
         - setup
         - flatpak
       command: flatpak install --assumeyes flathub de.haeckerfelix.Fragments
+
+    - name: Install Draw.io
+      become: yes
+      tags:
+        - setup
+        - flatpak
+      command: flatpak install --assumeyes flathub com.jgraph.drawio.desktop
 
     - name: Install LibreOffice
       become: yes

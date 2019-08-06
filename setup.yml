@@ -368,13 +368,6 @@
         - flatpak
       command: flatpak install --assumeyes flathub de.haeckerfelix.Fragments
 
-    - name: Install Draw.io
-      become: yes
-      tags:
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub com.jgraph.drawio.desktop
-
     - name: Install LibreOffice
       become: yes
       tags:
@@ -444,6 +437,14 @@
         name: https://downloads.mongodb.com/compass/mongodb-compass-1.14.5.x86_64.rpm
         state: present
 
+    - name: Install Draw.io
+      become: yes
+      tags:
+        - setup
+        - static
+      dnf:
+        name: https://github.com/jgraph/drawio-desktop/releases/download/v11.1.1/draw.io-x86_64-11.1.1.rpm
+        state: present
 
     # - name: Install Reactotron
     #   become: yes

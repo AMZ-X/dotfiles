@@ -317,6 +317,9 @@
     #     # linting
     #     - "davidanson.vscode-markdownlint"
     #     - "ms-vscode.vscode-typescript-tslint-plugin"
+    #     # c#
+    #     - "ms-vscode.csharp"
+    #     - "jchannon.csharpextensions"
 
     ## Flatpaks
     - name: Enable Flathub Repository

@@ -294,6 +294,23 @@
           - polkit-devel
           # PHP
           - php
+          - php-common
+          - php-opcache
+          - php-mcrypt
+          - php-cli
+          - php-gd
+          - php-curl
+          - php-fpm
+          - php-gmp
+          - php-curl
+          - php-intl
+          - php-mbstring
+          - php-xmlrpc
+          - php-bcmath
+          - php-xml
+          - php-zip
+          - php-imap
+          - php-posix
           - composer
           # Java
           - java-1.8.0-openjdk

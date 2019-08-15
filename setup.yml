@@ -51,30 +51,17 @@
         gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/pubkey.gpg
         gpgcheck: yes
         enabled: yes
-    
-    - name: Enable Microsoft / Visual Studio Code Repo
-      become: yes
-      tags: 
-       - setup
-       - repos
-      yum_repository:
-        name: fedora-extensions-vscode
-        description: 'Fedora Extensions $releasever - $basearch - Visual Studio Code'
-        baseurl: https://packages.microsoft.com/yumrepos/vscode
-        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-        gpgcheck: yes
-        enabled: yes
 
-    - name: Enable Google / Chrome Repo
+    - name: Enable Negativo17 / Multimedia
       become: yes
       tags: 
        - setup
        - repos
       yum_repository:
-        name: fedora-extensions-chrome
-        description: 'Fedora Extensions $releasever - $basearch - Chrome'
-        baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
-        gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+        name: fedora-extensions-multimedia
+        description: 'Fedora Extensions $releasever - $basearch - Multimedia'
+        baseurl: https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
+        gpgkey: https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
         gpgcheck: yes
         enabled: yes
 
@@ -90,20 +77,45 @@
         gpgkey: https://copr-be.cloud.fedoraproject.org/results/@dotnet-sig/dotnet/pubkey.gpg
         gpgcheck: yes
         enabled: yes
-
-    - name: Enable Negativo17 / Multimedia
+    
+    - name: Enable Microsoft / Visual Studio Code Repo
       become: yes
       tags: 
        - setup
        - repos
       yum_repository:
-        name: fedora-extensions-multimedia
-        description: 'Fedora Extensions $releasever - $basearch - Multimedia'
-        baseurl: https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
-        gpgkey: https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+        name: fedora-extensions-vscode
+        description: 'Fedora Extensions $releasever - $basearch - Visual Studio Code'
+        baseurl: https://packages.microsoft.com/yumrepos/vscode
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
         gpgcheck: yes
         enabled: yes
 
+    - name: Enable Sublime Text Repo
+      become: yes
+      tags: 
+       - setup
+       - repos
+      yum_repository:
+        name: fedora-extensions-sublime-text
+        description: 'Fedora Extensions $releasever - $basearch - Sublime Text'
+        baseurl: https://download.sublimetext.com/rpm/stable/x86_64
+        gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+        gpgcheck: yes
+        enabled: yes
+
+    - name: Enable Google / Chrome Repo
+      become: yes
+      tags: 
+       - setup
+       - repos
+      yum_repository:
+        name: fedora-extensions-chrome
+        description: 'Fedora Extensions $releasever - $basearch - Chrome'
+        baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+        gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+        gpgcheck: yes
+        enabled: yes
 
     ## Update All 
     - name: Update All
@@ -224,6 +236,7 @@
           - elementary-theme-gtk3
           - elementary-theme-plank
           - elementary-tweaks
+          - elementary-monitor
           - elementary-videos
           - elementary-wallpapers
           - elementary-wallpapers-gnome          
@@ -236,7 +249,6 @@
           # other
           - lightdm
           - light-locker
-          - stsdc-monitor
           - harvey
         state: latest
 
@@ -414,14 +426,6 @@
         - work
       command: flatpak install --assumeyes flathub io.dbeaver.DBeaverCommunity
 
-    - name: Install Remmina
-      become: yes
-      tags:
-        - setup
-        - flatpak
-        - work
-      command: flatpak install --assumeyes flathub org.remmina.Remmina
-
     - name: Install Android Studio
       become: yes
       tags:
@@ -448,16 +452,6 @@
         - static
       dnf:
         name: https://github.com/Automattic/simplenote-electron/releases/download/v1.5.0/Simplenote-linux-1.5.0-x86_64.rpm
-        state: present
-
-    - name: Install MongoDB Compass
-      become: yes
-      tags:
-        - setup
-        - static
-        - work
-      dnf:
-        name: https://downloads.mongodb.com/compass/mongodb-compass-1.14.5.x86_64.rpm
         state: present
 
     - name: Install Draw.io

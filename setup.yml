@@ -31,6 +31,7 @@
       tags: 
        - setup
        - repos
+       - repos-extras
       yum_repository:
         name: fedora-extensions-extras
         description: 'Fedora Extensions $releasever - $basearch - Extras'
@@ -44,6 +45,7 @@
       tags: 
        - setup
        - repos
+       - repos-pantheon
       yum_repository:
         name: fedora-extensions-pantheon
         description: 'Fedora Extensions $releasever - $basearch - Pantheon'
@@ -57,6 +59,7 @@
       tags: 
        - setup
        - repos
+       - repos-multimedia
       yum_repository:
         name: fedora-extensions-multimedia
         description: 'Fedora Extensions $releasever - $basearch - Multimedia'
@@ -70,6 +73,7 @@
       tags: 
        - setup
        - repos
+       - repos-dotnetcore
       yum_repository:
         name: fedora-extensions-dotnet
         description: 'Fedora Extensions $releasever - $basearch - .NET Core'
@@ -83,6 +87,7 @@
       tags: 
        - setup
        - repos
+       - repos-vscode
       yum_repository:
         name: fedora-extensions-vscode
         description: 'Fedora Extensions $releasever - $basearch - Visual Studio Code'
@@ -96,6 +101,7 @@
       tags: 
        - setup
        - repos
+       - repos-sublimetext
       yum_repository:
         name: fedora-extensions-sublime-text
         description: 'Fedora Extensions $releasever - $basearch - Sublime Text'
@@ -109,6 +115,7 @@
       tags: 
        - setup
        - repos
+       - repos-chrome
       yum_repository:
         name: fedora-extensions-chrome
         description: 'Fedora Extensions $releasever - $basearch - Chrome'
@@ -168,6 +175,7 @@
           - google-chrome-stable
           - chromium
           - code
+          - sublime-text
           - tilix
           - gnome-boxes
         state: latest

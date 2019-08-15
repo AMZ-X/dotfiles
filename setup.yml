@@ -308,6 +308,7 @@
           - rpmdevtools
           # Docker 
           - docker
+          - docker-compose
           # C / GTK / Vala
           - meson
           - granite-devel

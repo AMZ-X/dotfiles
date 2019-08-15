@@ -293,7 +293,7 @@
     #     enabled: yes
 
     ## Development Tools
-    - name: Install Development Tools
+    - name: Install Development Tools & Libraries
       become: yes
       tags:
         - setup
@@ -306,6 +306,8 @@
           # Fedora RPM
           - fedora-packager
           - rpmdevtools
+          # Docker 
+          - docker
           # C / GTK / Vala
           - meson
           - granite-devel

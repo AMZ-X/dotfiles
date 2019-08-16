@@ -178,6 +178,7 @@
           - sublime-text
           - tilix
           - gnome-boxes
+          - gimp
         state: latest
 
     ## ZSH & Antibody Setup

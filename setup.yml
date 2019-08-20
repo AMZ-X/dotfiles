@@ -179,6 +179,7 @@
           - tilix
           - gnome-boxes
           - gimp
+          - filezilla
         state: latest
 
     ## ZSH & Antibody Setup
@@ -422,14 +423,6 @@
         - flatpak
       command: flatpak install --assumeyes flathub org.libreoffice.LibreOffice
 
-    - name: Install FileZilla
-      become: yes
-      tags: 
-        - setup
-        - flatpak
-        - work
-      command: flatpak install --assumeyes flathub org.filezillaproject.Filezilla
-
     - name: Install DBeaver
       become: yes
       tags:
@@ -482,7 +475,7 @@
     #     - static
     #     - work
     #   dnf:
-    #     name: https://github.com/infinitered/reactotron/releases/download/v2.14.1/reactotron-app-2.14.1.x86_64.rpm
+    #     name: https://github.com/infinitered/reactotron/releases/download/v2.17.0/reactotron-app-2.17.0.x86_64.rpm
     #     state: present
 
     ## Drivers

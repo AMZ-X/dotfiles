@@ -1,4 +1,10 @@
-%_topdir %(echo $HOME)/Workspace/rpmbuild
+%_topdir        %(echo $HOME)/Workspace/personal/extras
+%_sourcedir     %{_topdir}/sources
+%_rpmdir        %{_topdir}/rpms
+%_specdir       %{_topdir}/specs
+%_srcrpmdir     %{_topdir}/srpms
+%_builddir      %{_topdir}/build
+%_buildrootdir  %{_topdir}/buildroot
 
 %__arch_install_post \
     [ "%{buildarch}" = "noarch" ] || QA_CHECK_RPATHS=1 ; \

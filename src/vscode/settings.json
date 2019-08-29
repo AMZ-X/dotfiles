@@ -2,9 +2,11 @@
 	"diffEditor.ignoreTrimWhitespace": false,
 	"editor.fontSize": 15,
 	"editor.insertSpaces": false,
+	"editor.minimap.enabled": false,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 0,
 	"workbench.colorTheme": "Dark (Molokai)",
-	"editor.minimap.enabled": false
+	"php.executablePath": "/usr/bin/php",
+	"php.validate.executablePath": "/usr/bin/php"
 }

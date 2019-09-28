@@ -96,6 +96,20 @@
         gpgcheck: yes
         enabled: yes
 
+    - name: Enable Microsoft / MS SQL Server
+      become: yes
+      tags:
+        - setup
+        - repos
+        - repos-vscode
+      yum_repository:
+        name: fedora-extensions-mssql
+        description: 'Fedora Extensions $releasever - $basearch - MS SQL'
+        baseurl: https://packages.microsoft.com/rhel/7/mssql-server-preview/
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+        gpgcheck: yes
+        enabled: yes
+
     - name: Enable Sublime Text Repo
       become: yes
       tags: 

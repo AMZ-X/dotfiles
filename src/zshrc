@@ -44,3 +44,13 @@ source ~/.zsh/oh-my-zsh
 antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh
 source ~/.zsh/plugins.sh
 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/sls.zsh ]] && . /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/slss.zsh ]] && . /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/slss.zsh

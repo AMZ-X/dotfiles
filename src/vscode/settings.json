@@ -3,9 +3,11 @@
 	"editor.fontSize": 14,
 	"editor.insertSpaces": false,
 	"editor.minimap.enabled": false,
-	"editor.renderWhitespace": "none",
+	"editor.renderWhitespace": "none",	
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 0,
-	"workbench.colorTheme": "Dark (Molokai)"	
+	"workbench.colorTheme": "Dark (Molokai)",
+	"php.executablePath": "/usr/bin/php",
+	"php.validate.executablePath": "/usr/bin/php"
 }

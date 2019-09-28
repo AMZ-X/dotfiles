@@ -54,7 +54,7 @@
         gpgcheck: yes
         enabled: yes
 
-    - name: Enable Negativo17 / Multimedia
+    - name: Enable Negativo17 / Multimedia Repo
       become: yes
       tags: 
        - setup
@@ -68,21 +68,36 @@
         gpgcheck: yes
         enabled: yes
 
-    - name: Enable Microsoft / RHEL 7 Repo
+    - name: Enable Remi's PHP Repo
+      become: yes
+      tags:
+        - setup
+        - repos
+        - repos-remi
+        - repos-php
+      yum_repository:
+        name: fedora-extensions-php
+        description: 'Fedora Extensions $releasever - $basearch - PHP'
+        baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
+        gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi-$releasever
+        gpgcheck: yes
+        enabled: yes
+
+    - name: Enable Microsoft / MS RHEL 7 Repo
       become: yes
       tags:
         - setup
         - repos
         - repos-ms
       yum_repository:
-        name: fedora-extensions-mssql
+        name: fedora-extensions-ms
         description: 'Fedora Extensions $releasever - $basearch - MS RHEL 7 Repo'
         baseurl: https://packages.microsoft.com/rhel/7/prod/
         gpgkey: https://packages.microsoft.com/keys/microsoft.asc
         gpgcheck: yes
         enabled: yes
 
-    - name: Enable Microsoft / MS SQL 2017 Repo
+    - name: Enable Microsoft / MS SQL 2017 RHEL Repo
       become: yes
       tags:
         - setup
@@ -331,9 +346,10 @@
           - switchboard-devel
           - GConf2-devel
           - polkit-devel
-          # PHP
+          # PHP Latest (v7.3)
           - php
           - php-common
+          - php-devel
           - php-opcache
           - php-mcrypt
           - php-cli
@@ -344,16 +360,45 @@
           - php-curl
           - php-intl
           - php-mbstring
+          - php-mysqlnd
           - php-xmlrpc
           - php-bcmath
           - php-xml
           - php-zip
           - php-imap
           - php-posix
+          - php-xdebug
+          - php-xml
           - composer
-          # Java
+          # PHP Stable (v7.1)
+          - php71
+          - php71-php-common
+          - php71-php-devel
+          - php71-php-opcache
+          - php71-php-mcrypt
+          - php71-php-cli
+          - php71-php-gd
+          - php71-php-curl
+          - php71-php-fpm
+          - php71-php-gmp
+          - php71-php-curl
+          - php71-php-intl
+          - php71-php-mbstring
+          - php71-php-mysqlnd
+          - php71-php-xmlrpc
+          - php71-php-bcmath
+          - php71-php-xml
+          - php71-php-zip
+          - php71-php-imap
+          - php71-php-posix
+          - php71-php-xdebug
+          - php71-php-xml
+          # Java (v8)
           - java-1.8.0-openjdk
           - java-1.8.0-openjdk-devel
+          - java-1.8.0-openjdk-headless
+          # Libraries
+          - libnsl
 
     ## Development Config - Visual Studio Code
     # - name: Development Setup - Configure - Visual Studio Code - Extensions

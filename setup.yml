@@ -68,17 +68,31 @@
         gpgcheck: yes
         enabled: yes
 
-    - name: Enable Microsoft / .NET Core Repo
+    - name: Enable Microsoft / RHEL 7 Repo
       become: yes
-      tags: 
-       - setup
-       - repos
-       - repos-dotnetcore
+      tags:
+        - setup
+        - repos
+        - repos-ms
       yum_repository:
-        name: fedora-extensions-dotnet
-        description: 'Fedora Extensions $releasever - $basearch - .NET Core'
-        baseurl: https://copr-be.cloud.fedoraproject.org/results/@dotnet-sig/dotnet/fedora-$releasever-$basearch/
-        gpgkey: https://copr-be.cloud.fedoraproject.org/results/@dotnet-sig/dotnet/pubkey.gpg
+        name: fedora-extensions-mssql
+        description: 'Fedora Extensions $releasever - $basearch - MS RHEL 7 Repo'
+        baseurl: https://packages.microsoft.com/rhel/7/prod/
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+        gpgcheck: yes
+        enabled: yes
+
+    - name: Enable Microsoft / MS SQL 2017 Repo
+      become: yes
+      tags:
+        - setup
+        - repos
+        - repos-mssql
+      yum_repository:
+        name: fedora-extensions-mssql
+        description: 'Fedora Extensions $releasever - $basearch - MS SQL RHEL 7 Repo'
+        baseurl: https://packages.microsoft.com/rhel/7/prod/
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
         gpgcheck: yes
         enabled: yes
     
@@ -92,20 +106,6 @@
         name: fedora-extensions-vscode
         description: 'Fedora Extensions $releasever - $basearch - Visual Studio Code'
         baseurl: https://packages.microsoft.com/yumrepos/vscode
-        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-        gpgcheck: yes
-        enabled: yes
-
-    - name: Enable Microsoft / MS SQL Server
-      become: yes
-      tags:
-        - setup
-        - repos
-        - repos-vscode
-      yum_repository:
-        name: fedora-extensions-mssql
-        description: 'Fedora Extensions $releasever - $basearch - MS SQL'
-        baseurl: https://packages.microsoft.com/rhel/7/mssql-server-preview/
         gpgkey: https://packages.microsoft.com/keys/microsoft.asc
         gpgcheck: yes
         enabled: yes

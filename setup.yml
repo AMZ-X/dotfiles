@@ -188,6 +188,14 @@
           # compression libs
           - rar
           - p7zip
+          # iphone support
+          - ifuse
+          - libplist
+          - libplist-python
+          - libimobiledevice
+          - libimobiledevice-utils
+          - libimobiledevice-devel
+          - usbmuxd
           # other
           - screenfetch
           - dconf-editor

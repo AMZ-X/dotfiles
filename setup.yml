@@ -514,7 +514,7 @@
         - setup
         - static
       dnf:
-        name: https://github.com/Foundry376/Mailspring/releases/download/1.6.3/mailspring-1.6.3-0.1.x86_64.rpm
+        name: https://github.com/Foundry376/Mailspring/releases/download/1.7.1/mailspring-1.7.1-0.1.x86_64.rpm
         state: present
 
     - name: Install Simplenote

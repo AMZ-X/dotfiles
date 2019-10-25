@@ -81,35 +81,7 @@
         baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
         gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi-$releasever
         gpgcheck: yes
-        enabled: yes
-
-    - name: Enable Microsoft / MS RHEL 7 Repo
-      become: yes
-      tags:
-        - setup
-        - repos
-        - repos-ms
-      yum_repository:
-        name: fedora-extensions-ms
-        description: 'Fedora Extensions $releasever - $basearch - MS RHEL 7 Repo'
-        baseurl: https://packages.microsoft.com/rhel/7/prod/
-        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-        gpgcheck: yes
-        enabled: yes
-
-    - name: Enable Microsoft / MS SQL 2017 RHEL Repo
-      become: yes
-      tags:
-        - setup
-        - repos
-        - repos-mssql
-      yum_repository:
-        name: fedora-extensions-mssql
-        description: 'Fedora Extensions $releasever - $basearch - MS SQL RHEL 7 Repo'
-        baseurl: https://packages.microsoft.com/rhel/7/mssql-server-2017/
-        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-        gpgcheck: yes
-        enabled: yes
+        enabled: yes    
     
     - name: Enable Microsoft / Visual Studio Code Repo
       become: yes
@@ -122,34 +94,6 @@
         description: 'Fedora Extensions $releasever - $basearch - Visual Studio Code'
         baseurl: https://packages.microsoft.com/yumrepos/vscode
         gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-        gpgcheck: yes
-        enabled: yes
-
-    - name: Enable Sublime Text Repo
-      become: yes
-      tags: 
-       - setup
-       - repos
-       - repos-sublimetext
-      yum_repository:
-        name: fedora-extensions-sublime-text
-        description: 'Fedora Extensions $releasever - $basearch - Sublime Text'
-        baseurl: https://download.sublimetext.com/rpm/stable/x86_64
-        gpgkey: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
-        gpgcheck: yes
-        enabled: yes
-
-    - name: Enable Google / Chrome Repo
-      become: yes
-      tags: 
-       - setup
-       - repos
-       - repos-chrome
-      yum_repository:
-        name: fedora-extensions-chrome
-        description: 'Fedora Extensions $releasever - $basearch - Chrome'
-        baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
-        gpgkey: https://dl.google.com/linux/linux_signing_key.pub
         gpgcheck: yes
         enabled: yes
 
@@ -207,12 +151,8 @@
         - setup
         - apps
       dnf:
-        name: 
-          - flatpak
-          - google-chrome-stable
-          - chromium
+        name:           
           - code
-          - sublime-text
           - tilix
           - gnome-boxes
           - gimp
@@ -406,7 +346,7 @@
           - java-1.8.0-openjdk-devel
           - java-1.8.0-openjdk-headless
           # C# / .NET Core 3
-          - dotnet-sdk-3.0          
+          # - dotnet-sdk-3.0          
 
     ## Development Config - Visual Studio Code
     # - name: Development Setup - Configure - Visual Studio Code - Extensions
@@ -433,118 +373,7 @@
     #     - "ms-vscode.csharp"
     #     - "jchannon.csharpextensions"
 
-    ## Flatpaks
-    - name: Enable Flathub Repository
-      become: yes
-      tags: 
-       - setup
-       - flatpak
-      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-    - name: Install Bitwarden
-      become: yes
-      tags: 
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub com.bitwarden.desktop 
-
-    - name: Install Spotify
-      become: yes
-      tags: 
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub com.spotify.Client
-
-    - name: Install Skype
-      become: yes
-      tags: 
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub com.skype.Client
-
-    - name: Install Telegram
-      become: yes
-      tags: 
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub org.telegram.desktop    
-
-    - name: Install Postman
-      become: yes
-      tags:
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub com.getpostman.Postman
-
-    - name: Install Fragments
-      become: yes
-      tags:
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub de.haeckerfelix.Fragments
-
-    - name: Install LibreOffice
-      become: yes
-      tags:
-        - setup
-        - flatpak
-      command: flatpak install --assumeyes flathub org.libreoffice.LibreOffice
-
-    - name: Install DBeaver
-      become: yes
-      tags:
-        - setup
-        - flatpak
-        - work
-      command: flatpak install --assumeyes flathub io.dbeaver.DBeaverCommunity
-
-    - name: Install Android Studio
-      become: yes
-      tags:
-        - setup
-        - flatpak
-        - work
-      command: flatpak install --assumeyes flathub com.google.AndroidStudio
-
-    ## Static 
-
-    - name: Install Mailspring
-      become: yes
-      tags: 
-        - setup
-        - static
-      dnf:
-        name: https://github.com/Foundry376/Mailspring/releases/download/1.7.1/mailspring-1.7.1-0.1.x86_64.rpm
-        state: present
-
-    - name: Install Simplenote
-      become: yes
-      tags: 
-        - setup
-        - static
-      dnf:
-        name: https://github.com/Automattic/simplenote-electron/releases/download/v1.5.0/Simplenote-linux-1.5.0-x86_64.rpm
-        state: present
-
-    - name: Install Draw.io
-      become: yes
-      tags:
-        - setup
-        - static
-      dnf:
-        name: https://github.com/jgraph/drawio-desktop/releases/download/v11.1.1/draw.io-x86_64-11.1.1.rpm
-        state: present
-
-    # - name: Install Reactotron
-    #   become: yes
-    #   tags:
-    #     - setup
-    #     - static
-    #     - work
-    #   dnf:
-    #     name: https://github.com/infinitered/reactotron/releases/download/v2.17.0/reactotron-app-2.17.0.x86_64.rpm
-    #     state: present
-
+   
     ## Drivers
     - name: Install AMD X11 Driver
       become: yes

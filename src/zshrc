@@ -7,20 +7,20 @@ export LANG=en_US.UTF-8
 export EDITOR=nano
 
 # Compilation flags
-export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch x86_64"
 
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # GIT
 GIT_AUTHOR_NAME="Christopher Crouse"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="mail@amz-x.com"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 
 # GIT Config
-git config --global user.name "$GIT_AUTHOR_NAME"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
+# git config --global user.name "$GIT_AUTHOR_NAME"
+# git config --global user.email "$GIT_AUTHOR_EMAIL"
 
 # Default
 source /etc/profile
@@ -43,14 +43,3 @@ source ~/.zsh/oh-my-zsh
 # Antibody (plugin manager)
 antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh
 source ~/.zsh/plugins.sh
-
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/sls.zsh ]] && . /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/slss.zsh ]] && . /home/amz/Workspace/swarm/paperlessconstruction/api/node_modules/tabtab/.completions/slss.zsh

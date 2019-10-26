@@ -92,7 +92,21 @@
       yum_repository:
         name: fedora-extensions-vscode
         description: 'Fedora Extensions $releasever - $basearch - Visual Studio Code'
-        baseurl: https://packages.microsoft.com/yumrepos/vscode
+        baseurl: https://packages.microsoft.com/yumrepos/vscode/
+        gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+        gpgcheck: yes
+        enabled: yes
+
+    - name: Enable Microsoft / .Net Core Repo
+      become: yes
+      tags: 
+       - setup
+       - repos
+       - repos-dotnetcore
+      yum_repository:
+        name: fedora-extensions-dotnet
+        description: 'edora Extensions $releasever - $basearch - .NET Core'
+        baseurl: https://packages.microsoft.com/fedora/30/prod/
         gpgkey: https://packages.microsoft.com/keys/microsoft.asc
         gpgcheck: yes
         enabled: yes
@@ -294,6 +308,9 @@
           - switchboard-devel
           - GConf2-devel
           - polkit-devel
+          # Python
+          - python
+          - python3-pip
           # PHP Latest (v7.3)
           - php
           - php-common
@@ -346,7 +363,19 @@
           - java-1.8.0-openjdk-devel
           - java-1.8.0-openjdk-headless
           # C# / .NET Core 3
-          # - dotnet-sdk-3.0          
+          - dotnet-sdk-3.0
+
+    ##  Virtualization
+    - name: Install Virtualization Tools & Libraries
+      become: yes
+      tags:
+        - setup
+        - virt
+      dnf: 
+        name:
+          # QEMU
+          - qemu 
+          - qemu-img
 
     ## Development Config - Visual Studio Code
     # - name: Development Setup - Configure - Visual Studio Code - Extensions
@@ -373,6 +402,34 @@
     #     - "ms-vscode.csharp"
     #     - "jchannon.csharpextensions"
 
+    ## Snaps
+    # - name: Enable Snaps
+    #   become: yes
+    #   tags:
+    #     - snap
+    #   dnf:
+    #     name: snapd
+    #     state: latest
+
+    # - name: Enable Classic Snap Support       
+    #   tags:
+    #     - snap    
+    #   command: ln -s /var/lib/snapd/snap /snap
+
+    ## Snap Apps 
+    # @todO
+    # - snap install snap-store
+    # - snap install bitwarden
+    # - snap install spotify 
+    # - snap install skype 
+    # - snap install discord 
+    # ###
+    # - android-studio
+    # - simplenote 
+    # - gitkraken
+    # - postman
+    # - chrome ?
+    
    
     ## Drivers
     - name: Install AMD X11 Driver

@@ -8,8 +8,11 @@ Personal dotfiles on Fedora Linux with dotbot & ansible.
 - Fedora 30
 - ZSH
 - Antibody
-- Pantheon
+- Pantheon Desktop (elementary OS)
 - Visual Studio Code
+- Docker
+- QEMU
+- Vala
 - NVM (Node Version Manager)
 - LAMP
 - PHP 7.1
@@ -46,11 +49,16 @@ $ unzip master.zip -d dotfiles
 
 ## Installation: 
 
+In root directory of folder
 ```bash
 
-$ ansible-playbook -K ./setup.yml
+$ ansible-playbook -K ./setup.yml --tags=setup
 ```
 
-## Future
+## Cleanup 
 
-- Replace oh-my-zsh with sane defaults, for example dotphiles or something
+Cleaup XFCE if you are HAPPY!
+```bash
+
+$ ansible-playbook -K ./setup.yml --tags=cleaup
+```

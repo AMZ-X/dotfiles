@@ -1,29 +1,6 @@
 
 - hosts: localhost
-  tasks:
-
-    ## System Configuration
-    # - name: Set Home PC Hostname
-    #   become: yes
-    #   tags:        
-    #     - home        
-    #   command: hostnamectl set-hostname "AMZ-Linux" --pretty --static
-
-    # - name: Set Work PC Hostname
-    #   become: yes
-    #   tags:        
-    #     - work        
-    #   command: hostnamectl set-hostname "Swarmbook" --pretty --static
-
-
-    ## SSH Configuration
-    # - name: Setup SSH
-    #   become: no
-    #   tags:
-    #     - setup
-    #     - ssh
-    #   command: ssh-keygen -t rsa -b 4096 -C "mail@amz-x.com"
-    
+  tasks:    
 
     ## Repositories
     - name: Enable AMZ / Extras Repo
@@ -267,24 +244,6 @@
         - pantheon
       command: gsettings set org.gnome.desktop.interface icon-theme elementary
       
-    # - name: Configure GDM - Disable
-    #   become: yes
-    #   tags:
-    #     - setup
-    #     - pantheon
-    #   systemd:
-    #     name: gdm.service
-    #     enabled: no
-
-    # - name: Configure LightDM - Enable  
-    #   become: yes
-    #   tags:
-    #     - setup
-    #     - pantheon
-    #   systemd:
-    #     name: lightdm.service
-    #     enabled: yes
-
     ## Development Tools
     - name: Install Development Tools & Libraries
       become: yes
@@ -401,34 +360,6 @@
     #     # c#
     #     - "ms-vscode.csharp"
     #     - "jchannon.csharpextensions"
-
-    ## Snaps
-    # - name: Enable Snaps
-    #   become: yes
-    #   tags:
-    #     - snap
-    #   dnf:
-    #     name: snapd
-    #     state: latest
-
-    # - name: Enable Classic Snap Support       
-    #   tags:
-    #     - snap    
-    #   command: ln -s /var/lib/snapd/snap /snap
-
-    ## Snap Apps 
-    # @todO
-    # - snap install snap-store
-    # - snap install bitwarden
-    # - snap install spotify 
-    # - snap install skype 
-    # - snap install discord 
-    # ###
-    # - android-studio
-    # - simplenote 
-    # - gitkraken
-    # - postman
-    # - chrome ?
     
    
     ## Drivers

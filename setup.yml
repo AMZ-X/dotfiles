@@ -31,6 +31,20 @@
         gpgcheck: yes
         enabled: yes
 
+    - name: Enable Decathorpe / Appcenter Repo
+      become: yes
+      tags: 
+       - setup
+       - repos
+       - repos-appcenter
+      yum_repository:
+        name: fedora-extensions-appcenter
+        description: 'Fedora Extensions $releasever - $basearch - Appcenter'
+        baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-appcenter/fedora-$releasever-$basearch/
+        gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-appcenter/pubkey.gpg
+        gpgcheck: yes
+        enabled: yes
+
     - name: Enable Negativo17 / Multimedia Repo
       become: yes
       tags: 
@@ -193,7 +207,7 @@
         - pantheon
       dnf:
         name: 
-          # complete
+          # pantheon
           - pantheon-session-settings
           - pantheon-session-settings-overrides
           - elementary-calculator
@@ -214,7 +228,6 @@
           - elementary-theme-gtk3
           - elementary-theme-plank
           - elementary-tweaks
-          - elementary-monitor
           - elementary-videos
           - elementary-wallpapers
           - elementary-wallpapers-gnome          
@@ -228,6 +241,7 @@
           - lightdm
           - light-locker
           - harvey
+          - monitor
         state: latest
 
     - name: Configure - Elementary GTK Theme

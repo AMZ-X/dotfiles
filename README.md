@@ -17,7 +17,7 @@ Personal dotfiles on Fedora Linux with dotbot & ansible.
 - LAMP
 - PHP 7.1
 - PHP 7.3
-- Dot NET Core 3
+- .NET Core 3
 
 ## Prerequisites
 

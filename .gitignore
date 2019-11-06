@@ -1,3 +1,4 @@
 # directories
 .vscode/
+.env/
 dotbot/

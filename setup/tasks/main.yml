@@ -1,3 +1,7 @@
+- name: Test
+  become: true
+  debug: msg="Hello, {{ user }}!"
+
 ## Repositories
 - name: Enable AMZ / Extras Repo
   become: true
@@ -92,7 +96,7 @@
     - repos-dotnetcore
   yum_repository:
     name: fedora-extensions-dotnet
-    description: 'edora Extensions $releasever - $basearch - .NET Core'
+    description: 'Fedora Extensions $releasever - $basearch - .NET Core'
     baseurl: https://packages.microsoft.com/fedora/30/prod/
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
     gpgcheck: true
@@ -103,7 +107,7 @@
   become: true
   tags:
     - setup
-    - skip_ansible_lint
+    - skip_ansible_lint # @todo
   dnf:
     name: "*"
     state: latest
@@ -166,11 +170,10 @@
   tags:
     - setup
     - zsh
+    - skip_ansible_lint # @todo
   become: true
   become_user: root
   command: chsh -s /bin/zsh "{{ ansible_user_id }}"
-  # @todo / temporary workaround
-  when: ansible_os_family == "Fedora"
 
 - name: Setup ZSH Directory
   tags:
@@ -197,11 +200,10 @@
   tags:
     - setup
     - zsh
+    - skip_ansible_lint # @todo
   become: true
   become_user: "{{ ansible_user_id }}"
   command: "{{ lookup('env', 'PWD') }}/install"
-  # @todo / temporary workaround
-  when: ansible_os_family == "Fedora"
 
 ## Pantheon Desktop
 - name: Install Pantheon Desktop
@@ -253,19 +255,16 @@
   tags:
     - setup
     - pantheon
+    - skip_ansible_lint # @todo
   command: gsettings set org.gnome.desktop.interface gtk-theme elementary
-  # @todo / temporary workaround
-  when: ansible_os_family == "Fedora"
 
 - name: Configure - Elementary Icon Theme
   become: true
   tags:
     - setup
     - pantheon
+    - skip_ansible_lint # @todo
   command: gsettings set org.gnome.desktop.interface icon-theme elementary
-  # @todo / temporary workaround
-  when: ansible_os_family == "Fedora"
-
 
 ## Development Tools
 - name: Install Development Tools & Libraries

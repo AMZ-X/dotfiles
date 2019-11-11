@@ -12,7 +12,7 @@ jobs:
       with:
         python-version: 3.7
     - name: Setup Virtual Environment
-      run: apt install virtualenv
+      run: sudo apt install virtualenv -y
     - name: Install Dependencies
       run: |
         virtualenv .env 

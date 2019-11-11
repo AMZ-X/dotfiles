@@ -7,10 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Run molecule test
+    - name: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install Dependencies
       run: |
-        docker run \
-        -v ${{ github.workspace }}/setup:/tmp/setup:ro \
-        -w /tmp/setup \
-        quay.io/ansible/molecule:2.20 \
+        virtualenv .env 
+        source .env/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run Molecule Tests
+      run: |
+        cd ${{ github.workspace }}/setup
         molecule test

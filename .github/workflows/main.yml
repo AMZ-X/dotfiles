@@ -1,0 +1,15 @@
+name: Dotfiles CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run molecule test
+      run: |
+        docker run \
+        -v ${{ github.workspace }}/setup:/tmp/setup \
+        quay.io/ansible/molecule:2.20 \
+        molecule test

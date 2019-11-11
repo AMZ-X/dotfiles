@@ -3,5 +3,13 @@
   hosts: all
   vars:
     - ansible_python_interpreter: /usr/bin/python3
+    - user: amz
+    - username: "AMZ-X"
   roles:
-    - role: setup
+    - role: repositories
+    - role: packages
+    - role: user
+    - role: pantheon
+    - role: cleanup
+    # - role: development
+    # - role: virtualization

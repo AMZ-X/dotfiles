@@ -1,0 +1,138 @@
+---
+## Cleanup
+- name: Cleanup - XFCE
+  become: true
+  tags:
+    - cleanup
+  dnf:
+    name:
+      - abiword
+      - albatross-gtk2-theme
+      - albatross-gtk3-theme
+      - arc-theme
+      - arc-theme-plank
+      - asunder
+      - catfish
+      - claws-mail
+      - claws-mail-plugins-archive
+      - claws-mail-plugins-att-remover
+      - claws-mail-plugins-attachwarner
+      - claws-mail-plugins-fetchinfo
+      - claws-mail-plugins-mailmbox
+      - claws-mail-plugins-newmail
+      - claws-mail-plugins-notification
+      - claws-mail-plugins-pgp
+      - claws-mail-plugins-rssyl
+      - claws-mail-plugins-smime
+      - claws-mail-plugins-spam-report
+      - claws-mail-plugins-tnef
+      - claws-mail-plugins-vcalendar
+      - dnfdragora
+      - dnfdragora-updater
+      - fedora-release-notes
+      - firewall-config
+      - galculator
+      - geany
+      - gparted
+      - greybird-xfce4-notifyd-theme
+      - gtk-xfce-engine
+      - gnumeric
+      - im-chooser-xfce
+      - libxfce4ui
+      - libxfce4util
+      - mousepad
+      - pidgin
+      - seahorse
+      - system-config-keyboard
+      - system-config-keyboard-base
+      - system-config-language
+      - system-config-users
+      - system-config-printer
+      - tint2
+      - pavucontrol
+      - xarchiver
+      - xfce-polkit
+      - xfce4-about
+      - xfce4-appfinder
+      - xfce4-battery-plugin
+      - xfce4-clipman-plugin
+      - xfce4-datetime-plugin
+      - xfce4-dict
+      - xfce4-dict-plugin
+      - xfce4-diskperf-plugin
+      - xfce4-eyes-plugin
+      - xfce4-fsguard-plugin
+      - xfce4-genmom-plugin
+      - xfce4-mailwatch-plugin
+      - xfce4-mount-plugin
+      - xfce4-netload-plugin
+      - xfce4-notifyd
+      - xfce4-panel
+      - xfce4-places-plugin
+      - xfce4-pulseaudio-plugin
+      - xfce4-screenshooter
+      - xfce4-screenshooter-plugin
+      - xfce4-session
+      - xfce4-session-engines
+      - xfce4-settings
+      - xfce4-systemload-plugin
+      - xfce4-taskmanager
+      - xfce4-terminal
+      - xfce4-time-out-plugin
+      - xfce4-verve-plugin
+      - xfce4-weather-plugin
+      - xfce4-whiskermenu-plugin
+      - xfce4-xkb-plugin
+      - xscreensaver
+      - xscreensaver-base
+      - xscreensaver-extras
+      - xscreensaver-extras-base
+    state: absent
+
+- name: Cleanup - GNOME
+  become: true
+  tags:
+    - cleanup
+  dnf:
+    name:
+      - cheese
+      - nautilus
+      - totem
+      - rhythmbox
+      - gdm
+      - gnome-abrt
+      - gnome-system-monitor
+      - gnome-terminal
+      - gnome-photos
+      - gnome-weather
+      - gnome-calendar
+      - gnome-screenshot
+      - gnome-calculator
+      - gnome-clocks
+      - gnome-maps
+    state: absent
+
+- name: Cleanup - Other
+  become: true
+  tags:
+    - cleanup
+  dnf:
+    name:
+      - abrt
+      - abrt-addon-ccpp
+      - abrt-addon-coredump-helper
+      - abrt-addon-kerneloops
+      - abrt-addon-pstoreoops
+      - abrt-addon-vmcore
+      - abrt-addon-xorg
+      - abrt-cli
+      - abrt-dbus
+      - abrt-gui-libs
+      - abrt-libs
+      - abrt-plugin-bodhi
+      - abrt-retrace-client
+      - abrt-tui
+      - transmission
+      - transmission-common
+      - transmission-gtk
+    state: absent

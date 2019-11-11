@@ -10,6 +10,7 @@ jobs:
     - name: Run molecule test
       run: |
         docker run \
-        -v ${{ github.workspace }}/setup:/tmp/setup \
+        -v ${{ github.workspace }}/setup:/tmp/setup:ro \
+        -w /tmp/setup \
         quay.io/ansible/molecule:2.20 \
         molecule test

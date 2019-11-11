@@ -1,0 +1,11 @@
+---
+##  Virtualization
+- name: Install Virtualization Tools & Libraries
+  become: true
+  tags:
+    - setup
+    - virt
+  dnf:
+    name:
+      - qemu
+      - qemu-img

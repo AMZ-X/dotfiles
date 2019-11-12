@@ -1,4 +1,4 @@
-name: Dotfiles CI
+name: Dotfiles_CI
 
 on: [push]
 

@@ -7,9 +7,9 @@
     - username: "AMZ-X"
   roles:
     - role: repositories
-    - role: packages
-    - role: user
-    - role: pantheon
+    # - role: packages
+    # - role: user
+    # - role: pantheon
     - role: cleanup
     # - role: development
     # - role: virtualization

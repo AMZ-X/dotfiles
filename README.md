@@ -1,5 +1,6 @@
 # dotfiles
 
+
 Personal dotfiles on Fedora Linux with dotbot & ansible.
 
 ![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 30 - Pantheon Desktop")
@@ -70,7 +71,7 @@ $ ansible-playbook -K ./setup.yml --tags=setup
 
 ### Cleanup 
 
-Cleaup XFCE if you are HAPPY!
+Cleaup unused packages
 ```bash
 
 $ ansible-playbook -K ./setup.yml --tags=cleaup

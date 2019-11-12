@@ -1,5 +1,6 @@
 # dotfiles
 
+[![Actions Status](https://github.com/amz-x/dotfiles/workflows/DotfilesCI/badge.svg)](https://github.com/amz-x/dotfiles/actions)
 
 Personal dotfiles on Fedora Linux with dotbot & ansible.
 

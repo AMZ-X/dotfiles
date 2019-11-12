@@ -1,0 +1,110 @@
+---
+## Repositories
+- name: Enable AMZ / Extras Repo
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-extras
+  yum_repository:
+    name: fedora-extensions-extras
+    description: 'Fedora Extensions $releasever - $basearch - Extras'
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/amz/extras/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/amz/extras/pubkey.gpg
+    gpgcheck: false
+    enabled: true
+
+- name: Enable Decathorpe / Pantheon Staging Repo
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-pantheon
+  yum_repository:
+    name: fedora-extensions-pantheon
+    description: 'Fedora Extensions $releasever - $basearch - Pantheon'
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/pubkey.gpg
+    gpgcheck: true
+    enabled: true
+
+- name: Enable Decathorpe / Appcenter Repo
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-appcenter
+  yum_repository:
+    name: fedora-extensions-appcenter
+    description: 'Fedora Extensions $releasever - $basearch - Appcenter'
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-appcenter/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-appcenter/pubkey.gpg
+    gpgcheck: true
+    enabled: true
+
+- name: Enable Negativo17 / Multimedia Repo
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-multimedia
+  yum_repository:
+    name: fedora-extensions-multimedia
+    description: 'Fedora Extensions $releasever - $basearch - Multimedia'
+    baseurl: https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
+    gpgkey: https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+    gpgcheck: true
+    enabled: true
+
+- name: Enable Remi's PHP Repo
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-remi
+    - repos-php
+  yum_repository:
+    name: fedora-extensions-php
+    description: 'Fedora Extensions $releasever - $basearch - PHP'
+    baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
+    gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi-$releasever
+    gpgcheck: true
+    enabled: true
+
+- name: Enable Microsoft / Visual Studio Code Repo
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-vscode
+  yum_repository:
+    name: fedora-extensions-vscode
+    description: 'Fedora Extensions $releasever - $basearch - Visual Studio Code'
+    baseurl: https://packages.microsoft.com/yumrepos/vscode/
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: true
+    enabled: true
+
+- name: Enable Microsoft / .Net Core Repo
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-dotnetcore
+  yum_repository:
+    name: fedora-extensions-dotnet
+    description: 'Fedora Extensions $releasever - $basearch - .NET Core'
+    baseurl: https://packages.microsoft.com/fedora/30/prod/
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: true
+    enabled: true
+
+## Update / Refresh All
+- name: Update All
+  become: true
+  tags:
+    - setup
+    - skip_ansible_lint # @todo
+  dnf:
+    name: "*"
+    state: latest

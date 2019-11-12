@@ -1,5 +1,7 @@
 # dotfiles
 
+[![Actions Status](https://github.com/amz-x/dotfiles/workflows/DotfilesCI/badge.svg)](https://github.com/amz-x/dotfiles/actions)
+
 Personal dotfiles on Fedora Linux with dotbot & ansible.
 
 ![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 30 - Pantheon Desktop")
@@ -8,7 +10,7 @@ Personal dotfiles on Fedora Linux with dotbot & ansible.
 - Fedora 30
 - ZSH
 - Antibody
-- Pantheon Desktop (elementary OS)
+- Pantheon Desktop
 - Visual Studio Code
 - Docker
 - QEMU
@@ -17,18 +19,23 @@ Personal dotfiles on Fedora Linux with dotbot & ansible.
 - LAMP
 - PHP 7.1
 - PHP 7.3
-- Dot NET Core 3
+- .NET Core 3
 
 ## Prerequisites
 
-Packages that are required for automatic setup
+Packages that are required for automatic setup installation
 
 - fedora 30 (XFCE variant)
 - git
 - ansible
 - unzip
 
-## Setup:
+Development
+
+- python3-virtualenv
+- docker
+
+## Setup
 
 Install Fedora 30 Xfce
 
@@ -47,7 +54,15 @@ Extract it
 $ unzip master.zip -d dotfiles
 ```
 
-## Installation: 
+## Developement Setup
+
+```bash
+$ virtualenv .env && source .env/bin/activate && pip3 install -r requirements.txt
+```
+
+## Scripts
+
+### Installation 
 
 In root directory of folder
 ```bash
@@ -55,9 +70,9 @@ In root directory of folder
 $ ansible-playbook -K ./setup.yml --tags=setup
 ```
 
-## Cleanup 
+### Cleanup 
 
-Cleaup XFCE if you are HAPPY!
+Cleaup unused packages
 ```bash
 
 $ ansible-playbook -K ./setup.yml --tags=cleaup

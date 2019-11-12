@@ -1,0 +1,68 @@
+---
+# ZSH Setup
+- name: Install ZSH, Antibody & Utilities
+  dnf:
+    name:
+      - zsh
+      - antibody
+      - util-linux-user
+    state: present
+
+- name: Setup User Account
+  user:
+    name: "{{ user }}"
+    comment: "{{ username }}"
+    shell: /bin/zsh
+    groups:
+      - wheel
+
+- name: Setup ZSH Directory
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: "{{ user }}"
+  file:
+    path: ~/.zsh
+    state: directory
+
+- name: Setup VSCode User Configuration Directory
+  tags:
+    - setup
+    - zsh
+    - code
+  become: true
+  become_user: "{{ user }}"
+  file:
+    path: ~/.config/Code/User
+    state: directory
+
+# - name: Setup Antibody & Dotfiles
+#   tags:
+#     - setup
+#     - zsh
+#     - skip_ansible_lint # @todo
+#   become: true
+#   become_user: "{{ user }}"
+#   command: "{{ lookup('env', 'PWD') }}/install"
+
+- name: Visual Studio Code - Extensions
+  become: yes
+  become_user: "{{ user }}"
+  tags:
+    - setup
+    - development
+    - vscode
+    - skip_ansible_lint
+  command: "code --install-extension {{ item }}"
+  with_items:
+    - "asabil.meson"
+    - "redhat.vscode-yaml"
+    - "laurenttreguier.rpm-spec"
+    - "thiagoabreu.vala"
+    - "attilabuti.vscode-mjml"
+    - "nonylene.dark-molokai-theme"
+    - "davidanson.vscode-markdownlint"
+    - "ms-vscode.vscode-typescript-tslint-plugin"
+    - "ms-vscode.csharp"
+    - "jchannon.csharpextensions"

@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: Christopher Crouse
+  description: Personal dotfiles setup role
+  license: GPLv3
+  min_ansible_version: 1.2
+  platforms:
+    - name: Fedora
+      versions:
+        - 30
+  galaxy_tags: []
+dependencies: []

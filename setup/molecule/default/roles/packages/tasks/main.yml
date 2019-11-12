@@ -1,0 +1,50 @@
+---
+## Packages
+- name: Install Libraries
+  become: true
+  tags:
+    - setup
+    - libs
+  dnf:
+    name:
+      # cli editor
+      - nano
+      # codecs 
+      - gstreamer1-plugins-bad
+      - gstreamer1-plugins-good
+      - gstreamer1-plugins-base
+      - gstreamer1-plugins-ugly
+      - gstreamer1-plugins-fc
+      - ffmpeg
+      - mpg123
+      - x264
+      # compression libs
+      - rar
+      - p7zip
+      # selinux
+      - libselinux-utils
+      # iphone support
+      - ifuse
+      - libplist
+      - libplist-python
+      - libimobiledevice
+      - libimobiledevice-utils
+      - libimobiledevice-devel
+      - usbmuxd
+    state: present
+
+- name: Install Apps
+  become: true
+  tags:
+    - setup
+    - apps
+  dnf:
+    name:
+      - code
+      - tilix
+      - gnome-boxes
+      - gimp
+      - filezilla
+      - screenfetch
+      - dconf-editor
+    state: present

@@ -12,4 +12,5 @@
     - role: pantheon
     - role: development
     - role: virtualization
+    - role: flatpak
     - role: cleanup

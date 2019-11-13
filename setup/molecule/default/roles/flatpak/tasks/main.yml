@@ -1,0 +1,27 @@
+---
+# Flatpak
+- name: Install Flatpak
+  become: true
+  dnf:
+    name:
+      - flatpak
+    state: present
+
+- name: Add Flathub Remote
+  become: true
+  flathub_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: system
+
+- name: Install Flatpak Apps from Flathub
+  become: true
+  flatpak:
+    name: '{{ item }}'
+    remote: flathub
+    state: present
+  with_items:
+    - com.bitwarden.desktop
+    - com.spotify.Client
+    - com.skype.Client

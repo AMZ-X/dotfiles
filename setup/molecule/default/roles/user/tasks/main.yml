@@ -10,8 +10,8 @@
 
 - name: Setup User Account
   user:
-    name: "{{ user }}"
-    comment: "{{ username }}"
+    name: '{{ user }}'
+    comment: '{{ username }}'
     shell: /bin/zsh
     groups:
       - wheel
@@ -21,7 +21,7 @@
     - setup
     - zsh
   become: true
-  become_user: "{{ user }}"
+  become_user: '{{ user }}'
   file:
     path: ~/.zsh
     state: directory
@@ -32,11 +32,12 @@
     - zsh
     - code
   become: true
-  become_user: "{{ user }}"
+  become_user: '{{ user }}'
   file:
     path: ~/.config/Code/User
     state: directory
 
+# @todo
 # - name: Setup Antibody & Dotfiles
 #   tags:
 #     - setup

@@ -1,0 +1,24 @@
+---
+## Docker
+- name: Install Docker
+  become: true
+  tags:
+    - setup
+    - docker
+  dnf:
+    name:
+      - docker
+      - docker-compose
+    state: present
+
+- name: Ensure docker group exists
+  group:
+    name: docker
+    state: present
+
+- name: Adding {{ user }} to group docker
+  user:
+    name: '{{ user }}'
+    groups:
+      - docker
+    append: yes

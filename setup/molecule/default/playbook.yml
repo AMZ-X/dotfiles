@@ -12,5 +12,6 @@
     - role: pantheon
     - role: development
     - role: virtualization
+    - role: selinux
     - role: flatpak
     - role: cleanup

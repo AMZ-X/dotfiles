@@ -15,13 +15,24 @@
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
     method: system
 
-- name: Install Flatpak Apps from Flathub
+- name: Install Bitwarden Flatpak
   become: true
   flatpak:
-    name: '{{ item }}'
+    name: com.bitwarden.desktop
     remote: flathub
     state: present
-  with_items:
-    - com.bitwarden.desktop
-    - com.spotify.Client
-    # - com.skype.Client
+
+- name: Install Spotify Flatpak
+  become: true
+  flatpak:
+    name: com.spotify.Client
+    remote: flathub
+    state: present
+
+- name: Install Skype Flatpak
+  become: true
+  flatpak:
+    name: com.skype.Client
+    remote: flathub
+    state: present
+

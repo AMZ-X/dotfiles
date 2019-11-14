@@ -13,5 +13,7 @@
     - role: development
     - role: virtualization
     - role: selinux
-    - role: flatpak
     - role: cleanup
+    # @todo
+    # Flatpak role cannot complete successfully because of SELinux, workaround needed
+    # - role: flatpak

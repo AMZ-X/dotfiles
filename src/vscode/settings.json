@@ -5,7 +5,6 @@
 	"editor.minimap.enabled": false,
 	"editor.renderWhitespace": "none",	
 	"typescript.updateImportsOnFileMove.enabled": "always",
-	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 0,
 	"workbench.colorTheme": "Dark (Molokai)",
 	"php.executablePath": "/usr/bin/php",

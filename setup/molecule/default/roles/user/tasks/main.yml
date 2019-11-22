@@ -37,15 +37,14 @@
     path: ~/.config/Code/User
     state: directory
 
-# @todo
-# - name: Setup Antibody & Dotfiles
-#   tags:
-#     - setup
-#     - zsh
-#     - skip_ansible_lint # @todo
-#   become: true
-#   become_user: "{{ user }}"
-#   command: "{{ lookup('env', 'PWD') }}/install"
+- name: Setup Antibody & Dotfiles
+  tags:
+    - setup
+    - zsh
+    - skip_ansible_lint # @todo
+  become: true
+  become_user: "{{ user }}"
+  command: "{{ dotfiles_dir }}/install"
 
 - name: Visual Studio Code - Extensions
   become: yes
@@ -66,4 +65,3 @@
     - "davidanson.vscode-markdownlint"
     - "ms-vscode.vscode-typescript-tslint-plugin"
     - "ms-vscode.csharp"
-    - "jchannon.csharpextensions"

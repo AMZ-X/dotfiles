@@ -20,7 +20,6 @@
           src: src/zsh/android
           dest: ~/.zsh/android
   roles:
-    - role: facts
     - role: repositories
     - role: packages
     - role: user

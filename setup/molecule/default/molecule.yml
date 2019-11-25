@@ -11,6 +11,8 @@ platforms:
     image: fedora:30
 provisioner:
   name: ansible
+  env:
+    MOLECULE_ENV: 'true'
   lint:
     name: ansible-lint
   options:

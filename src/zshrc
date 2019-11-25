@@ -6,9 +6,6 @@ export LANG=en_US.UTF-8
 # EDITOR
 export EDITOR=nano
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 

@@ -2,11 +2,25 @@
 - name: Converge
   hosts: all
   vars:
+    # Ansible Configuration
     - ansible_python_interpreter: /usr/bin/python3
+    - dotfiles_url: "https://github.com/amz-x/dotfiles.git"
+    - dotfiles_dir: "{{ lookup('env', 'PWD') | dirname }}"
+    - dotfiles_tmp_dir: "/tmp/dotfiles"
+    - molecule_env: "{{ lookup('env','MOLECULE_ENV') | default('false') }}"
+    # User Configuration
     - user: amz
     - username: "AMZ-X"
-    - dotfiles_dir: "{{ lookup('env', 'PWD') | dirname }}"
+    # ZSH Configuration
+    - zsh_links:
+        zshrc:
+          src: src/zshrc
+          dest: ~/.zshrc
+        android:
+          src: src/zsh/android
+          dest: ~/.zsh/android
   roles:
+    - role: facts
     - role: repositories
     - role: packages
     - role: user

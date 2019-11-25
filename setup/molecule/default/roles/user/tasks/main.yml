@@ -10,8 +10,8 @@
 
 - name: Setup User Account
   user:
-    name: '{{ user }}'
-    comment: '{{ username }}'
+    name: "{{ user }}"
+    comment: "{{ username }}"
     shell: /bin/zsh
     groups:
       - wheel
@@ -21,7 +21,7 @@
     - setup
     - zsh
   become: true
-  become_user: '{{ user }}'
+  become_user: "{{ user }}"
   file:
     path: ~/.zsh
     state: directory
@@ -32,22 +32,55 @@
     - zsh
     - code
   become: true
-  become_user: '{{ user }}'
+  become_user: "{{ user }}"
   file:
     path: ~/.config/Code/User
     state: directory
 
-- name: Setup Antibody & Dotfiles
+- name: Clone Dotfiles (Testing)
   tags:
     - setup
     - zsh
-    - skip_ansible_lint # @todo
   become: true
   become_user: "{{ user }}"
-  command: "{{ dotfiles_dir }}/install"
+  git:
+    repo: "{{ dotfiles_url }}"
+    dest: "{{ dotfiles_tmp_dir }}"
+    version: master
+  when: molecule_env
+
+- name: Setup Dotfiles (Testing)
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: "{{ user }}"
+  file:
+    src: "{{ dotfiles_tmp_dir }}/{{ item.value.src }}"
+    dest: "{{ item.value.dest }}"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    state: link
+  with_dict: "{{ zsh_links }}"
+  when: molecule_env
+
+- name: Setup Dotfiles
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: "{{ user }}"
+  file:
+    src: "{{ dotfiles_dir }}/{{ item.value.src }}"
+    dest: "{{ item.value.dest }}"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    state: link
+  with_dict: "{{ zsh_links }}"
+  when: not molecule_env
 
 - name: Visual Studio Code - Extensions
-  become: yes
+  become: true
   become_user: "{{ user }}"
   tags:
     - setup

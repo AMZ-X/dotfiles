@@ -57,7 +57,7 @@
     repo: "{{ dotfiles_url }}"
     dest: "{{ dotfiles_tmp_dir }}"
     version: master
-  when: molecule_env
+  when: molecule_env|bool
 
 - name: Setup Dotfiles (Testing)
   tags:
@@ -72,7 +72,7 @@
     group: "{{ user }}"
     state: link
   with_dict: "{{ zsh_links }}"
-  when: molecule_env
+  when: molecule_env|bool
 
 - name: Setup Dotfiles
   tags:
@@ -87,7 +87,7 @@
     group: "{{ user }}"
     state: link
   with_dict: "{{ zsh_links }}"
-  when: not molecule_env
+  when: not molecule_env|bool
 
 - name: Visual Studio Code - Extensions
   become: true

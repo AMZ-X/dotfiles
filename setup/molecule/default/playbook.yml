@@ -49,7 +49,7 @@
     - role: development
     - role: docker
     - role: virtualization
-    - role: selinux
+    - role: system
     - role: cleanup
     # @todo
     # Flatpak role cannot complete successfully because of SELinux, workaround needed

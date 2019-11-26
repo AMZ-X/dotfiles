@@ -1,7 +1,0 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-
-[submodule "Qogir-theme"]
-	path = theme
-	url = https://github.com/vinceliuice/Qogir-theme

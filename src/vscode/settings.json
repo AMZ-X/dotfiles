@@ -4,6 +4,7 @@
 	"editor.insertSpaces": false,
 	"editor.minimap.enabled": false,
 	"editor.renderWhitespace": "none",	
+	"git.autofetch": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"window.zoomLevel": 0,
 	"workbench.colorTheme": "Dark (Molokai)",

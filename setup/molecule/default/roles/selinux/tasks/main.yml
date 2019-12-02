@@ -1,5 +1,0 @@
----
-# SELinux Configuration
-- name: Set SELinux State
-  selinux:
-    state: disabled

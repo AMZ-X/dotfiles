@@ -2,7 +2,7 @@
 # Light DM Configuration
 - name: Install LightDM & Dependencies
   dnf:
-    name: 
+    name:
       - lightdm
       - light-locker
       - numlockx

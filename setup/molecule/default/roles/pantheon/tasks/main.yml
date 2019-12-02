@@ -2,9 +2,6 @@
 ## Pantheon Desktop
 - name: Install Pantheon Desktop
   become: true
-  tags:
-    - setup
-    - pantheon
   dnf:
     name:
       - pantheon-session-settings
@@ -36,8 +33,6 @@
       - switchboard-plug-power
       - switchboard-plug-security-privacy
       - switchboard-plug-useraccounts
-      - lightdm
-      - light-locker
       - harvey
       - monitor
     state: present
@@ -45,15 +40,11 @@
 - name: Configure - Elementary GTK Theme
   become: true
   tags:
-    - setup
-    - pantheon
     - skip_ansible_lint
   command: gsettings set org.gnome.desktop.interface gtk-theme elementary
 
 - name: Configure - Elementary Icon Theme
   become: true
   tags:
-    - setup
-    - pantheon
     - skip_ansible_lint
   command: gsettings set org.gnome.desktop.interface icon-theme elementary

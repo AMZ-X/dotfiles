@@ -46,6 +46,7 @@
     - role: packages
     - role: user
     - role: pantheon
+    - role: lightdm
     - role: development
     - role: docker
     - role: virtualization

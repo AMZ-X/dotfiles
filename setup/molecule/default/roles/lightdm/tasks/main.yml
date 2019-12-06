@@ -1,0 +1,18 @@
+---
+# Light DM Configuration
+- name: Install LightDM & Dependencies
+  dnf:
+    name:
+      - lightdm
+      - light-locker
+      - numlockx
+    state: present
+
+- name: Write LightDM Configuration File
+  become: true
+  template:
+    src: lightdm.conf.j2
+    dest: "{{ lightdm_conf_directory }}/{{ lightdm_overide_filename }}"
+    owner: root
+    group: root
+    mode: "u=rw,go=r"

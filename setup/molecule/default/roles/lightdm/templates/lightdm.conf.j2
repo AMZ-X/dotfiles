@@ -1,0 +1,4 @@
+{{ ansible_managed | comment }}
+
+[Seat:*]
+greeter-setup-script={{ lightdm_enable_numpad | bool | ternary('/usr/bin/numlockx on', '') }} 

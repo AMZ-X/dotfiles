@@ -9,6 +9,8 @@ lint:
 platforms:
   - name: instance
     image: fedora:30
+  - name: instance
+    image: fedora:31
 provisioner:
   name: ansible
   env:

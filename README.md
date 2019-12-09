@@ -19,23 +19,22 @@ Personal dotfiles on Fedora Linux with dotbot & ansible.
 - LAMP
 - PHP 7.1
 - PHP 7.3
-- .NET Core 3
+- .NET Core 2.2
+- .NET Core 3.0
+- .NET Core 3.1
 
-## Prerequisites
+## Installation
 
-Packages that are required for automatic setup installation
+### Setup Requirements
 
-- fedora 30 (XFCE variant)
-- git
+Requirements for installation setup on Fedora 30
+
+- [fedora 30 xfce spin](https://dl.fedoraproject.org/pub/fedora/linux/releases/30/Spins/x86_64/iso/Fedora-Xfce-Live-x86_64-30-1.2.iso)
+- unzip (if downloading)
 - ansible
-- unzip
 
-Development
 
-- python3-virtualenv
-- docker
-
-## Setup
+### Setup
 
 Install Fedora 30 Xfce
 
@@ -54,26 +53,31 @@ Extract it
 $ unzip master.zip -d dotfiles
 ```
 
-## Developement Setup
+### Installing 
+
+In root directory of project
+```bash
+$ cd ./setup/molecule/default
+$ ansible-playbook -K ./playbook.yml --connection=local --inventory 127.0.0.1, --limit 127.0.0.1
+```
+
+
+## Development
+
+### Setup Requirements
+
+- python3-virtualenv
+- docker
+
+### Setup
 
 ```bash
 $ virtualenv .env && source .env/bin/activate && pip3 install -r requirements.txt
 ```
 
-## Scripts
+### Testing
 
-### Installation 
-
-In root directory of folder
-```bash
-
-$ ansible-playbook -K ./setup.yml --tags=setup
 ```
-
-### Cleanup 
-
-Cleaup unused packages
-```bash
-
-$ ansible-playbook -K ./setup.yml --tags=cleaup
+$ cd ./setup
+$ molecule test
 ```

@@ -2,7 +2,7 @@
 
 [![Actions Status](https://github.com/amz-x/dotfiles/workflows/DotfilesCI/badge.svg)](https://github.com/amz-x/dotfiles/actions)
 
-Personal dotfiles on Fedora Linux with dotbot & ansible.
+Personal dotfiles on Fedora Linux with Ansible & Molecule.
 
 ![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 30 - Pantheon Desktop")
 

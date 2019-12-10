@@ -2,6 +2,7 @@
 # System Configuration
 
 - name: Disable SELinux
+  become: true
   selinux:
     state: disabled
 

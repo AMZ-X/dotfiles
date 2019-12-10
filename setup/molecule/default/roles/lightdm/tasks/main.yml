@@ -1,6 +1,7 @@
 ---
 # Light DM Configuration
 - name: Install LightDM & Dependencies
+  become: true
   dnf:
     name:
       - lightdm

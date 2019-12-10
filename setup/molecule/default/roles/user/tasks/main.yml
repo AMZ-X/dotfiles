@@ -1,6 +1,7 @@
 ---
 # ZSH Setup
 - name: Install ZSH, Antibody & Utilities
+  become: true
   dnf:
     name:
       - zsh

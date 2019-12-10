@@ -10,6 +10,7 @@
     state: present
 
 - name: Setup User Account
+  become: true
   user:
     name: "{{ user }}"
     comment: "{{ username }}"

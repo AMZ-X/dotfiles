@@ -6,8 +6,9 @@
 	"editor.renderWhitespace": "none",	
 	"git.autofetch": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
-	"window.zoomLevel": 0,
+	"window.zoomLevel": -1,
 	"workbench.colorTheme": "Dark (Molokai)",
 	"php.executablePath": "/usr/bin/php",
-	"php.validate.executablePath": "/usr/bin/php"
+	"php.validate.executablePath": "/usr/bin/php",
+	"mesonbuild.configureOnOpen": true
 }

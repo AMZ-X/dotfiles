@@ -13,70 +13,73 @@
       # Fedora RPM
       - fedora-packager
       - rpmdevtools
-      # Docker 
-      - docker
-      - docker-compose
       # C / GTK / Vala
       - meson
+      - vala
       - granite-devel
       - switchboard-devel
+      - folks-devel
       - GConf2-devel
       - polkit-devel
+      - evolution-data-server-devel
       # Python
       - python3
       - python3-pip
+      # Docker 
+      # - docker
+      # - docker-compose
       # PHP Latest (v7.3)
-      - php
-      - php-common
-      - php-devel
-      - php-opcache
-      - php-mcrypt
-      - php-cli
-      - php-gd
-      - php-curl
-      - php-fpm
-      - php-gmp
-      - php-curl
-      - php-intl
-      - php-mbstring
-      - php-mysqlnd
-      - php-xmlrpc
-      - php-bcmath
-      - php-xml
-      - php-zip
-      - php-imap
-      - php-posix
-      - php-xdebug
-      - php-xml
-      - composer
+      # - php
+      # - php-common
+      # - php-devel
+      # - php-opcache
+      # - php-mcrypt
+      # - php-cli
+      # - php-gd
+      # - php-curl
+      # - php-fpm
+      # - php-gmp
+      # - php-curl
+      # - php-intl
+      # - php-mbstring
+      # - php-mysqlnd
+      # - php-xmlrpc
+      # - php-bcmath
+      # - php-xml
+      # - php-zip
+      # - php-imap
+      # - php-posix
+      # - php-xdebug
+      # - php-xml
+      # - composer
       # PHP Stable (v7.1)
-      - php71
-      - php71-php-common
-      - php71-php-devel
-      - php71-php-opcache
-      - php71-php-mcrypt
-      - php71-php-cli
-      - php71-php-gd
-      - php71-php-curl
-      - php71-php-fpm
-      - php71-php-gmp
-      - php71-php-curl
-      - php71-php-intl
-      - php71-php-mbstring
-      - php71-php-mysqlnd
-      - php71-php-xmlrpc
-      - php71-php-bcmath
-      - php71-php-xml
-      - php71-php-zip
-      - php71-php-imap
-      - php71-php-posix
-      - php71-php-xdebug
-      - php71-php-xml
+      # - php71
+      # - php71-php-common
+      # - php71-php-devel
+      # - php71-php-opcache
+      # - php71-php-mcrypt
+      # - php71-php-cli
+      # - php71-php-gd
+      # - php71-php-curl
+      # - php71-php-fpm
+      # - php71-php-gmp
+      # - php71-php-curl
+      # - php71-php-intl
+      # - php71-php-mbstring
+      # - php71-php-mysqlnd
+      # - php71-php-xmlrpc
+      # - php71-php-bcmath
+      # - php71-php-xml
+      # - php71-php-zip
+      # - php71-php-imap
+      # - php71-php-posix
+      # - php71-php-xdebug
+      # - php71-php-xml
       # Java (v8)
-      - java-1.8.0-openjdk
-      - java-1.8.0-openjdk-devel
-      - java-1.8.0-openjdk-headless
+      # - java-1.8.0-openjdk
+      # - java-1.8.0-openjdk-devel
+      # - java-1.8.0-openjdk-headless
       # C# / .NET Core 3
-      - dotnet-sdk-2.2
-      - dotnet-sdk-3.0
-      - dotnet-sdk-3.1
+      # - dotnet-sdk-2.2
+      # - dotnet-sdk-3.0
+      # - dotnet-sdk-3.1

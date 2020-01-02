@@ -3,7 +3,7 @@
 	"editor.fontSize": 14,
 	"editor.insertSpaces": false,
 	"editor.minimap.enabled": false,
-	"editor.renderWhitespace": "none",	
+	"editor.renderWhitespace": "all",	
 	"git.autofetch": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"window.zoomLevel": -1,

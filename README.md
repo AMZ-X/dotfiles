@@ -7,15 +7,19 @@ Personal dotfiles on Fedora Linux with Ansible & Molecule.
 ![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 30 - Pantheon Desktop")
 
 ## Features
+
 - Fedora 30
 - ZSH
 - Antibody
+- NVM (Node Version Manager)
 - Pantheon Desktop
 - Visual Studio Code
+
+## Additional Development Features
+
 - Docker
 - QEMU
 - Vala
-- NVM (Node Version Manager)
 - LAMP
 - PHP 7.1
 - PHP 7.3
@@ -33,51 +37,53 @@ Requirements for installation setup on Fedora 30
 - unzip (if downloading)
 - ansible
 
-
 ### Setup
 
 Install Fedora 30 Xfce
 
 Install ansible & git
+
 ```bash
-$ sudo dnf install ansible git unzip -y
+sudo dnf install ansible git unzip -y
 ```
 
 Download from Source
+
 ```bash
-$ wget https://github.com/amz-x/dotfiles/archive/master.zip
+wget https://github.com/amz-x/dotfiles/archive/master.zip
 ```
 
-Extract it 
+Extract it
+
 ```bash
-$ unzip master.zip -d dotfiles
+unzip master.zip -d dotfiles
 ```
 
-### Installing 
+### Installing
 
 In root directory of project
+
 ```bash
-$ cd ./setup/molecule/default
-$ ansible-playbook -K ./playbook.yml --connection=local --inventory 127.0.0.1, --limit 127.0.0.1
+cd ./setup/molecule/default
+ansible-playbook -K ./playbook.yml --connection=local --inventory 127.0.0.1, --limit 127.0.0.1
 ```
 
+### Development Setup
 
-## Development
-
-### Setup Requirements
+Prerequisites
 
 - python3-virtualenv
 - docker
 
-### Setup
+Setup
 
 ```bash
-$ virtualenv .env && source .env/bin/activate && pip3 install -r requirements.txt
+virtualenv .env && source .env/bin/activate && pip3 install -r requirements.txt
 ```
 
 ### Testing
 
-```
-$ cd ./setup
-$ molecule test
+```bash
+cd ./setup
+molecule test
 ```

@@ -1,5 +1,10 @@
 ---
 # System Configuration
+- name: Install Python SELinux
+  become: true
+  dnf:
+    name: libselinux-python3
+    state: present
 
 - name: Disable SELinux
   become: true

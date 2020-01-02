@@ -16,12 +16,11 @@
       # C / GTK / Vala
       - meson
       - vala
+      - vala-devel
+      - vala-language-server
+      - vala-lint 
       - granite-devel
       - switchboard-devel
-      - folks-devel
-      - GConf2-devel
-      - polkit-devel
-      - evolution-data-server-devel
       # Python
       - python3
       - python3-pip

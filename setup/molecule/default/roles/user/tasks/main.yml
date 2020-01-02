@@ -111,4 +111,5 @@
     - "davidanson.vscode-markdownlint"
     - "ms-vscode.vscode-typescript-tslint-plugin"
     - "ms-vscode.csharp"
+    - "ms-vscode.cpptools"
     - "editorconfig.editorconfig"

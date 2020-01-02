@@ -18,7 +18,7 @@
       - vala
       - vala-devel
       - vala-language-server
-      - vala-lint 
+      - vala-lint
       - granite-devel
       - switchboard-devel
       # Python

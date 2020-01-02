@@ -18,6 +18,8 @@
       - ffmpeg
       - mpg123
       - x264
+      # fonts
+      - google-roboto-fonts
       # compression libs
       - rar
       - p7zip

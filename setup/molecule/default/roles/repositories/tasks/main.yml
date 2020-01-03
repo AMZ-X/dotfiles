@@ -56,20 +56,20 @@
     gpgcheck: true
     enabled: true
 
-- name: Enable Remi's PHP Repo
-  become: true
-  tags:
-    - setup
-    - repos
-    - repos-remi
-    - repos-php
-  yum_repository:
-    name: fedora-extensions-php
-    description: 'Fedora Extensions $releasever - $basearch - PHP'
-    baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
-    gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi-$releasever
-    gpgcheck: true
-    enabled: true
+# - name: Enable Remi's PHP Repo
+#   become: true
+#   tags:
+#     - setup
+#     - repos
+#     - repos-remi
+#     - repos-php
+#   yum_repository:
+#     name: fedora-extensions-php
+#     description: 'Fedora Extensions $releasever - $basearch - PHP'
+#     baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
+#     gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi-$releasever
+#     gpgcheck: true
+#     enabled: true
 
 - name: Enable Microsoft / Visual Studio Code Repo
   become: true
@@ -85,7 +85,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Enable Microsoft / .Net Core Repo
+- name: Enable Microsoft / .NET Core Repo
   become: true
   tags:
     - setup
@@ -96,6 +96,20 @@
     description: 'Fedora Extensions $releasever - $basearch - .NET Core'
     baseurl: https://packages.microsoft.com/fedora/30/prod/
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: true
+    enabled: true
+
+- name: Enable Google Chrome Repo
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-google-chrome
+  yum_repository:
+    name: fedora-extensions-google-chrome
+    description: 'Fedora Extensions $releasever - $basearch - Google Chrome'
+    baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
     gpgcheck: true
     enabled: true
 

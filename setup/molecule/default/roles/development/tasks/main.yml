@@ -24,6 +24,8 @@
       # Python
       - python3
       - python3-pip
+      # C# / .NET Core 3.1
+      - dotnet-sdk-3.1
       # Docker 
       # - docker
       # - docker-compose
@@ -78,7 +80,3 @@
       # - java-1.8.0-openjdk
       # - java-1.8.0-openjdk-devel
       # - java-1.8.0-openjdk-headless
-      # C# / .NET Core 3
-      # - dotnet-sdk-2.2
-      # - dotnet-sdk-3.0
-      # - dotnet-sdk-3.1

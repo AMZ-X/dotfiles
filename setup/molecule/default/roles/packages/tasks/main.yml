@@ -18,6 +18,16 @@
       - ffmpeg
       - mpg123
       - x264
+      # gpu libs & drivers
+      - mesa-dri-drivers
+      - mesa-libd3d
+      - mesa-libGLES
+      - mesa-libGLw
+      - mesa-omx-drivers
+      - mesa-vdpau-drivers
+      - mesa-vulkan-drivers
+      - libva-utils
+      - vdpauinfo
       # fonts
       - google-roboto-fonts
       # compression libs
@@ -48,6 +58,7 @@
       - tilix
       - gnome-boxes
       - gimp
+      - google-chrome-stable
       - filezilla
       - screenfetch
       - dconf-editor

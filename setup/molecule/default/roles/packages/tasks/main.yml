@@ -18,6 +18,7 @@
       - ffmpeg
       - mpg123
       - x264
+      - x265
       # gpu libs & drivers
       - mesa-dri-drivers
       - mesa-libd3d
@@ -43,7 +44,8 @@
       - libimobiledevice-utils
       - libimobiledevice-devel
       - usbmuxd
-      # other
+      # tools
+      - mediawriter
       - git
     state: present
 

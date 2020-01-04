@@ -45,6 +45,8 @@
       - libimobiledevice-devel
       - usbmuxd
       # tools
+      - abrt
+      - abrt-gui
       - mediawriter
       - git
     state: present

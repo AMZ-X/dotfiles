@@ -19,16 +19,30 @@
       - mpg123
       - x264
       - x265
-      # gpu libs & drivers
+      # mesa drivers
       - mesa-dri-drivers
-      - mesa-libd3d
+      - mesa-filesystem
+      - mesa-khr-devel
+      - mesa-libEGL
+      - mesa-libGL
       - mesa-libGLES
+      - mesa-libGLU
       - mesa-libGLw
+      - mesa-libOSMesa
+      - mesa-libOpenCL
+      - mesa-libd3d
       - mesa-omx-drivers
       - mesa-vdpau-drivers
-      - mesa-vulkan-drivers
       - libva-utils
       - vdpauinfo
+      # vulkan
+      - mesa-vulkan-drivers
+      - mesa-vulkan-devel
+      - vulkan-headers
+      - vulkan-loader
+      - vulkan-loader-devel
+      - vulkan-validation-layers
+      - vulkan-tools
       # fonts
       - google-roboto-fonts
       # compression libs
@@ -45,8 +59,6 @@
       - libimobiledevice-devel
       - usbmuxd
       # tools
-      - abrt
-      - abrt-gui
       - mediawriter
       - git
     state: present

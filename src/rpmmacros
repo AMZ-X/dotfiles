@@ -1,4 +1,4 @@
-%_topdir        %(echo $HOME)/Workspace/extras
+%_topdir        %(echo $HOME)/Workspace/rpmbuilds
 %_sourcedir     %{_topdir}/sources
 %_rpmdir        %{_topdir}/rpms
 %_specdir       %{_topdir}/specs

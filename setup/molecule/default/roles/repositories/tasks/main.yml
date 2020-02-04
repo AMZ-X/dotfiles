@@ -94,7 +94,7 @@
   yum_repository:
     name: fedora-extensions-dotnet
     description: 'Fedora Extensions $releasever - $basearch - .NET Core'
-    baseurl: https://packages.microsoft.com/fedora/30/prod/
+    baseurl: https://packages.microsoft.com/fedora/31/prod/
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
     gpgcheck: true
     enabled: true

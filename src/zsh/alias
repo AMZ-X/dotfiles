@@ -5,3 +5,7 @@ alias zsh_update_plugins='antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh'
 alias specfetch='spectool -g -R'
 alias specdeps='sudo dnf builddep -y'
 alias specbuild='rpmbuild -ba'
+
+# gala WM
+alias gala_restart='killall gala && DISPLAY=:0 gala --replace &'
+

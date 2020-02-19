@@ -109,6 +109,7 @@
     - "attilabuti.vscode-mjml"
     - "nonylene.dark-molokai-theme"
     - "davidanson.vscode-markdownlint"
+    - "msjsdiag.vscode-react-native"
     - "ms-vscode.vscode-typescript-tslint-plugin"
     - "ms-vscode.csharp"
     - "ms-vscode.cpptools"

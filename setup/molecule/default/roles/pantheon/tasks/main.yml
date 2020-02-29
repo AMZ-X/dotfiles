@@ -34,7 +34,7 @@
       - switchboard-plug-security-privacy
       - switchboard-plug-useraccounts
       - harvey
-      - monitor
+      - optimizer
     state: present
 
 - name: Configure - Elementary GTK Theme

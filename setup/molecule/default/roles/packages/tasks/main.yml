@@ -9,6 +9,8 @@
     name:
       # cli editor
       - nano
+      # aws cli
+      - awscli
       # codecs 
       - gstreamer1-plugins-bad
       - gstreamer1-plugins-good

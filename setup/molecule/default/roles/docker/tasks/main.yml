@@ -1,26 +1,26 @@
 ---
 ## Docker
-- name: Install Docker
+- name: Install Podman
   become: true
   tags:
     - setup
-    - docker
+    - podman
   dnf:
     name:
-      - docker
-      - docker-compose
+      - podman
+      - pdoman-compose
     state: present
 
-- name: Ensure docker group exists
-  become: true
-  group:
-    name: docker
-    state: present
+# - name: Ensure docker group exists
+#   become: true
+#   group:
+#     name: docker
+#     state: present
 
-- name: Adding {{ user }} to group docker
-  become: true
-  user:
-    name: "{{ user }}"
-    groups:
-      - docker
-    append: true
+# - name: Adding {{ user }} to group docker
+#   become: true
+#   user:
+#     name: "{{ user }}"
+#     groups:
+#       - docker
+#     append: true

@@ -42,16 +42,16 @@
           dest: ~/.rpmmacros
 
   roles:
-    - role: repositories
-    - role: packages
-    - role: user
-    - role: pantheon
-    - role: lightdm
-    - role: development
+    # - role: repositories
+    # - role: packages
+    # - role: user
+    # - role: pantheon
+    # - role: lightdm
+    # - role: development
     - role: docker
-    - role: virtualization
-    - role: system
-    - role: cleanup
+    # - role: virtualization
+    # - role: system
+    # - role: cleanup
     # @todo
     # Flatpak role cannot complete successfully because of SELinux, workaround needed
     # - role: flatpak

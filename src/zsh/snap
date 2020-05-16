@@ -1,0 +1,2 @@
+# Snap
+export PATH=$PATH:/snap/bin

@@ -1,0 +1,8 @@
+---
+- name: update all
+  become: true
+  tags:
+    - setup
+  dnf:
+    name: '*'
+    state: present

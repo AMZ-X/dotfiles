@@ -16,6 +16,9 @@
         zshrc:
           src: src/zshrc
           dest: ~/.zshrc
+        snap:
+          src: src/zsh/snap
+          dest: ~/.zsh/snap
         android:
           src: src/zsh/android
           dest: ~/.zsh/android
@@ -44,11 +47,11 @@
   roles:
     # - role: repositories
     # - role: packages
-    # - role: user
+    - role: user
     # - role: pantheon
     # - role: lightdm
     # - role: development
-    - role: docker
+    # - role: docker
     # - role: virtualization
     # - role: system
     # - role: cleanup

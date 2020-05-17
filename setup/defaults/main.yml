@@ -120,7 +120,8 @@ pantheon_lightdm:
 
 # Libraries
 libs:
-  # cli editor
+  # basic
+  - git
   - nano
   # codecs 
   # - gstreamer1-plugins-bad
@@ -132,7 +133,7 @@ libs:
   - mpg123
   # - x264
   # - x265
-  # mesa drivers
+  # drivers
   - mesa-dri-drivers
   - mesa-filesystem
   - mesa-khr-devel
@@ -148,7 +149,6 @@ libs:
   - mesa-vdpau-drivers
   - libva-utils
   - vdpauinfo
-  # vulkan
   - mesa-vulkan-drivers
   - mesa-vulkan-devel
   - vulkan-headers
@@ -175,7 +175,6 @@ libs:
 # Developer Tools & Libraries
 dev_tools_and_libs:
   # tools
-  - git
   - awscli 
   - '@Development Tools'
   - '@C Development Tools and Libraries'

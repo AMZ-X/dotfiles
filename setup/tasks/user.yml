@@ -48,11 +48,13 @@
     owner: '{{ user }}'
     group: '{{ user }}'
     state: link
+    force: true
   with_dict: '{{ zsh_links }}'
   when: not molecule_env|bool
   notify: INSTALL_VSCODE_EXTENSIONS
 
 ## Testing Steps
+## @todo -> CLONE DOTFILES / CONFIRM THIS SECTION ???
 - name: Clone Dotfiles (Testing)
   tags:
     - setup

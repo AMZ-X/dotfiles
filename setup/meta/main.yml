@@ -1,12 +1,12 @@
 ---
 galaxy_info:
-  author: Christopher Crouse
-  description: Personal dotfiles setup role
+  author: AMZ-X
+  description: Personal Dotfiles
   license: GPLv3
-  min_ansible_version: 1.2
+  min_ansible_version: 2.9
   platforms:
     - name: Fedora
       versions:
-        - 30
+        - 32
   galaxy_tags: []
 dependencies: []

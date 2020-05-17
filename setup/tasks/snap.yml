@@ -1,0 +1,12 @@
+---
+## Snap
+- name: SNAP | install snapd
+  become: true
+  dnf:
+    name: snapd
+
+- name: SNAP | install snap apps
+  become: true
+  snap:
+    name: '{{ snaps }}'
+    state: present

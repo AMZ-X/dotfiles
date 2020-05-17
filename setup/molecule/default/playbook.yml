@@ -8,9 +8,6 @@
     - dotfiles_dir: "{{ lookup('env', 'PWD') | dirname | dirname | dirname }}"
     - dotfiles_tmp_dir: "/tmp/dotfiles"
     - molecule_env: "{{ lookup('env','MOLECULE_ENV') | default('false') }}"
-    # User Configuration
-    - user: amz
-    - username: "AMZ-X"
     # ZSH Configuration
     - zsh_links:
         zshrc:
@@ -45,9 +42,10 @@
           dest: ~/.rpmmacros
 
   roles:
+    - role: setup
     # - role: repositories
     # - role: packages
-    - role: user
+    # - role: user
     # - role: pantheon
     # - role: lightdm
     # - role: development

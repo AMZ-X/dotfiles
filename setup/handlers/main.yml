@@ -1,8 +1,19 @@
 ---
-- name: update all
+- name: UPDATE
   become: true
   tags:
     - setup
+    - skip_ansible_lint
   dnf:
     name: '*'
-    state: present
+    state: latest
+
+- name: INSTALL_VSCODE_EXTENSIONS
+  become: true
+  become_user: '{{ user }}'
+  tags:
+    - setup
+    - development
+    - vscode
+  command: 'code --install-extension {{ item }}'
+  with_items: '{{ user_vscode_extensions }}'

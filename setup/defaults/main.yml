@@ -1,0 +1,318 @@
+---
+# User
+user: amz
+username: "AMZ-X"
+
+user_packages:
+  - zsh
+  - antibody
+  - util-linux-user
+
+user_vscode_extensions:
+  - 'asabil.meson'
+  - 'redhat.vscode-yaml'
+  - 'laurenttreguier.rpm-spec'
+  - 'philippejer.vala-grammar'
+  - 'philippejer.vala-language-client'
+  - 'attilabuti.vscode-mjml'
+  - 'nonylene.dark-molokai-theme'
+  - 'davidanson.vscode-markdownlint'
+  - 'ms-vscode.vscode-typescript-tslint-plugin'
+  - 'editorconfig.editorconfig'
+
+user_zsh_links:
+  zshrc:
+    src: src/zshrc
+    dest: ~/.zshrc
+  snap:
+    src: src/zsh/snap
+    dest: ~/.zsh/snap
+  android:
+    src: src/zsh/android
+    dest: ~/.zsh/android
+  java:
+    src: src/zsh/java
+    dest: ~/.zsh/java
+  alias:
+    src: src/zsh/alias
+    dest: ~/.zsh/alias
+  plugins:
+    src: src/zsh/plugins
+    dest: ~/.zsh/plugins
+  theme:
+    src: src/zsh/theme
+    dest: ~/.zsh/theme
+  oh-my-zsh:
+    src: src/zsh/oh-my-zsh
+    dest: ~/.zsh/oh-my-zsh
+  vscode:
+    src: src/vscode/settings.json
+    dest: ~/.config/Code/User/settings.json
+  rpm:
+    src: src/rpmmacros
+    dest: ~/.rpmmacros
+
+# Apps
+apps:
+  - code
+  - tilix
+  - gimp
+  - google-chrome-stable
+  - filezilla
+  - screenfetch
+  - dconf-editor
+
+# Snap Apps
+snaps:
+  # default
+  - core
+  - snapd
+  # other
+  - beekeeper-studio
+  - discord
+  - mailspring
+  - onlyoffice-desktopeditors
+  - postman
+  - simplenote
+  - skype
+  - spotify
+  - vlc
+
+# Pantheon Desktop
+pantheon_desktop:
+  - pantheon-session-settings
+  - pantheon-session-settings-overrides
+  - elementary-calculator
+  - elementary-calendar
+  - elementary-dpms-helper
+  - elementary-files
+  - elementary-greeter
+  - elementary-icon-theme
+  - elementary-music
+  - elementary-photos
+  - elementary-print
+  - elementary-screenshot-tool
+  - elementary-shortcut-overlay
+  - elementary-sound-theme
+  - elementary-terminal
+  - elementary-theme
+  - elementary-theme-gtk2
+  - elementary-theme-gtk3
+  - elementary-theme-plank
+  - elementary-tweaks
+  - elementary-videos
+  - elementary-wallpapers
+  - elementary-wallpapers-gnome
+  - switchboard
+  - switchboard-plug-datetime
+  - switchboard-plug-locale
+  - switchboard-plug-power
+  - switchboard-plug-security-privacy
+  - switchboard-plug-useraccounts
+  - harvey
+  - optimizer
+
+# Pantheon LightDM
+pantheon_lightdm:
+  - lightdm
+  - light-locker
+  - numlockx
+
+# Libraries
+libs:
+  # cli editor
+  - nano
+  # codecs 
+  # - gstreamer1-plugins-bad
+  - gstreamer1-plugins-good
+  - gstreamer1-plugins-base
+  # - gstreamer1-plugins-ugly
+  - gstreamer1-plugins-fc
+  # - ffmpeg
+  - mpg123
+  # - x264
+  # - x265
+  # mesa drivers
+  - mesa-dri-drivers
+  - mesa-filesystem
+  - mesa-khr-devel
+  - mesa-libEGL
+  - mesa-libGL
+  - mesa-libGLES
+  - mesa-libGLU
+  - mesa-libGLw
+  - mesa-libOSMesa
+  - mesa-libOpenCL
+  - mesa-libd3d
+  - mesa-omx-drivers
+  - mesa-vdpau-drivers
+  - libva-utils
+  - vdpauinfo
+  # vulkan
+  - mesa-vulkan-drivers
+  - mesa-vulkan-devel
+  - vulkan-headers
+  - vulkan-loader
+  - vulkan-loader-devel
+  - vulkan-validation-layers
+  - vulkan-tools
+  # fonts
+  - google-roboto-fonts
+  # compression libs
+  # - rar
+  - p7zip
+  # selinux
+  - libselinux-utils
+  # iphone support
+  - ifuse
+  - libplist
+  - libplist-python
+  - libimobiledevice
+  - libimobiledevice-utils
+  - libimobiledevice-devel
+  - usbmuxd
+
+# Developer Tools & Libraries
+dev_tools_and_libs:
+  # tools
+  - git
+  - awscli 
+  - '@Development Tools'
+  - '@C Development Tools and Libraries'
+  # packaging
+  - fedora-packager
+  - rpmdevtools
+  # C / GTK / Vala
+  - meson
+  - vala
+  - vala-devel
+  - vala-language-server
+  - vala-lint
+  - granite-devel
+  - switchboard-devel
+  # Python
+  - python3
+  - python3-pip
+
+# XFCE Cleanup
+xfce_cleanup:
+  - abiword
+  - albatross-gtk2-theme
+  - albatross-gtk3-theme
+  - arc-theme
+  - arc-theme-plank
+  - asunder
+  - catfish
+  - claws-mail
+  - claws-mail-plugins-archive
+  - claws-mail-plugins-att-remover
+  - claws-mail-plugins-attachwarner
+  - claws-mail-plugins-fetchinfo
+  - claws-mail-plugins-mailmbox
+  - claws-mail-plugins-newmail
+  - claws-mail-plugins-notification
+  - claws-mail-plugins-pgp
+  - claws-mail-plugins-rssyl
+  - claws-mail-plugins-smime
+  - claws-mail-plugins-spam-report
+  - claws-mail-plugins-tnef
+  - claws-mail-plugins-vcalendar
+  - dnfdragora
+  - dnfdragora-updater
+  - fedora-release-notes
+  - firewall-config
+  - galculator
+  - geany
+  - gparted
+  - greybird-xfce4-notifyd-theme
+  - gtk-xfce-engine
+  - gnumeric
+  - im-chooser-xfce
+  - libxfce4ui
+  - libxfce4util
+  - mousepad
+  - pidgin
+  - seahorse
+  - system-config-keyboard
+  - system-config-keyboard-base
+  - system-config-language
+  - system-config-users
+  - system-config-printer
+  - tint2
+  - pavucontrol
+  - xarchiver
+  - xfce-polkit
+  - xfce4-about
+  - xfce4-appfinder
+  - xfce4-battery-plugin
+  - xfce4-clipman-plugin
+  - xfce4-datetime-plugin
+  - xfce4-dict
+  - xfce4-dict-plugin
+  - xfce4-diskperf-plugin
+  - xfce4-eyes-plugin
+  - xfce4-fsguard-plugin
+  - xfce4-genmom-plugin
+  - xfce4-mailwatch-plugin
+  - xfce4-mount-plugin
+  - xfce4-netload-plugin
+  - xfce4-notifyd
+  - xfce4-panel
+  - xfce4-places-plugin
+  - xfce4-pulseaudio-plugin
+  - xfce4-screenshooter
+  - xfce4-screenshooter-plugin
+  - xfce4-session
+  - xfce4-session-engines
+  - xfce4-settings
+  - xfce4-systemload-plugin
+  - xfce4-taskmanager
+  - xfce4-terminal
+  - xfce4-time-out-plugin
+  - xfce4-verve-plugin
+  - xfce4-weather-plugin
+  - xfce4-whiskermenu-plugin
+  - xfce4-xkb-plugin
+  - xscreensaver
+  - xscreensaver-base
+  - xscreensaver-extras
+  - xscreensaver-extras-base
+
+# GNOME Cleanup
+gnome_cleanup:
+  - cheese
+  - nautilus
+  - totem
+  - rhythmbox
+  - gdm
+  - gnome-abrt
+  - gnome-boxes
+  - gnome-system-monitor
+  - gnome-terminal
+  - gnome-photos
+  - gnome-weather
+  - gnome-calendar
+  - gnome-screenshot
+  - gnome-calculator
+  - gnome-clocks
+  - gnome-maps
+
+# Other Cleanup
+other_cleanup:
+  - abrt
+  - abrt-addon-ccpp
+  - abrt-addon-coredump-helper
+  - abrt-addon-kerneloops
+  - abrt-addon-pstoreoops
+  - abrt-addon-vmcore
+  - abrt-addon-xorg
+  - abrt-cli
+  - abrt-dbus
+  - abrt-gui-libs
+  - abrt-libs
+  - abrt-plugin-bodhi
+  - abrt-retrace-client
+  - abrt-tui
+  - transmission
+  - transmission-common
+  - transmission-gtk

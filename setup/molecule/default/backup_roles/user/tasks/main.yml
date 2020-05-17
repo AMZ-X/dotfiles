@@ -1,0 +1,85 @@
+---
+# ZSH Setup
+- name: Install ZSH, Antibody & Utilities
+  become: true
+  dnf:
+    name:
+     
+    state: present
+
+- name: Setup User Account
+  become: true
+  user:
+    name: "{{ user }}"
+    comment: "{{ username }}"
+    shell: /bin/zsh
+    groups:
+      - wheel
+
+- name: Setup ZSH Directory
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: "{{ user }}"
+  file:
+    path: ~/.zsh
+    state: directory
+
+- name: Setup VSCode User Configuration Directory
+  tags:
+    - setup
+    - zsh
+    - code
+  become: true
+  become_user: "{{ user }}"
+  file:
+    path: ~/.config/Code/User
+    state: directory
+
+- name: Cleanup ZSH Main Configuration
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: "{{ user }}"
+  file:
+    path: ~/.zshrc
+    state: absent
+
+- name: Setup Dotfiles
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: "{{ user }}"
+  file:
+    src: "{{ dotfiles_dir }}/{{ item.value.src }}"
+    dest: "{{ item.value.dest }}"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    state: link
+  with_dict: "{{ zsh_links }}"
+  when: not molecule_env|bool
+
+- name: Visual Studio Code - Extensions
+  become: true
+  become_user: "{{ user }}"
+  tags:
+    - setup
+    - development
+    - vscode
+    - skip_ansible_lint
+  command: "code --install-extension {{ item }}"
+  with_items:
+    - "asabil.meson"
+    - "redhat.vscode-yaml"
+    - "laurenttreguier.rpm-spec"
+    - "philippejer.vala-grammar"
+    - "philippejer.vala-language-client"
+    - "attilabuti.vscode-mjml"
+    - "nonylene.dark-molokai-theme"
+    - "davidanson.vscode-markdownlint"
+    - "ms-vscode.vscode-typescript-tslint-plugin"
+    - "editorconfig.editorconfig"
+    - "firefox-devtools.vscode-firefox-debug"

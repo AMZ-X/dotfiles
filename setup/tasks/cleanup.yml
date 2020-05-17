@@ -1,0 +1,24 @@
+---
+- name: Cleanup | xfce
+  become: true
+  tags:
+    - cleanup
+  dnf:
+    name: '{{ xfce_cleanup }}'
+    state: absent
+
+- name: Cleanup | gnome
+  become: true
+  tags:
+    - cleanup
+  dnf:
+    name: '{{ gnome_cleanup }}'
+    state: absent
+
+- name: Cleanup - other
+  become: true
+  tags:
+    - cleanup
+  dnf:
+    name: '{{ other_cleanup }}'
+    state: absent

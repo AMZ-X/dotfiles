@@ -1,0 +1,13 @@
+---
+## Packages
+- name: Packages | install libaries
+  become: true
+  dnf:
+     name: '{{ libs }}'
+     state: present
+
+- name: Packages | install apps
+  become: true
+  dnf:
+    name: '{{ apps }}'
+    state: present

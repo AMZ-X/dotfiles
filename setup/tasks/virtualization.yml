@@ -1,0 +1,10 @@
+---
+##  Virtualization
+- name: Virtualization | Install Tools & Libraries
+  become: true
+  tags:
+    - setup
+    - virt
+  dnf:
+    name: '{{ virt_libs }}'
+    state: present

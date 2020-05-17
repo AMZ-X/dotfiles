@@ -1,0 +1,28 @@
+---
+## Cleanup
+- name: Cleanup - XFCE
+  become: true
+  tags:
+    - cleanup
+  dnf:
+    name:
+
+    state: absent
+
+- name: Cleanup - GNOME
+  become: true
+  tags:
+    - cleanup
+  dnf:
+    name:
+      
+    state: absent
+
+- name: Cleanup - Other
+  become: true
+  tags:
+    - cleanup
+  dnf:
+    name:
+      
+    state: absent

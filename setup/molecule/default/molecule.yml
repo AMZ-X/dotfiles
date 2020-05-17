@@ -3,12 +3,12 @@
 dependency:
   name: galaxy
 driver:
-  name: docker
+  name: podman
 lint:
   name: yamllint
 platforms:
   - name: instance
-    image: fedora:30
+    image: fedora:32
 provisioner:
   name: ansible
   env:
@@ -16,7 +16,7 @@ provisioner:
   lint:
     name: ansible-lint
   options:
-    vvv: True
+    vvv: False
 verifier:
   name: testinfra
   lint:

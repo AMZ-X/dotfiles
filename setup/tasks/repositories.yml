@@ -51,25 +51,10 @@
   yum_repository:
     name: fedora-extensions-multimedia
     description: 'Fedora Extensions $releasever - $basearch - Multimedia'
-    baseurl: https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
-    gpgkey: https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+    baseurl: http://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
+    gpgkey: http://negativo17.org/repos/RPM-GPG-KEY-slaanesh
     gpgcheck: true
     enabled: true
-
-# - name: Enable Remi's PHP Repo
-#   become: true
-#   tags:
-#     - setup
-#     - repos
-#     - repos-remi
-#     - repos-php
-#   yum_repository:
-#     name: fedora-extensions-php
-#     description: 'Fedora Extensions $releasever - $basearch - PHP'
-#     baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
-#     gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi-$releasever
-#     gpgcheck: true
-#     enabled: true
 
 - name: Enable Microsoft / Visual Studio Code Repo
   become: true
@@ -85,20 +70,6 @@
     gpgcheck: true
     enabled: true
 
-# - name: Enable Microsoft / .NET Core Repo
-#   become: true
-#   tags:
-#     - setup
-#     - repos
-#     - repos-dotnetcore
-#   yum_repository:
-#     name: fedora-extensions-dotnet
-#     description: 'Fedora Extensions $releasever - $basearch - .NET Core'
-#     baseurl: https://packages.microsoft.com/fedora/31/prod/
-#     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-#     gpgcheck: true
-#     enabled: true
-
 - name: Enable Google Chrome Repo
   become: true
   tags:
@@ -112,4 +83,28 @@
     gpgkey: https://dl.google.com/linux/linux_signing_key.pub
     gpgcheck: true
     enabled: true
-  notify: update all
+
+- name: UPDATE
+  become: true
+  tags:
+    - setup
+    - skip_ansible_lint
+  dnf:
+    name: '*'
+    state: latest
+    update_cache: true
+
+# - name: Enable Remi's PHP Repo
+#   become: true
+#   tags:
+#     - setup
+#     - repos
+#     - repos-remi
+#     - repos-php
+#   yum_repository:
+#     name: fedora-extensions-php
+#     description: 'Fedora Extensions $releasever - $basearch - PHP'
+#     baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
+#     gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi-$releasever
+#     gpgcheck: true
+#     enabled: true

@@ -1,0 +1,82 @@
+---
+# ZSH Setup
+- name: User | install zsh, antibody & utilities
+  become: true
+  dnf:
+    name: '{{ user_packages }}'
+    state: present
+
+- name: User | setup user account
+  become: true
+  user:
+    name: '{{ user }}'
+    comment: '{{ username }}'
+    shell: /bin/zsh
+    groups:
+      - wheel
+
+- name: User | setup vscode user configuration directory
+  tags:
+    - setup
+    - zsh
+    - code
+  become: true
+  become_user: '{{ user }}'
+  file:
+    path: ~/.config/Code/User
+    state: directory
+
+- name: User | cleanup zsh main configuration
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: '{{ user }}'
+  file:
+    path: ~/.zshrc
+    state: absent
+
+- name: User | setup dotfiles
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: '{{ user }}'
+  file:
+    src: '{{ dotfiles_dir }}/{{ item.value.src }}'
+    dest: '{{ item.value.dest }}'
+    owner: '{{ user }}'
+    group: '{{ user }}'
+    state: link
+  with_dict: '{{ zsh_links }}'
+  when: not molecule_env|bool
+  notify: INSTALL_VSCODE_EXTENSIONS
+
+## Testing Steps
+- name: Clone Dotfiles (Testing)
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: '{{ user }}'
+  git:
+    repo: '{{ dotfiles_url }}'
+    dest: '{{ dotfiles_tmp_dir }}'
+    version: master
+  when: molecule_env|bool
+
+- name: Setup Dotfiles (Testing)
+  tags:
+    - setup
+    - zsh
+  become: true
+  become_user: '{{ user }}'
+  file:
+    src: '{{ dotfiles_tmp_dir }}/{{ item.value.src }}'
+    dest: '{{ item.value.dest }}'
+    owner: '{{ user }}'
+    group: '{{ user }}'
+    state: link
+  with_dict: '{{ zsh_links }}'
+  when: molecule_env|bool
+  notify: INSTALL_VSCODE_EXTENSIONS

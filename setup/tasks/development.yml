@@ -10,10 +10,10 @@
     state: present
 
 # Development System Configuration
-- name: Development | install python selinux
+- name: Development | install selinux utils
   become: true
   dnf:
-    name: libselinux-python3
+    name: '{{ selinux_utils }}'
     state: present
 
 - name: Development | disable selinux

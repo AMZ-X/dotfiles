@@ -65,8 +65,8 @@ apps:
 # Snap Apps
 snaps:
   # default
-  - core
-  - snapd
+  # - core
+  # - snapd
   # other
   - beekeeper-studio
   - discord
@@ -192,6 +192,11 @@ dev_tools_and_libs:
   # Python
   - python3
   - python3-pip
+
+# SELinux Utils
+selinux_utils:
+  - selinux-policy
+  - libselinux-python3
 
 # XFCE Cleanup
 xfce_cleanup:

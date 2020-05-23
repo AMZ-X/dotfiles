@@ -15,7 +15,7 @@
     name: '{{ gnome_cleanup }}'
     state: absent
 
-- name: Cleanup - other
+- name: Cleanup | other
   become: true
   tags:
     - cleanup

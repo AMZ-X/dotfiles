@@ -5,6 +5,7 @@
 - include: pantheon.yml
 - include: development.yml
 - include: virtualization.yml
+# - include: cleanup.yml
 
 # @TODO
 # - include: snap.yml

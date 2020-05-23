@@ -20,38 +20,6 @@ user_vscode_extensions:
   - 'ms-vscode.vscode-typescript-tslint-plugin'
   - 'editorconfig.editorconfig'
 
-user_zsh_links:
-  zshrc:
-    src: src/zshrc
-    dest: ~/.zshrc
-  snap:
-    src: src/zsh/snap
-    dest: ~/.zsh/snap
-  android:
-    src: src/zsh/android
-    dest: ~/.zsh/android
-  java:
-    src: src/zsh/java
-    dest: ~/.zsh/java
-  alias:
-    src: src/zsh/alias
-    dest: ~/.zsh/alias
-  plugins:
-    src: src/zsh/plugins
-    dest: ~/.zsh/plugins
-  theme:
-    src: src/zsh/theme
-    dest: ~/.zsh/theme
-  oh-my-zsh:
-    src: src/zsh/oh-my-zsh
-    dest: ~/.zsh/oh-my-zsh
-  vscode:
-    src: src/vscode/settings.json
-    dest: ~/.config/Code/User/settings.json
-  rpm:
-    src: src/rpmmacros
-    dest: ~/.rpmmacros
-
 # Apps
 apps:
   - code
@@ -65,8 +33,8 @@ apps:
 # Snap Apps
 snaps:
   # default
-  # - core
-  # - snapd
+  - core
+  - snapd
   # other
   - beekeeper-studio
   - discord
@@ -192,6 +160,13 @@ dev_tools_and_libs:
   # Python
   - python3
   - python3-pip
+
+# Virtual Libaries
+virt_libs:
+  - podman
+  - podman-compose
+  - qemu
+  - qemu-img
 
 # SELinux Utils
 selinux_utils:

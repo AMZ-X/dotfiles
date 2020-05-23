@@ -5,8 +5,7 @@
 - include: pantheon.yml
 - include: development.yml
 - include: virtualization.yml
-# - include: cleanup.yml
+- include: flatpak.yml
 
-# @TODO
-# - include: snap.yml
-# - include: flatpak.yml
+# @todo fix
+# - include: cleanup.yml

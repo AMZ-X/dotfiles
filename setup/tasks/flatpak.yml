@@ -1,5 +1,4 @@
 ---
-# Flatpak
 - name: Flatpak | install flatpak
   become: true
   dnf:
@@ -17,6 +16,7 @@
 - name: Flatpak | install apps
   become: true
   flatpak:
-    name: com.bitwarden.desktop
+    name: '{{ item }}'
     remote: flathub
     state: present
+  with_items: '{{ flatpaks }}'

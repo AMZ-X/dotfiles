@@ -30,21 +30,15 @@ apps:
   - screenfetch
   - dconf-editor
 
-# Snap Apps
-snaps:
-  # default
-  - core
-  - snapd
-  # other
-  - beekeeper-studio
-  - discord
-  - mailspring
-  - onlyoffice-desktopeditors
-  - postman
-  - simplenote
-  - skype
-  - spotify
-  - vlc
+# Flatpak Apps
+flatpaks:
+  - 'com.bitwarden.desktop'
+  - 'com.discordapp.Discord'
+  - 'com.google.AndroidStudio'
+  - 'com.skype.Client'
+  - 'com.slack.Slack'
+  - 'com.spotify.Client'
+  - 'de.haeckerfelix.Fragments'
 
 # Pantheon Desktop
 pantheon_desktop:

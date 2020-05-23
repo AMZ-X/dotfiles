@@ -38,4 +38,4 @@
           src: src/rpmmacros
           dest: ~/.rpmmacros
   roles:
-    - role: setup
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"

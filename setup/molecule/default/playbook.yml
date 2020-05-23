@@ -4,55 +4,38 @@
   vars:
     # Ansible Configuration
     - ansible_python_interpreter: /usr/bin/python3
-    - dotfiles_url: "https://github.com/amz-x/dotfiles.git"
     - dotfiles_dir: "{{ lookup('env', 'PWD') | dirname | dirname | dirname }}"
-    - dotfiles_tmp_dir: "/tmp/dotfiles"
-    - molecule_env: "{{ lookup('env','MOLECULE_ENV') | default('false') }}"
     # ZSH Configuration
-    - zsh_links:
-        zshrc:
-          src: src/zshrc
-          dest: ~/.zshrc
-        snap:
-          src: src/zsh/snap
-          dest: ~/.zsh/snap
-        android:
-          src: src/zsh/android
-          dest: ~/.zsh/android
-        java:
-          src: src/zsh/java
-          dest: ~/.zsh/java
-        alias:
-          src: src/zsh/alias
-          dest: ~/.zsh/alias
-        plugins:
-          src: src/zsh/plugins
-          dest: ~/.zsh/plugins
-        theme:
-          src: src/zsh/theme
-          dest: ~/.zsh/theme
-        oh-my-zsh:
-          src: src/zsh/oh-my-zsh
-          dest: ~/.zsh/oh-my-zsh
-        vscode:
-          src: src/vscode/settings.json
-          dest: ~/.config/Code/User/settings.json
-        rpm:
-          src: src/rpmmacros
-          dest: ~/.rpmmacros
-
+    # - zsh_links:
+    #     zshrc:
+    #       src: src/zshrc
+    #       dest: ~/.zshrc
+    #     snap:
+    #       src: src/zsh/snap
+    #       dest: ~/.zsh/snap
+    #     android:
+    #       src: src/zsh/android
+    #       dest: ~/.zsh/android
+    #     java:
+    #       src: src/zsh/java
+    #       dest: ~/.zsh/java
+    #     alias:
+    #       src: src/zsh/alias
+    #       dest: ~/.zsh/alias
+    #     plugins:
+    #       src: src/zsh/plugins
+    #       dest: ~/.zsh/plugins
+    #     theme:
+    #       src: src/zsh/theme
+    #       dest: ~/.zsh/theme
+    #     oh-my-zsh:
+    #       src: src/zsh/oh-my-zsh
+    #       dest: ~/.zsh/oh-my-zsh
+    #     vscode:
+    #       src: src/vscode/settings.json
+    #       dest: ~/.config/Code/User/settings.json
+    #     rpm:
+    #       src: src/rpmmacros
+    #       dest: ~/.rpmmacros
   roles:
     - role: setup
-    # - role: repositories
-    # - role: packages
-    # - role: user
-    # - role: pantheon
-    # - role: lightdm
-    # - role: development
-    # - role: docker
-    # - role: virtualization
-    # - role: system
-    # - role: cleanup
-    # @todo
-    # Flatpak role cannot complete successfully because of SELinux, workaround needed
-    # - role: flatpak

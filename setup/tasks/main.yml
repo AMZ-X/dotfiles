@@ -4,5 +4,7 @@
 - include: user.yml
 - include: pantheon.yml
 - include: development.yml
-- include: snap.yml
-# - include: virtualization
+- include: virtualization.yml
+
+# @TODO
+# - include: snap.yml

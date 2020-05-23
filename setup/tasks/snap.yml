@@ -5,6 +5,13 @@
   dnf:
     name: snapd
 
+- name: SNAP | enable snapd service
+  become: true
+  service:
+    name: snapd
+    enabled: true
+    state: started
+
 - name: SNAP | install snap apps
   become: true
   snap:

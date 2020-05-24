@@ -61,5 +61,5 @@
     group: '{{ user }}'
     state: link
     force: true
-  with_dict: '{{ zsh_links }}'
+  with_dict: '{{ user_zsh_links }}'
   notify: INSTALL_VSCODE_EXTENSIONS

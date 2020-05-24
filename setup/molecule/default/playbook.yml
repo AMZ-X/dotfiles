@@ -5,37 +5,5 @@
     # Ansible Configuration
     - ansible_python_interpreter: /usr/bin/python3
     - dotfiles_dir: "{{ lookup('env', 'PWD') | dirname | dirname | dirname }}"
-    # ZSH Configuration
-    - zsh_links:
-        zshrc:
-          src: src/zshrc
-          dest: ~/.zshrc
-        snap:
-          src: src/zsh/snap
-          dest: ~/.zsh/snap
-        android:
-          src: src/zsh/android
-          dest: ~/.zsh/android
-        java:
-          src: src/zsh/java
-          dest: ~/.zsh/java
-        alias:
-          src: src/zsh/alias
-          dest: ~/.zsh/alias
-        plugins:
-          src: src/zsh/plugins
-          dest: ~/.zsh/plugins
-        theme:
-          src: src/zsh/theme
-          dest: ~/.zsh/theme
-        oh-my-zsh:
-          src: src/zsh/oh-my-zsh
-          dest: ~/.zsh/oh-my-zsh
-        vscode:
-          src: src/vscode/settings.json
-          dest: ~/.config/Code/User/settings.json
-        rpm:
-          src: src/rpmmacros
-          dest: ~/.rpmmacros
   roles:
-    - role: "{{ lookup('env', 'PWD') | dirname | dirname }}"
+    - role: setup

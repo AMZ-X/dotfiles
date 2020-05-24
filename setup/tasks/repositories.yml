@@ -1,6 +1,6 @@
 ---
 ## Repositories
-- name: Enable AMZ / Extras Repo
+- name: Repositories | AMZ / Extras Repo
   become: true
   tags:
     - setup
@@ -14,7 +14,7 @@
     gpgcheck: false
     enabled: true
 
-- name: Enable Decathorpe / Pantheon Staging Repo
+- name: Repositories | Decathorpe / Pantheon Staging Repo
   become: true
   tags:
     - setup
@@ -28,7 +28,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Enable Decathorpe / Appcenter Repo
+- name: Repositories | Decathorpe / Appcenter Repo
   become: true
   tags:
     - setup
@@ -42,7 +42,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Enable Negativo17 / Multimedia Repo
+- name: Repositories | Negativo17 / Multimedia Repo
   become: true
   tags:
     - setup
@@ -56,7 +56,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Enable Microsoft / Visual Studio Code Repo
+- name: Repositories | Microsoft / Visual Studio Code Repo
   become: true
   tags:
     - setup
@@ -70,7 +70,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Enable Google Chrome Repo
+- name: Repositories | Google Chrome Repo
   become: true
   tags:
     - setup
@@ -84,14 +84,14 @@
     gpgcheck: true
     enabled: true
 
-- name: UPDATE
+- name: Repositories | update all
   become: true
   tags:
     - setup
     - skip_ansible_lint
   dnf:
     name: '*'
-    state: latest
+    state: present
     update_cache: true
 
 # - name: Enable Remi's PHP Repo

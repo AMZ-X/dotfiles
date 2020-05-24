@@ -10,17 +10,17 @@ jobs:
     - name: Setup Python 3.7
       uses: actions/setup-python@v1
       with:
-        python-version: 3.7
+        python-version: 3.8
     - name: Setup Virtual Environment
       run: sudo apt install virtualenv -y
     - name: Install Dependencies
       run: |
-        virtualenv .env 
-        source .env/bin/activate
+        virtualenv .virtenv 
+        source .virtenv/bin/activate
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Molecule Tests
       run: |
-        source .env/bin/activate
+        source .virtenv/bin/activate
         cd ${{ github.workspace }}/setup
         molecule test --destroy=never

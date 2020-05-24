@@ -3,11 +3,13 @@
 user: amz
 username: "AMZ-X"
 
+# User Packages
 user_packages:
   - zsh
   - antibody
   - util-linux-user
 
+# VS Code Extensions
 user_vscode_extensions:
   - 'asabil.meson'
   - 'redhat.vscode-yaml'
@@ -39,6 +41,11 @@ flatpaks:
   - 'com.slack.Slack'
   - 'com.spotify.Client'
   - 'de.haeckerfelix.Fragments'
+
+# Static Apps
+static_apps:
+  - 'https://github.com/Foundry376/Mailspring/releases/download/1.7.7/mailspring-1.7.7-0.1.x86_64.rpm'
+  - 'https://github.com/Automattic/simplenote-electron/releases/download/v1.16.0/Simplenote-linux-1.16.0-x86_64.rpm'
 
 # Pantheon Desktop
 pantheon_desktop:
@@ -153,7 +160,9 @@ dev_tools_and_libs:
   - switchboard-devel
   # Python
   - python3
+  - python3-devel
   - python3-pip
+  - python3-virtualenv
 
 # Virtual Libaries
 virt_libs:

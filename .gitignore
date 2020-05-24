@@ -1,7 +1,7 @@
 # Directories
 .vscode/
 .env/
-dotbot/
+.virtenv/
 
 # MacOSX
 .DS_Store

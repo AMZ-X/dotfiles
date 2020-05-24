@@ -72,13 +72,15 @@ ansible-playbook -K ./playbook.yml --connection=local --inventory 127.0.0.1, --l
 
 Prerequisites
 
+- python3
+- python3-devel
+- python3-pip
 - python3-virtualenv
-- docker
 
 Setup
 
 ```bash
-virtualenv .env && source .env/bin/activate && pip3 install -r requirements.txt
+virtualenv .virtenv && source .virtenv/bin/activate && pip3 install -r requirements.txt
 ```
 
 ### Testing

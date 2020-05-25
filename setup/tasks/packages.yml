@@ -1,5 +1,15 @@
 ---
 ## Packages
+- name: Packages | install drivers
+  become: true
+  tags:
+    - setup
+    - development
+    - amd
+  dnf:
+    name: '{{ drivers }}'
+    state: present
+
 - name: Packages | install libaries
   become: true
   dnf:

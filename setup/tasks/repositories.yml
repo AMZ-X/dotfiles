@@ -1,6 +1,6 @@
 ---
 ## Repositories
-- name: Repositories | AMZ / Extras Repo
+- name: Repositories | AMZ / Extras
   become: true
   tags:
     - setup
@@ -14,7 +14,7 @@
     gpgcheck: false
     enabled: true
 
-- name: Repositories | Decathorpe / Pantheon Staging Repo
+- name: Repositories | Decathorpe / Pantheon Staging
   become: true
   tags:
     - setup
@@ -28,7 +28,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Repositories | Decathorpe / Appcenter Repo
+- name: Repositories | Decathorpe / Appcenter
   become: true
   tags:
     - setup
@@ -42,7 +42,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Repositories | Negativo17 / Multimedia Repo
+- name: Repositories | Negativo17 / Multimedia
   become: true
   tags:
     - setup
@@ -56,7 +56,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Repositories | Microsoft / Visual Studio Code Repo
+- name: Repositories | Microsoft / Visual Studio Code
   become: true
   tags:
     - setup
@@ -70,7 +70,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Repositories | Google Chrome Repo
+- name: Repositories | Google Chrome
   become: true
   tags:
     - setup
@@ -84,7 +84,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Repositories | Update All
+- name: Repositories | update all
   become: true
   tags:
     - setup

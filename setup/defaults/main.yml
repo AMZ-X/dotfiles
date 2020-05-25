@@ -55,29 +55,90 @@ user_vscode_extensions:
   - 'ms-vscode.vscode-typescript-tslint-plugin'
   - 'editorconfig.editorconfig'
 
+# Drivers
+drivers:
+  - mesa-dri-drivers
+  - mesa-demos
+  - mesa-filesystem
+  - mesa-khr-devel
+  - mesa-libEGL
+  - mesa-libGL
+  - mesa-libGLES
+  - mesa-libGLU
+  - mesa-libGLw
+  - mesa-libOSMesa
+  - mesa-libOpenCL
+  - mesa-libd3d
+  - mesa-omx-drivers
+  - mesa-vdpau-drivers
+  - libva
+  - libva-utils
+  - libva-vdpau-driver
+  - vdpauinfo
+  - mesa-vulkan-drivers
+  - mesa-vulkan-devel
+  - vulkan-headers
+  - vulkan-loader
+  - vulkan-loader-devel
+  - vulkan-validation-layers
+  - vulkan-tools
+  - xorg-x11-drv-amdgpu
+
+# Libraries
+libs:
+  # basic
+  - git
+  - nano
+  # codecs 
+  # - gstreamer1-plugins-bad
+  - gstreamer1-plugins-good
+  - gstreamer1-plugins-base
+  # - gstreamer1-plugins-ugly
+  - gstreamer1-plugins-fc
+  # - ffmpeg
+  - mpg123
+  # - x264
+  # - x265
+  # fonts
+  - google-roboto-fonts
+  # compression libs
+  # - rar
+  - p7zip
+  # selinux
+  - libselinux-utils
+  # iphone support
+  - ifuse
+  - libplist
+  - libplist-python
+  - libimobiledevice
+  - libimobiledevice-utils
+  - libimobiledevice-devel
+  - usbmuxd
+
 # Apps
 apps:
   - code
-  - tilix
+  - dconf-editor
+  - filezilla
   - gimp
   - google-chrome-stable
-  - filezilla
   - screenfetch
-  - dconf-editor
-
-# Flatpak Apps
-flatpaks:
-  - 'com.bitwarden.desktop'
-  - 'com.discordapp.Discord'
-  - 'com.google.AndroidStudio'
-  - 'com.skype.Client'
-  - 'com.slack.Slack'
-  - 'com.spotify.Client'
-  - 'de.haeckerfelix.Fragments'
+  - tilix
+  - remmina
+  - remmina-gnome-session
+  - remmina-plugins-exec
+  - remmina-plugins-nx
+  - remmina-plugins-rdp
+  - remmina-plugins-secret
+  - remmina-plugins-spice
+  - remmina-plugins-st
+  - remmina-plugins-vnc
+  - remmina-plugins-www
+  - remmina-plugins-xdmcp
 
 # Static Apps
 static_apps:
-  - 'https://github.com/Foundry376/Mailspring/releases/download/1.7.7/mailspring-1.7.7-0.1.x86_64.rpm'
+  - 'https://github.com/Foundry376/Mailspring/releases/download/1.7.8/mailspring-1.7.8-0.1.x86_64.rpm'
   - 'https://github.com/Automattic/simplenote-electron/releases/download/v1.16.0/Simplenote-linux-1.16.0-x86_64.rpm'
 
 # Pantheon Desktop
@@ -120,60 +181,6 @@ pantheon_lightdm:
   - light-locker
   - numlockx
 
-# Libraries
-libs:
-  # basic
-  - git
-  - nano
-  # codecs 
-  # - gstreamer1-plugins-bad
-  - gstreamer1-plugins-good
-  - gstreamer1-plugins-base
-  # - gstreamer1-plugins-ugly
-  - gstreamer1-plugins-fc
-  # - ffmpeg
-  - mpg123
-  # - x264
-  # - x265
-  # drivers
-  - mesa-dri-drivers
-  - mesa-filesystem
-  - mesa-khr-devel
-  - mesa-libEGL
-  - mesa-libGL
-  - mesa-libGLES
-  - mesa-libGLU
-  - mesa-libGLw
-  - mesa-libOSMesa
-  - mesa-libOpenCL
-  - mesa-libd3d
-  - mesa-omx-drivers
-  - mesa-vdpau-drivers
-  - libva-utils
-  - vdpauinfo
-  - mesa-vulkan-drivers
-  - mesa-vulkan-devel
-  - vulkan-headers
-  - vulkan-loader
-  - vulkan-loader-devel
-  - vulkan-validation-layers
-  - vulkan-tools
-  # fonts
-  - google-roboto-fonts
-  # compression libs
-  # - rar
-  - p7zip
-  # selinux
-  - libselinux-utils
-  # iphone support
-  - ifuse
-  - libplist
-  - libplist-python
-  - libimobiledevice
-  - libimobiledevice-utils
-  - libimobiledevice-devel
-  - usbmuxd
-
 # Developer Tools & Libraries
 dev_tools_and_libs:
   # tools
@@ -208,6 +215,16 @@ virt_libs:
 selinux_utils:
   - selinux-policy
   - libselinux-python3
+
+# Flatpak Apps
+flatpak_apps:
+  - 'com.bitwarden.desktop'
+  - 'com.discordapp.Discord'
+  - 'com.google.AndroidStudio'
+  - 'com.skype.Client'
+  - 'com.slack.Slack'
+  - 'com.spotify.Client'
+  - 'de.haeckerfelix.Fragments'
 
 # XFCE Cleanup
 xfce_cleanup:

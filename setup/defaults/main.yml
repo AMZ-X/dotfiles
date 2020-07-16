@@ -95,7 +95,7 @@ libs:
   - gstreamer1-plugins-base
   # - gstreamer1-plugins-ugly
   - gstreamer1-plugins-fc
-  # - ffmpeg
+  - ffmpeg
   - mpg123
   # - x264
   # - x265
@@ -141,6 +141,18 @@ static_apps:
   - 'https://github.com/Foundry376/Mailspring/releases/download/1.7.8/mailspring-1.7.8-0.1.x86_64.rpm'
   - 'https://github.com/Automattic/simplenote-electron/releases/download/v1.16.0/Simplenote-linux-1.16.0-x86_64.rpm'
 
+# Flatpak Apps
+flatpak_apps:
+  - 'com.bitwarden.desktop'
+  - 'com.discordapp.Discord'
+  - 'com.google.AndroidStudio'
+  - 'com.getpostman.Postman'
+  - 'com.skype.Client'
+  - 'com.slack.Slack'
+  - 'com.spotify.Client'
+  - 'de.haeckerfelix.Fragments'
+  - 'us.zoom.Zoom'
+
 # Pantheon Desktop
 pantheon_desktop:
   - pantheon-session-settings
@@ -183,11 +195,10 @@ pantheon_lightdm:
 
 # Developer Tools & Libraries
 dev_tools_and_libs:
-  # tools
-  - awscli 
+  # Developer Tools and Libraries
   - '@Development Tools'
   - '@C Development Tools and Libraries'
-  # packaging
+  # RPM Packaging
   - fedora-packager
   - rpmdevtools
   # C / GTK / Vala
@@ -203,6 +214,17 @@ dev_tools_and_libs:
   - python3-devel
   - python3-pip
   - python3-virtualenv
+  # Java
+  - java-1.8.0-openjdk
+  - java-1.8.0-openjdk-devel
+  - java-1.8.0-openjdk-headless
+  # Ruby
+  - ruby
+  - ruby-devel
+  - rubygem-rails
+  - zlib-devel
+  # Other Tools
+  - awscli
 
 # Virtual Libaries
 virt_libs:
@@ -215,16 +237,6 @@ virt_libs:
 selinux_utils:
   - selinux-policy
   - libselinux-python3
-
-# Flatpak Apps
-flatpak_apps:
-  - 'com.bitwarden.desktop'
-  - 'com.discordapp.Discord'
-  - 'com.google.AndroidStudio'
-  - 'com.skype.Client'
-  - 'com.slack.Slack'
-  - 'com.spotify.Client'
-  - 'de.haeckerfelix.Fragments'
 
 # XFCE Cleanup
 xfce_cleanup:
@@ -314,9 +326,7 @@ xfce_cleanup:
 gnome_cleanup:
   - cheese
   - nautilus
-  - totem
   - rhythmbox
-  - gdm
   - gnome-abrt
   - gnome-boxes
   - gnome-system-monitor
@@ -328,6 +338,11 @@ gnome_cleanup:
   - gnome-calculator
   - gnome-clocks
   - gnome-maps
+  - gnome-shell-extension-gamemode
+  - totem
+  - transmission
+  - transmission-common
+  - transmission-gtk
 
 # Other Cleanup
 other_cleanup:
@@ -345,6 +360,3 @@ other_cleanup:
   - abrt-plugin-bodhi
   - abrt-retrace-client
   - abrt-tui
-  - transmission
-  - transmission-common
-  - transmission-gtk

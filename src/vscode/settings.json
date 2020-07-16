@@ -1,12 +1,11 @@
 {
 	"diffEditor.ignoreTrimWhitespace": false,
-	"editor.fontSize": 14,
 	"editor.insertSpaces": false,
 	"editor.minimap.enabled": false,
 	"editor.renderWhitespace": "all",	
 	"git.autofetch": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
-	"window.zoomLevel": -1,
+	"window.zoomLevel": 0,
 	"workbench.colorTheme": "Dark (Molokai)",
 	"php.executablePath": "/usr/bin/php",
 	"php.validate.executablePath": "/usr/bin/php",

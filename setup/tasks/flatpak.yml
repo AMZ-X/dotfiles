@@ -1,8 +1,8 @@
 ---
-- name: Flatpak | install flatpak
+- name: Flatpak | install flatpak & flatpak builder
   become: true
   dnf:
-    name: flatpak
+    name: flatpak flatpak-builder
     state: present
 
 - name: Flatpak | add flathub remote

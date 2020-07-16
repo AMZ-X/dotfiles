@@ -86,9 +86,6 @@
 
 - name: Repositories | update all
   become: true
-  tags:
-    - setup
-    - skip_ansible_lint
   dnf:
     name: '*'
     state: latest

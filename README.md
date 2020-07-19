@@ -64,7 +64,6 @@ unzip master.zip -d dotfiles
 In root directory of project
 
 ```bash
-cd ./setup/molecule/default
 ansible-playbook -K ./playbook.yml --connection=local --inventory 127.0.0.1, --limit 127.0.0.1
 ```
 

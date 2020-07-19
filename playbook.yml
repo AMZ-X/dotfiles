@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    - ansible_python_interpreter: /usr/bin/python3
+    # - dotfiles_dir: "{{ lookup('env', 'PWD') | dirname | dirname | dirname }}"
+  roles:
+    - role: setup

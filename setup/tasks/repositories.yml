@@ -42,17 +42,59 @@
     gpgcheck: true
     enabled: true
 
-- name: Repositories | Negativo17 / Multimedia
+- name: Repositories | RPM Fusion - Free
   become: true
   tags:
     - setup
     - repos
     - repos-multimedia
   yum_repository:
-    name: fedora-extensions-multimedia
-    description: 'Fedora Extensions $releasever - $basearch - Multimedia'
-    baseurl: http://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
-    gpgkey: http://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+    name: fedora-extensions-rpmfusion-free
+    description: 'Fedora Extensions $releasever - $basearch - RPM Fusion - Free'
+    metalink: https://mirrors.rpmfusion.org/metalink?repo=free-fedora-$releasever&arch=$basearch
+    gpgkey: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-$releasever
+    gpgcheck: true
+    enabled: true
+
+- name: Repositories | RPM Fusion - Free - Updates
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-multimedia
+  yum_repository:
+    name: fedora-extensions-rpmfusion-free-updates
+    description: 'Fedora Extensions $releasever - $basearch - RPM Fusion - Free - Updates'
+    metalink: https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-$releasever&arch=$basearch
+    gpgkey: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-$releasever
+    gpgcheck: true
+    enabled: true
+
+- name: Repositories | RPM Fusion - Non-Free
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-multimedia
+  yum_repository:
+    name: fedora-extensions-rpmfusion-nonfree
+    description: 'Fedora Extensions $releasever - $basearch - RPM Fusion - Non-Free'
+    metalink: https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-$releasever&arch=$basearch
+    gpgkey: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-$releasever
+    gpgcheck: true
+    enabled: true
+
+- name: Repositories | RPM Fusion - Non-Free - Updates
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-multimedia
+  yum_repository:
+    name: fedora-extensions-rpmfusion-nonfree-updates
+    description: 'Fedora Extensions $releasever - $basearch - RPM Fusion - Non-Free - Updates'
+    metalink: https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-updates-released-$releasever&arch=$basearch
+    gpgkey: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-$releasever
     gpgcheck: true
     enabled: true
 

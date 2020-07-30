@@ -10,5 +10,6 @@
 	"php.executablePath": "/usr/bin/php",
 	"php.validate.executablePath": "/usr/bin/php",
 	"mesonbuild.configureOnOpen": true,
-	"git.confirmSync": false
+	"git.confirmSync": false,
+	"javascript.updateImportsOnFileMove.enabled": "always"
 }

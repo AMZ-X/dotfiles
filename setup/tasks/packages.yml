@@ -22,8 +22,8 @@
     name: '{{ apps }}'
     state: present
 
-- name: Packages | install static apps
-  become: true
-  dnf:
-    name: '{{ static_apps }}'
-    state: present
+# - name: Packages | install static apps
+#   become: true
+#   dnf:
+#     name: '{{ static_apps }}'
+#     state: present

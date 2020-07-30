@@ -90,19 +90,11 @@ libs:
   - git
   - nano
   # codecs 
-  - gstreamer1-plugins-bad-freeworld
-  - gstreamer1-plugins-base
-  - gstreamer1-plugins-base-tools
-  - gstreamer1-plugins-good
-  - gstreamer1-plugins-good-extras
-  - gstreamer1-plugins-good-gtk
+  - gstreamer1-plugins-bad
   - gstreamer1-plugins-ugly
   - gstreamer1-plugins-fc
   - gstreamer1-vaapi
   - gstreamer1-libav
-  - gstreamer1-svt-av1
-  - gstreamer1-svt-hevc
-  - gstreamer1-svt-vp9
   - ffmpeg
   - mpg123
   - x264

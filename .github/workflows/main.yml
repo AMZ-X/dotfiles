@@ -17,9 +17,9 @@ jobs:
       run: sudo apt install python3-virtualenv -y
     - name: Install Dependencies
       run: |
-        python3-virtualenv .virtenv 
+        python3 -m venv .virtenv 
         source .virtenv/bin/activate
-        python -m pip install --upgrade pip
+        python3 -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Molecule Tests
       run: |

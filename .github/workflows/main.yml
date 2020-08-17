@@ -11,6 +11,8 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
+    - name: Setup Podman
+      run: sudo apt install podman -y
     - name: Setup Virtual Environment
       run: sudo apt install virtualenv -y
     - name: Install Dependencies

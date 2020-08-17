@@ -89,8 +89,11 @@ libs:
   # basic
   - git
   - nano
-  # codecs 
+  # codecs
+  - gstreamer1
   - gstreamer1-plugins-bad
+  - gstreamer1-plugins-base
+  - gstreamer1-plugins-good
   - gstreamer1-plugins-ugly
   - gstreamer1-plugins-fc
   - gstreamer1-vaapi
@@ -151,6 +154,7 @@ flatpak_apps:
   - 'com.spotify.Client'
   - 'de.haeckerfelix.Fragments'
   - 'us.zoom.Zoom'
+  - 'com.anydesk.Anydesk'
 
 # Pantheon Desktop
 pantheon_desktop:

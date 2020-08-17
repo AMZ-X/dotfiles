@@ -1,6 +1,10 @@
 # Aliases
 alias zsh_update_plugins='antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh'
 
+# docker
+alias docker='podman'
+alias docker-compose='podman-compose'
+
 # rpm
 alias specfetch='spectool -g -R'
 alias specdeps='sudo dnf builddep -y'

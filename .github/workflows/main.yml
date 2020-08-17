@@ -14,10 +14,10 @@ jobs:
     - name: Setup Podman
       run: sudo apt install podman -y
     - name: Setup Virtual Environment
-      run: sudo apt install virtualenv -y
+      run: sudo apt install python3-virtualenv -y
     - name: Install Dependencies
       run: |
-        virtualenv .virtenv 
+        python3-virtualenv .virtenv 
         source .virtenv/bin/activate
         python -m pip install --upgrade pip
         pip install -r requirements.txt

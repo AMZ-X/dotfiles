@@ -42,6 +42,10 @@ user_zsh_links:
     src: src/rpmmacros
     dest: ~/.rpmmacros
 
+# RVM
+rvm_installer_url: 'https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer'
+rvm_installer_path: '/home/{{ user }}/Downloads/rvm-installer.sh' 
+
 # User VS Code Extensions
 user_vscode_extensions:
   # ruby
@@ -156,7 +160,6 @@ static_apps:
 flatpak_apps:
   - 'com.bitwarden.desktop'
   - 'com.discordapp.Discord'
-  - 'com.google.AndroidStudio'
   - 'com.getpostman.Postman'
   - 'com.skype.Client'
   - 'com.slack.Slack'
@@ -226,10 +229,6 @@ dev_tools_and_libs:
   - python3-devel
   - python3-pip
   - python3-virtualenv
-  # Java
-  - java-1.8.0-openjdk
-  - java-1.8.0-openjdk-devel
-  - java-1.8.0-openjdk-headless
   # Other Tools
   - awscli
 

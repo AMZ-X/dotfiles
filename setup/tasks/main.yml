@@ -3,7 +3,8 @@
 - include: packages.yml
 - include: user.yml
 - include: pantheon.yml
-# - include: development.yml
+- include: development.yml
+- include: rvm.yml
 # - include: virtualization.yml
 # - include: flatpak.yml
 

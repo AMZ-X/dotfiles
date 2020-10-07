@@ -14,9 +14,9 @@ user_zsh_links:
   zshrc:
     src: src/zshrc
     dest: ~/.zshrc
-  snap:
-    src: src/zsh/snap
-    dest: ~/.zsh/snap
+  rvmrc:
+    src: src/rvmrc
+    dest: ~/.rvmrc
   android:
     src: src/zsh/android
     dest: ~/.zsh/android
@@ -44,16 +44,25 @@ user_zsh_links:
 
 # User VS Code Extensions
 user_vscode_extensions:
-  - 'asabil.meson'
-  - 'redhat.vscode-yaml'
-  - 'laurenttreguier.rpm-spec'
-  - 'philippejer.vala-grammar'
-  - 'philippejer.vala-language-client'
-  - 'attilabuti.vscode-mjml'
-  - 'nonylene.dark-molokai-theme'
-  - 'davidanson.vscode-markdownlint'
+  # ruby
+  - 'rebornix.ruby'
+  - 'castwide.solargraph'
+  # typescript
   - 'ms-vscode.vscode-typescript-tslint-plugin'
+  # vala
+  - 'prince781.vala'
+  # meson
+  - 'asabil.meson'
+  # yaml
+  - 'redhat.vscode-yaml'
+  # rpm spec
+  - 'laurenttreguier.rpm-spec'
+  # markdown
+  - 'davidanson.vscode-markdownlint'
+  # editorconfig
   - 'editorconfig.editorconfig'
+  # theme
+  - 'nonylene.dark-molokai-theme'
 
 # Drivers
 drivers:
@@ -221,11 +230,6 @@ dev_tools_and_libs:
   - java-1.8.0-openjdk
   - java-1.8.0-openjdk-devel
   - java-1.8.0-openjdk-headless
-  # Ruby
-  - ruby
-  - ruby-devel
-  - rubygem-rails
-  - zlib-devel
   # Other Tools
   - awscli
 

@@ -11,5 +11,6 @@
 	"php.validate.executablePath": "/usr/bin/php",
 	"mesonbuild.configureOnOpen": true,
 	"git.confirmSync": false,
-	"javascript.updateImportsOnFileMove.enabled": "always"
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"ruby.useLanguageServer": true
 }

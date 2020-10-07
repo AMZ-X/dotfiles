@@ -1,8 +1,8 @@
 ---
 - include: repositories.yml
 - include: packages.yml
-# - include: user.yml
-# - include: pantheon.yml
+- include: user.yml
+- include: pantheon.yml
 # - include: development.yml
 # - include: virtualization.yml
 # - include: flatpak.yml

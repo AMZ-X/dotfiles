@@ -5,15 +5,21 @@
   changed_when: false
   check_mode: false
   ignore_errors: true
+  tags:
+    - skip_ansible_lint
 
 - name: RVM | download installer
   get_url:
     url: '{{ rvm_installer_url }}'
     dest: '{{ rvm_installer_path }}'
     mode: 0755
+  tags:
+    - skip_ansible_lint
 
 - name: RVM | install rvm
   shell: '{{ rvm_installer_path }} | bash -s -- --ignore-dotfiles'
   changed_when: false
   check_mode: false
   ignore_errors: true
+  tags:
+    - skip_ansible_lint

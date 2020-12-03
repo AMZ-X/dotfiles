@@ -134,11 +134,10 @@ libs:
 apps:
   - code
   - dconf-editor
-  - filezilla
+  - fragments
   - gimp
   - google-chrome-stable
   - screenfetch
-  - tilix
   - remmina
   - remmina-gnome-session
   - remmina-plugins-exec
@@ -164,9 +163,7 @@ flatpak_apps:
   - 'com.skype.Client'
   - 'com.slack.Slack'
   - 'com.spotify.Client'
-  - 'de.haeckerfelix.Fragments'
   - 'us.zoom.Zoom'
-  - 'com.anydesk.Anydesk'
 
 # Pantheon Desktop
 pantheon_desktop:
@@ -269,7 +266,6 @@ xfce_cleanup:
   - claws-mail-plugins-vcalendar
   - dnfdragora
   - dnfdragora-updater
-  - fedora-release-notes
   - firewall-config
   - galculator
   - geany

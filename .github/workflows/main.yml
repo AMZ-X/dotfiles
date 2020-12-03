@@ -6,20 +6,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Setup Python 3.8
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
       with:
         python-version: 3.8
     - name: Setup Podman
       run: sudo apt install podman -y
     - name: Setup Virtual Environment
-      run: sudo apt install python3-virtualenv -y
+      run: sudo apt install python-virtualenv -y
     - name: Install Dependencies
       run: |
-        python3 -m venv .virtenv 
+        python -m venv .virtenv 
         source .virtenv/bin/activate
-        python3 -m pip install --upgrade pip
+        python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Molecule Tests
       run: |

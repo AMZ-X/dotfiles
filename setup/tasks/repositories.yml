@@ -84,12 +84,16 @@
     gpgcheck: true
     enabled: true
 
-# - name: Repositories | update all
-#   become: true
-#   dnf:
-#     name: '*'
-#     state: latest
-#     update_cache: true
+- name: Repositories | Update All
+  become: true
+  tags:
+    - setup
+    - repos
+    - skip_ansible_lint
+  dnf:
+    name: '*'
+    state: latest
+    update_cache: true
 
 # - name: Enable Remi's PHP Repo
 #   become: true

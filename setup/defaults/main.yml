@@ -164,6 +164,7 @@ flatpak_apps:
   - 'com.slack.Slack'
   - 'com.spotify.Client'
   - 'us.zoom.Zoom'
+  - 'io.dbeaver.DBeaverCommunity'
 
 # Pantheon Desktop
 pantheon_desktop:
@@ -327,12 +328,17 @@ xfce_cleanup:
 # GNOME Cleanup
 gnome_cleanup:
   - cheese
+  - eog
   - nautilus
   - rhythmbox
+  - gedit
   - gnome-abrt
-  - gnome-boxes
+  - gnome-contacts
+  - gnome-characters
+  - gnome-color-manager
   - gnome-system-monitor
   - gnome-terminal
+  - gnome-tour
   - gnome-photos
   - gnome-weather
   - gnome-calendar
@@ -340,7 +346,10 @@ gnome_cleanup:
   - gnome-calculator
   - gnome-clocks
   - gnome-maps
-  - gnome-shell-extension-gamemode
+  - gnome-software
+  - gnome-shell-extension-background-logo
+  - gnome-shell-extension-common
+  - gnome-video-effects
   - totem
   - transmission
   - transmission-common

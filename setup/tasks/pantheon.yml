@@ -4,11 +4,11 @@
     name: '{{ pantheon_desktop }}'
     state: present
 
-- name: Pantheon | Install LightDM
-  become: true
-  dnf:
-    name: '{{ pantheon_lightdm }}'
-
+#- name: Pantheon | Install LightDM
+#  become: true
+#  dnf:
+#    name: '{{ pantheon_lightdm }}'
+#
 # - name: Configure - Elementary GTK Theme
 #   become: true
 #   tags:

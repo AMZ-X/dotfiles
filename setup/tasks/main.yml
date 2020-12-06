@@ -4,7 +4,7 @@
 - include: user.yml
 - include: pantheon.yml
 - include: development.yml
-# - include: rvm.yml
-# - include: virtualization.yml
-# - include: flatpak.yml
-# - include: cleanup.yml
+#- include: rvm.yml
+#- include: virtualization.yml
+#- include: flatpak.yml
+#- include: cleanup.yml

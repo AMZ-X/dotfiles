@@ -4,11 +4,11 @@
 
 Personal dotfiles on Fedora Linux with Ansible & Molecule.
 
-![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 30 - Pantheon Desktop")
+![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 33 - Pantheon Desktop")
 
 ## Features
 
-- Fedora 30
+- Fedora 33
 - ZSH
 - Antibody
 - NVM (Node Version Manager)
@@ -17,15 +17,9 @@ Personal dotfiles on Fedora Linux with Ansible & Molecule.
 
 ## Additional Development Features
 
-- Docker
+- Podman
 - QEMU
 - Vala
-- LAMP
-- PHP 7.1
-- PHP 7.3
-- .NET Core 2.2
-- .NET Core 3.0
-- .NET Core 3.1
 
 ## Installation
 
@@ -33,13 +27,13 @@ Personal dotfiles on Fedora Linux with Ansible & Molecule.
 
 Requirements for installation setup on Fedora 30
 
-- [fedora 30 xfce spin](https://dl.fedoraproject.org/pub/fedora/linux/releases/30/Spins/x86_64/iso/Fedora-Xfce-Live-x86_64-30-1.2.iso)
-- unzip (if downloading)
-- ansible
+- Fedora 33 Workstation
+- Git
+- Ansible
 
 ### Setup
 
-Install Fedora 30 Xfce
+Install Fedora 33 Workstation
 
 Install ansible & git
 

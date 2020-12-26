@@ -3,23 +3,22 @@
 user: amz
 username: "AMZ-X"
 
-# User Packages
-user_packages:
-  - zsh
-  - antibody
-  - util-linux-user
 
-# User ZSH Links
-user_zsh_links:
+
+# ZSH Links
+zsh_links:
   zshrc:
     src: src/zshrc
     dest: ~/.zshrc
+  direnvrc:
+    src: src/direnvrc
+    dest: ~/.direnvrc
   rvmrc:
     src: src/rvmrc
     dest: ~/.rvmrc
-  android:
-    src: src/zsh/android
-    dest: ~/.zsh/android
+  git:
+    src: src/zsh/git
+    dest: ~/.zsh/git
   java:
     src: src/zsh/java
     dest: ~/.zsh/java
@@ -38,9 +37,9 @@ user_zsh_links:
   vscode:
     src: src/vscode/settings.json
     dest: ~/.config/Code/User/settings.json
-  rpm:
-    src: src/rpmmacros
-    dest: ~/.rpmmacros
+  # rpm:
+  #   src: src/rpmmacros
+  #   dest: ~/.rpmmacros
 
 # RVM
 rvm_installer_url: 'https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer'

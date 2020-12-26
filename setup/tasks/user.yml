@@ -1,33 +1,44 @@
 ---
 # ZSH Setup
-- name: User | install zsh, antibody & utilities
-  become: true
-  dnf:
-    name: '{{ user_packages }}'
-    state: present
+# - name: User | install zsh, antibody & utilities
+#   become: true
+#   dnf:
+#     name: '{{ user_packages }}'
+#     state: present
 
-- name: User | setup user account
-  become: true
-  user:
-    name: '{{ user }}'
-    comment: '{{ username }}'
-    shell: /bin/zsh
-    groups:
-      - wheel
+# - name: User | setup user account
+#   become: true
+#   user:
+#     name: '{{ user }}'
+#     comment: '{{ username }}'
+#     shell: /bin/zsh
+#     groups:
+#       - wheel
 
-- name: User | setup vscode user configuration directory
+- name: Dotfiles | Setup NixOS Configuration
   tags:
     - setup
-    - zsh
-    - code
+    - dotfiles
   become: true
-  become_user: '{{ user }}'
   file:
-    path: ~/.config/Code/User
-    state: directory
-    mode: 0755
+    src: '{{ dotfiles_dir }}/src/nixos/configuration.nix'
+    dest: '/etc/nixos/configuration.nix'
+    state: link
+    force: true
 
-- name: User | cleanup zsh main configuration
+# - name: User | setup vscode user configuration directory
+#   tags:
+#     - setup
+#     - zsh
+#     - code
+#   become: true
+#   become_user: '{{ user }}'
+#   file:
+#     path: ~/.config/Code/User
+#     state: directory
+#     mode: 0755
+
+- name: Dotfiles | Remove existing ~/.zshrc
   tags:
     - setup
     - zsh
@@ -37,7 +48,7 @@
     path: ~/.zshrc
     state: absent
 
-- name: User | create .zsh directory
+- name: Dotfiles | Create .zsh Directory
   tags:
     - setup
     - zsh
@@ -45,12 +56,10 @@
   become_user: '{{ user }}'
   file:
     path: '/home/{{ user }}/.zsh'
-    owner: '{{ user }}'
-    group: '{{ user }}'
     state: directory
     mode: 0755
 
-- name: User | setup dotfiles
+- name: Dotfiles | Setup ZSH
   tags:
     - setup
     - zsh
@@ -59,9 +68,7 @@
   file:
     src: '{{ dotfiles_dir }}/{{ item.value.src }}'
     dest: '{{ item.value.dest }}'
-    owner: '{{ user }}'
-    group: '{{ user }}'
     state: link
     force: true
-  with_dict: '{{ user_zsh_links }}'
-  notify: INSTALL_VSCODE_EXTENSIONS
+  with_dict: '{{ zsh_links }}'
+  # notify: INSTALL_VSCODE_EXTENSIONS

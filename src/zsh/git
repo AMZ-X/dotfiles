@@ -1,0 +1,7 @@
+# GIT
+GIT_AUTHOR_NAME="Christopher Crouse"
+GIT_AUTHOR_EMAIL="mail@amz-x.com"
+
+# GIT Config
+git config --global user.name "$GIT_AUTHOR_NAME"
+git config --global user.email "$GIT_AUTHOR_EMAIL"

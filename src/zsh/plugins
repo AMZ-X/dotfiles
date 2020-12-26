@@ -2,7 +2,7 @@
 mafredri/zsh-async
 robbyrussell/oh-my-zsh
 lukechilds/zsh-nvm
-johnhamelink/rvm-zsh
+# johnhamelink/rvm-zsh
 
 # Theme
 denysdovhan/spaceship-prompt

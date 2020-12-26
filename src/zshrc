@@ -9,27 +9,11 @@ export EDITOR=nano
 # SSH
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# GIT
-# GIT_AUTHOR_NAME="Christopher Crouse"
-# GIT_AUTHOR_EMAIL="mail@amz-x.com"
-# GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-# GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-
-# GIT Config
-# git config --global user.name "$GIT_AUTHOR_NAME"
-# git config --global user.email "$GIT_AUTHOR_EMAIL"
-
 # Default
 source /etc/profile
 
-# Java
-source ~/.zsh/java
-
-# Android
-source ~/.zsh/android
-
-# Alias
-source ~/.zsh/alias
+# Git
+source ~/.zsh/git
 
 # Theme
 source ~/.zsh/theme
@@ -40,3 +24,6 @@ source ~/.zsh/oh-my-zsh
 # Plugins
 antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh
 source ~/.zsh/plugins.sh
+
+# NixOS Directory Environment
+eval "$(direnv hook zsh)"

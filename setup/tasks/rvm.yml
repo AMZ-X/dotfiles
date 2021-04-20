@@ -19,7 +19,7 @@
     - skip_ansible_lint
 
 - name: RVM | Install RVM & Ruby
-  command: '{{ rvm_installer_path }} | bash -s stable --ruby --ignore-dotfiles'
+  command: '{{ rvm_installer_path }} stable --ignore-dotfiles'
   become: true
   become_user: '{{ user }}'
   ignore_errors: true

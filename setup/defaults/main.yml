@@ -17,12 +17,6 @@ user_zsh_links:
   rvmrc:
     src: src/rvmrc
     dest: ~/.rvmrc
-  android:
-    src: src/zsh/android
-    dest: ~/.zsh/android
-  java:
-    src: src/zsh/java
-    dest: ~/.zsh/java
   alias:
     src: src/zsh/alias
     dest: ~/.zsh/alias
@@ -38,7 +32,7 @@ user_zsh_links:
   vscode:
     src: src/vscode/settings.json
     dest: ~/.config/Code/User/settings.json
-  rpm:
+  rpmmacros:
     src: src/rpmmacros
     dest: ~/.rpmmacros
 
@@ -129,6 +123,8 @@ libs:
   - libimobiledevice-utils
   - libimobiledevice-devel
   - usbmuxd
+  # printer support
+  - lsb
 
 # Apps
 apps:
@@ -138,22 +134,10 @@ apps:
   - gimp
   - google-chrome-stable
   - screenfetch
-  - remmina
-  - remmina-gnome-session
-  - remmina-plugins-exec
-  - remmina-plugins-nx
-  - remmina-plugins-rdp
-  - remmina-plugins-secret
-  - remmina-plugins-spice
-  - remmina-plugins-st
-  - remmina-plugins-vnc
-  - remmina-plugins-www
-  - remmina-plugins-xdmcp
 
 # Static Apps
 static_apps:
   - 'https://github.com/Foundry376/Mailspring/releases/download/1.7.8/mailspring-1.7.8-0.1.x86_64.rpm'
-  - 'https://github.com/Automattic/simplenote-electron/releases/download/v1.16.0/Simplenote-linux-1.16.0-x86_64.rpm'
 
 # Flatpak Apps
 flatpak_apps:
@@ -184,7 +168,6 @@ pantheon_desktop:
   - elementary-sound-theme
   - elementary-terminal
   - elementary-theme
-  - elementary-theme-gtk2
   - elementary-theme-gtk3
   - elementary-theme-plank
   - elementary-tweaks
@@ -229,13 +212,15 @@ dev_tools_and_libs:
   - python3-virtualenv
   # Other Tools
   - awscli
-
-# Virtual Libaries
-virt_libs:
-  - podman
-  - podman-compose
+  # Virt Libs
   - qemu
   - qemu-img
+
+# Docker
+docker_libs:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
 
 # SELinux Utils
 selinux_utils:
@@ -332,7 +317,6 @@ gnome_cleanup:
   - nautilus
   - rhythmbox
   - gedit
-  - gnome-abrt
   - gnome-contacts
   - gnome-characters
   - gnome-color-manager

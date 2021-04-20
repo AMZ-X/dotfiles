@@ -15,10 +15,10 @@
     name: '{{ gnome_cleanup }}'
     state: absent
 
-- name: Cleanup | other
-  become: true
-  tags:
-    - cleanup
-  dnf:
-    name: '{{ other_cleanup }}'
-    state: absent
+# - name: Cleanup | other
+#   become: true
+#   tags:
+#     - cleanup
+#   dnf:
+#     name: '{{ other_cleanup }}'
+#     state: absent

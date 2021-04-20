@@ -22,25 +22,25 @@
     - repos-pantheon
   yum_repository:
     name: fedora-extensions-pantheon
-    description: 'Fedora Extensions $releasever - $basearch - Pantheon'
+    description: 'Fedora Extensions $releasever - $basearch - Pantheon Staging'
     baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/fedora-$releasever-$basearch/
     gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/pubkey.gpg
     gpgcheck: true
     enabled: true
 
-- name: Repositories | Decathorpe / Appcenter
+- name: Repositories | Decathorpe / Pantheon Nightly
   become: true
   tags:
     - setup
     - repos
-    - repos-appcenter
+    - repos-pantheon
   yum_repository:
-    name: fedora-extensions-appcenter
-    description: 'Fedora Extensions $releasever - $basearch - Appcenter'
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-appcenter/fedora-$releasever-$basearch/
-    gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-appcenter/pubkey.gpg
+    name: fedora-extensions-pantheon
+    description: 'Fedora Extensions $releasever - $basearch - Pantheon Nightly'
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/pubkey.gpg
     gpgcheck: true
-    enabled: true
+    enabled: false
 
 - name: Repositories | Negativo17 / Multimedia
   become: true
@@ -81,6 +81,20 @@
     description: 'Fedora Extensions $releasever - $basearch - Google Chrome'
     baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
     gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+    gpgcheck: true
+    enabled: true
+
+- name: Repositories | Docker
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-docker
+  yum_repository:
+    name: fedora-extensions-docker
+    description: 'Fedora Extensions $releasever - $basearch - Docker'
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    gpgkey: https://download.docker.com/linux/fedora/gpg
     gpgcheck: true
     enabled: true
 

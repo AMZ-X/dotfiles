@@ -4,11 +4,11 @@
 
 Personal dotfiles on Fedora Linux with Ansible & Molecule.
 
-![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 33 - Pantheon Desktop")
+![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 34 - Pantheon Desktop")
 
 ## Features
 
-- Fedora 33
+- Fedora 34
 - ZSH
 - Antibody
 - NVM (Node Version Manager)
@@ -27,13 +27,13 @@ Personal dotfiles on Fedora Linux with Ansible & Molecule.
 
 Requirements for installation setup on Fedora 30
 
-- Fedora 33 Workstation
+- Fedora 34 Workstation
 - Git
 - Ansible
 
 ### Setup
 
-Install Fedora 33 Workstation
+Install Fedora 34 Workstation
 
 Install ansible & git
 

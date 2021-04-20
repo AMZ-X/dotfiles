@@ -4,7 +4,7 @@
 export rvm_path="$HOME/.rvm"
 
 # RVM Compile With 4 Threads 
-export rvm_make_flags="-j4"
+export rvm_make_flags="-j8"
 
 # RVM Ignore Path Warning
 export rvm_silence_path_mismatch_check_flag=1

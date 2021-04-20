@@ -1,0 +1,14 @@
+---
+##  Docker
+- name: Docker | Install Tools & Libraries
+  become: true
+  tags:
+    - setup
+    - docker
+  dnf:
+    name: '{{ docker_libs }}'
+    state: present
+
+# @todo
+# - Add user to docker group
+# - Additional configuration

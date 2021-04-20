@@ -1,15 +1,11 @@
 # Aliases
 alias zsh_update_plugins='antibody bundle < ~/.zsh/plugins > ~/.zsh/plugins.sh'
 
-# rpm
+# RPM Packaging
 alias specfetch='spectool -g -R'
 alias specbuilddep='sudo dnf builddep -y'
 alias specbuild='rpmbuild -ba'
 
-# docker / podman
-alias docker='podman'
-alias docker-compose='podman-compose'
-
-# gala WM
+# Gala WM
 alias gala_restart='killall gala && DISPLAY=:0 gala --replace &'
 

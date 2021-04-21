@@ -21,7 +21,7 @@
     - repos
     - repos-pantheon
   yum_repository:
-    name: fedora-extensions-pantheon
+    name: fedora-extensions-pantheon-staging
     description: 'Fedora Extensions $releasever - $basearch - Pantheon Staging'
     baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/fedora-$releasever-$basearch/
     gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/pubkey.gpg
@@ -35,7 +35,7 @@
     - repos
     - repos-pantheon
   yum_repository:
-    name: fedora-extensions-pantheon
+    name: fedora-extensions-pantheon-nightly
     description: 'Fedora Extensions $releasever - $basearch - Pantheon Nightly'
     baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/fedora-$releasever-$basearch/
     gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/pubkey.gpg

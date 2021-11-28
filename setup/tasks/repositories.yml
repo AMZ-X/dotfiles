@@ -98,28 +98,13 @@
     gpgcheck: true
     enabled: true
 
-- name: Repositories | Update All
-  become: true
-  tags:
-    - setup
-    - repos
-    - skip_ansible_lint
-  dnf:
-    name: '*'
-    state: latest
-    update_cache: true
-
-# - name: Enable Remi's PHP Repo
+# - name: Repositories | Update All
 #   become: true
 #   tags:
 #     - setup
 #     - repos
-#     - repos-remi
-#     - repos-php
-#   yum_repository:
-#     name: fedora-extensions-php
-#     description: 'Fedora Extensions $releasever - $basearch - PHP'
-#     baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
-#     gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi-$releasever
-#     gpgcheck: true
-#     enabled: true
+#     - skip_ansible_lint
+#   dnf:
+#     name: '*'
+#     state: latest
+#     update_cache: true

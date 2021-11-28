@@ -1,0 +1,67 @@
+---
+## PHP - Repositories (Remi)
+
+- name: Enable Remi's PHP Repo
+  become: true
+  tags:
+    - repos
+    - repos-remi
+    - repos-php
+    - repos-php-base
+    - setup
+    - setup-php
+    - setup-php-80
+  yum_repository:
+    name: fedora-extensions-php
+    description: 'Fedora Extensions $releasever - $basearch - PHP Base'
+    baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
+    mirrorlist: https://cdn.remirepo.net/fedora/$releasever/remi/$basearch/mirror
+    gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi2021
+    gpgcheck: true
+    enabled: true
+
+- name: Enable Remi's PHP 8.0 Repo
+  become: true
+  tags:
+    - repos
+    - repos-remi
+    - repos-php
+    - repos-php-80
+    - setup
+    - setup-php
+    - setup-php-80
+  yum_repository:
+    name: fedora-extensions-php-80
+    description: 'Fedora Extensions $releasever - $basearch - PHP 8.0'
+    baseurl: https://rpms.remirepo.net/fedora/$releasever/php80/$basearch/
+    mirrorlist: https://cdn.remirepo.net/fedora/$releasever/php80/$basearch/mirror
+    gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi2021
+    gpgcheck: true
+    enabled: true
+
+- name: Enable Remi's PHP 8.1 Repo
+  become: true
+  tags:
+    - repos
+    - repos-remi
+    - repos-php
+    - repos-php-81
+    - setup
+    - setup-php
+    - setup-php-81
+  yum_repository:
+    name: fedora-extensions-php-81
+    description: 'Fedora Extensions $releasever - $basearch - PHP 8.1'
+    baseurl: https://rpms.remirepo.net/fedora/$releasever/php81/$basearch/
+    mirrorlist: https://cdn.remirepo.net/fedora/$releasever/php81/$basearch/mirror
+    gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi2021
+    gpgcheck: true
+    enabled: false
+
+# - name: Install PHP 8.1 Packages
+#   become: true
+#   tags:
+#     - setup
+#     - setup-php
+#     - setup-php-8.1
+#   dnf: 

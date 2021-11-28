@@ -15,6 +15,9 @@ source /etc/profile
 # Alias
 source ~/.zsh/alias
 
+# Path
+source ~/.zsh/path
+
 # Theme
 source ~/.zsh/theme
 

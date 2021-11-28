@@ -9,6 +9,16 @@
     name: '{{ docker_libs }}'
     state: present
 
-# @todo
-# - Add user to docker group
-# - Additional configuration
+- name: Ensure docker group exists
+  become: true
+  group:
+    name: docker
+    state: present
+
+- name: Adding {{ user }} to group docker
+  become: true
+  user:
+    name: '{{ user }}'
+    groups:
+      - docker
+    append: true

@@ -56,21 +56,6 @@
     gpgcheck: true
     enabled: true
 
-# - name: Enable Remi's PHP Repo
-#   become: true
-#   tags:
-#     - setup
-#     - repos
-#     - repos-remi
-#     - repos-php
-#   yum_repository:
-#     name: fedora-extensions-php
-#     description: 'Fedora Extensions $releasever - $basearch - PHP'
-#     baseurl: https://rpms.remirepo.net/fedora/$releasever/remi/$basearch/
-#     gpgkey: https://rpms.remirepo.net/RPM-GPG-KEY-remi-$releasever
-#     gpgcheck: true
-#     enabled: true
-
 - name: Enable Microsoft / Visual Studio Code Repo
   become: true
   tags:

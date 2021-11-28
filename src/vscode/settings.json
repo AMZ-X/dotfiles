@@ -1,16 +1,31 @@
 {
-	"diffEditor.ignoreTrimWhitespace": false,
-	"editor.insertSpaces": false,
-	"editor.minimap.enabled": false,
-	"editor.renderWhitespace": "all",	
-	"git.autofetch": true,
-	"typescript.updateImportsOnFileMove.enabled": "always",
-	"window.zoomLevel": 0,
-	"workbench.colorTheme": "Dark (Molokai)",
-	"php.executablePath": "/usr/bin/php",
-	"php.validate.executablePath": "/usr/bin/php",
-	"mesonbuild.configureOnOpen": true,
-	"git.confirmSync": false,
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"ruby.useLanguageServer": true
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",	
+    "git.autofetch": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorTheme": "Dark (Molokai)",
+    "mesonbuild.configureOnOpen": true,
+    "git.confirmSync": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "ruby.useLanguageServer": true,
+    "settingsSync.ignoredExtensions": [],
+    "[dart]": {
+        "editor.formatOnType": true,
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "solargraph.diagnostics": true,
+    "dart.openDevTools": "flutter",
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": false,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false
+    }
 }

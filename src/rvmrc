@@ -3,7 +3,7 @@
 # RVM Path
 export rvm_path="$HOME/.rvm"
 
-# RVM Compile With 4 Threads 
+# RVM Compile With 8 Threads 
 export rvm_make_flags="-j8"
 
 # RVM Ignore Path Warning

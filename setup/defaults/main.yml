@@ -20,6 +20,9 @@ user_zsh_links:
   alias:
     src: src/zsh/alias
     dest: ~/.zsh/alias
+  path:
+    src: src/zsh/path
+    dest: ~/.zsh/path
   plugins:
     src: src/zsh/plugins
     dest: ~/.zsh/plugins
@@ -61,6 +64,8 @@ user_vscode_extensions:
   - 'editorconfig.editorconfig'
   # theme
   - 'nonylene.dark-molokai-theme'
+  # other
+  - 'usernamehw.errorlens'
 
 # Drivers
 drivers:
@@ -135,16 +140,12 @@ apps:
   - google-chrome-stable
   - screenfetch
 
-# Static Apps
-static_apps:
-  - 'https://github.com/Foundry376/Mailspring/releases/download/1.7.8/mailspring-1.7.8-0.1.x86_64.rpm'
-
 # Flatpak Apps
 flatpak_apps:
   - 'com.bitwarden.desktop'
   - 'com.discordapp.Discord'
   - 'com.getpostman.Postman'
-  - 'com.skype.Client'
+  - 'com.getmailspring.Mailspring'
   - 'com.slack.Slack'
   - 'com.spotify.Client'
   - 'us.zoom.Zoom'
@@ -210,6 +211,9 @@ dev_tools_and_libs:
   - python3-devel
   - python3-pip
   - python3-virtualenv
+  # Java 8
+  - java-1.8.0-openjdk
+  - java-1.8.0-openjdk-headless
   # Other Tools
   - awscli
   # Virt Libs
@@ -221,6 +225,16 @@ docker_libs:
   - docker-ce
   - docker-ce-cli
   - containerd.io
+
+# MSSQL 
+mssql_libs:
+  - mssql-server
+  - mssql-tools
+  - openldap-compat
+
+# PHP
+php_libs:
+  - php80
 
 # SELinux Utils
 selinux_utils:

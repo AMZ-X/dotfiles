@@ -1,6 +1,6 @@
 
 ---
-##  Microsoft Production Packages
+##  Microsoft Production Packages (RHEL 8)
 - name: Repositories | Microsoft Production Packages
   become: true
   tags:
@@ -11,12 +11,12 @@
   yum_repository:
     name: fedora-extensions-ms-prod-packages
     description: 'Fedora Extensions $releasever - $basearch - Microsoft Production Packages'
-    baseurl: https://packages.microsoft.com/fedora/34/prod/
+    baseurl: https://packages.microsoft.com/rhel/8/prod/
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
     gpgcheck: true
     enabled: true
 
-##  Microsoft SQL Server (RHEL 7)
+##  Microsoft SQL Server (RHEL 8)
 - name: Repositories | MSSQL Server 2019
   become: true
   tags:
@@ -26,7 +26,7 @@
   yum_repository:
     name: fedora-extensions-mssql-sever-2019
     description: 'Fedora Extensions $releasever - $basearch - Microsoft SQL Server 2019'
-    baseurl: https://packages.microsoft.com/rhel/7/mssql-server-2019/
+    baseurl: https://packages.microsoft.com/rhel/8/mssql-server-2019/
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
     gpgcheck: true
     enabled: true

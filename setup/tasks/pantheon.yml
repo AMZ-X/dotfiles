@@ -4,18 +4,7 @@
     name: '{{ pantheon_desktop }}'
     state: present
 
-#- name: Pantheon | Install LightDM
-#  become: true
-#  dnf:
-#    name: '{{ pantheon_lightdm }}'
-#
-# - name: Configure - Elementary GTK Theme
-#   become: true
-#   tags:
-#     - skip_ansible_lint
-#   command: gsettings set org.gnome.desktop.interface gtk-theme elementary
-# - name: Configure - Elementary Icon Theme
-#   become: true
-#   tags:
-#     - skip_ansible_lint
-#   command: gsettings set org.gnome.desktop.interface icon-theme elementary
+- name: Pantheon | Install LightDM
+  become: true
+  dnf:
+    name: '{{ pantheon_lightdm }}'

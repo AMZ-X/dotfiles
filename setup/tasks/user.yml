@@ -1,21 +1,72 @@
 ---
 # User & ZSH Setup
-- name: User | install zsh, antibody & utilities
-  become: true
-  dnf:
-    name: '{{ user_packages }}'
-    state: present
+# - name: User | install zsh, antibody & utilities
+#   become: true
+#   dnf:
+#     name: '{{ user_packages }}'
+#     state: present
 
-- name: User | setup user account
-  become: true
-  user:
-    name: '{{ user }}'
-    comment: '{{ username }}'
-    shell: /bin/zsh
-    groups:
-      - wheel
+# - name: User | setup user account
+#   become: true
+#   user:
+#     name: '{{ user }}'
+#     comment: '{{ username }}'
+#     shell: /bin/zsh
+#     groups:
+#       - wheel
 
-- name: User | setup vscode user configuration directory
+# - name: User | setup vscode user configuration directory
+#   tags:
+#     - setup
+#     - zsh
+#     - code
+#   become: true
+#   become_user: '{{ user }}'
+#   file:
+#     path: ~/.config/Code/User
+#     state: directory
+#     mode: 0755
+
+# - name: User | cleanup zsh main configuration
+#   tags:
+#     - setup
+#     - zsh
+#   become: true
+#   become_user: '{{ user }}'
+#   file:
+#     path: ~/.zshrc
+#     state: absent
+
+# - name: User | create .zsh directory
+#   tags:
+#     - setup
+#     - zsh
+#   become: true
+#   become_user: '{{ user }}'
+#   file:
+#     path: '/home/{{ user }}/.zsh'
+#     owner: '{{ user }}'
+#     group: '{{ user }}'
+#     state: directory
+#     mode: 0755
+
+# - name: User | setup dotfiles
+#   tags:
+#     - setup
+#     - zsh
+#   become: true
+#   become_user: '{{ user }}'
+#   file:
+#     src: '{{ dotfiles_dir }}/{{ item.value.src }}'
+#     dest: '{{ item.value.dest }}'
+#     owner: '{{ user }}'
+#     group: '{{ user }}'
+#     state: link
+#     force: true
+#   with_dict: '{{ user_zsh_links }}'
+#   notify: INSTALL_VSCODE_EXTENSIONS
+
+- name: User | GTK 3 configuration directory
   tags:
     - setup
     - zsh
@@ -23,34 +74,23 @@
   become: true
   become_user: '{{ user }}'
   file:
-    path: ~/.config/Code/User
+    path: ~/.config/gkt-3.0
     state: directory
     mode: 0755
 
-- name: User | cleanup zsh main configuration
+- name: User | GTK 4 configuration directory
   tags:
     - setup
     - zsh
+    - code
   become: true
   become_user: '{{ user }}'
   file:
-    path: ~/.zshrc
-    state: absent
-
-- name: User | create .zsh directory
-  tags:
-    - setup
-    - zsh
-  become: true
-  become_user: '{{ user }}'
-  file:
-    path: '/home/{{ user }}/.zsh'
-    owner: '{{ user }}'
-    group: '{{ user }}'
+    path: ~/.config/gkt-4.0
     state: directory
     mode: 0755
 
-- name: User | setup dotfiles
+- name: User | setup GTK 3 & 4 settings
   tags:
     - setup
     - zsh
@@ -63,5 +103,4 @@
     group: '{{ user }}'
     state: link
     force: true
-  with_dict: '{{ user_zsh_links }}'
-  notify: INSTALL_VSCODE_EXTENSIONS
+  with_dict: '{{ user_gtk_configs }}'

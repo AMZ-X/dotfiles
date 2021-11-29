@@ -1,13 +1,13 @@
 ---
 #- include: repositories.yml
 #- include: packages.yml
-#- include: user.yml
+- include: user.yml
 #- include: pantheon.yml
 #- include: development.yml
 #- include: rvm.yml
 #- include: docker.yml
 #- include: dotnet.yml
-#- include: mssql-server.yml
+- include: mssql-server.yml
 #- include: php.yml
 #- include: flatpak.yml
 #- include: cleanup.yml

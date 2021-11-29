@@ -39,6 +39,15 @@ user_zsh_links:
     src: src/rpmmacros
     dest: ~/.rpmmacros
 
+# User GTK configs
+user_gtk_configs:
+  gtk3:
+    src: src/config/gtk-3.0/settings.ini
+    dest: ~/.config/gtk-3.0/settings.ini
+  gtk4:
+    src: src/config/gtk-4.0/settings.ini
+    dest: ~/.config/gtk-4.0/settings.ini
+
 # RVM
 rvm_installer_url: 'https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer'
 rvm_installer_path: '/home/{{ user }}/Downloads/rvm-installer.sh' 
@@ -130,6 +139,8 @@ libs:
   - usbmuxd
   # printer support
   - lsb
+  # other
+  - jq
 
 # Apps
 apps:
@@ -157,7 +168,6 @@ pantheon_desktop:
   - pantheon-session-settings-overrides
   - elementary-calculator
   - elementary-calendar
-  - elementary-dpms-helper
   - elementary-files
   - elementary-greeter
   - elementary-icon-theme
@@ -202,8 +212,8 @@ dev_tools_and_libs:
   - meson
   - vala
   - vala-devel
-  - vala-language-server
-  - vala-lint
+  # - vala-language-server
+  # - vala-lint
   - granite-devel
   - switchboard-devel
   # Python
@@ -212,8 +222,8 @@ dev_tools_and_libs:
   - python3-pip
   - python3-virtualenv
   # Java 8
-  - java-1.8.0-openjdk
-  - java-1.8.0-openjdk-headless
+  #- java-1.8.0-openjdk
+  #- java-1.8.0-openjdk-headless
   # Other Tools
   - awscli
   # Virt Libs

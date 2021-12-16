@@ -2,13 +2,12 @@
 # Default Configuration
 dependency:
   name: galaxy
-driver:
-  name: podman
-lint:
-  name: yamllint
+  enabled: false
+# lint:
+#   name: yamllint
 platforms:
-  - name: instance
-    image: fedora:32
+  - name: instance-docker
+    image: fedora:35
 provisioner:
   name: ansible
   lint:

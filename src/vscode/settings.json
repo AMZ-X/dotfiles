@@ -2,7 +2,7 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.insertSpaces": true,
     "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "all",	
+    "editor.renderWhitespace": "all",
     "git.autofetch": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "workbench.colorTheme": "Dark (Molokai)",

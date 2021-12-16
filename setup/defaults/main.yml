@@ -5,42 +5,30 @@ username: "AMZ-X"
 
 # User Packages
 user_packages:
-  - zsh
-  - antibody
+  - fish
+  - fisher
   - util-linux-user
 
-# User ZSH Links
-user_zsh_links:
-  zshrc:
-    src: src/zshrc
-    dest: ~/.zshrc
+# User Links
+user_links:
+  fish_config:
+    src: src/fish/config.fish
+    dest: ~/.config/fish/config.fish
+  fish_plugins:
+    src: src/fish/fish_plugins
+    dest: ~/.config/fish/fish_plugins
+  fish_rvm_function:
+    src: src/fish/functions/rvm.fish
+    dest: ~/.config/fish/functions/rvm.fish
   rvmrc:
     src: src/rvmrc
-    dest: ~/.rvmrc
-  alias:
-    src: src/zsh/alias
-    dest: ~/.zsh/alias
-  path:
-    src: src/zsh/path
-    dest: ~/.zsh/path
-  plugins:
-    src: src/zsh/plugins
-    dest: ~/.zsh/plugins
-  theme:
-    src: src/zsh/theme
-    dest: ~/.zsh/theme
-  oh-my-zsh:
-    src: src/zsh/oh-my-zsh
-    dest: ~/.zsh/oh-my-zsh
+    dest: ~/.rvmrc 
   vscode:
     src: src/vscode/settings.json
     dest: ~/.config/Code/User/settings.json
   rpmmacros:
     src: src/rpmmacros
     dest: ~/.rpmmacros
-
-# User GTK configs
-user_gtk_configs:
   gtk3:
     src: src/config/gtk-3.0/settings.ini
     dest: ~/.config/gtk-3.0/settings.ini
@@ -54,15 +42,21 @@ rvm_installer_path: '/home/{{ user }}/Downloads/rvm-installer.sh'
 
 # User VS Code Extensions
 user_vscode_extensions:
+  # c#
+  - 'ms-dotnettools.csharp'
   # ruby
   - 'rebornix.ruby'
   - 'castwide.solargraph'
+  # nvm
+  - 'henrynguyen5-vsc.vsc-nvm'
   # typescript
   - 'ms-vscode.vscode-typescript-tslint-plugin'
   # vala
   - 'prince781.vala'
   # meson
   - 'asabil.meson'
+  # fish syntax
+  - 'skyapps.fish-vscode'
   # yaml
   - 'redhat.vscode-yaml'
   # rpm spec
@@ -168,6 +162,7 @@ pantheon_desktop:
   - pantheon-session-settings-overrides
   - elementary-calculator
   - elementary-calendar
+  - elementary-camera
   - elementary-files
   - elementary-greeter
   - elementary-icon-theme
@@ -178,6 +173,7 @@ pantheon_desktop:
   - elementary-shortcut-overlay
   - elementary-sound-theme
   - elementary-terminal
+  - elementary-terminal-fish
   - elementary-theme
   - elementary-theme-gtk3
   - elementary-theme-plank
@@ -193,6 +189,7 @@ pantheon_desktop:
   - switchboard-plug-useraccounts
   - harvey
   - optimizer
+  - touchegg
 
 # Pantheon LightDM
 pantheon_lightdm:
@@ -224,11 +221,12 @@ dev_tools_and_libs:
   # Java 8
   #- java-1.8.0-openjdk
   #- java-1.8.0-openjdk-headless
-  # Other Tools
+  # AWS CLI
   - awscli
   # Virt Libs
   - qemu
   - qemu-img
+  - swtpm
 
 # Docker
 docker_libs:

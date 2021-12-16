@@ -8,32 +8,31 @@ Personal dotfiles on Fedora Linux with Ansible & Molecule.
 
 ## Features
 
-- Fedora 34
-- ZSH
-- Antibody
+- Fedora 35
+- Fish & Fisher
 - NVM (Node Version Manager)
 - Pantheon Desktop
 - Visual Studio Code
 
 ## Additional Development Features
 
-- Podman
-- QEMU
+- Docker & KVM / QEMU virtualization
+- .NET Core 6
 - Vala
 
 ## Installation
 
 ### Setup Requirements
 
-Requirements for installation setup on Fedora 30
+Requirements for installation setup on Fedora 35
 
-- Fedora 34 Workstation
+- Fedora 35 Workstation
 - Git
 - Ansible
 
 ### Setup
 
-Install Fedora 34 Workstation
+Install Fedora 35 Workstation
 
 Install ansible & git
 

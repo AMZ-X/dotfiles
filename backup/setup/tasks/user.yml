@@ -1,0 +1,71 @@
+---
+# User & Fish Setup
+- name: User | install fish, fisher & utilities
+  tags:
+    - setup
+    - fish
+  become: true
+  dnf:
+    name: '{{ user_packages }}'
+    state: present
+
+- name: User | setup user account
+  tags:
+    - setup
+    - fish
+  become: true
+  user:
+    name: '{{ user }}'
+    comment: '{{ username }}'
+    shell: /bin/fish
+    groups:
+      - wheel
+
+- name: User | fish main configuration directory
+  tags:
+    - setup
+    - fish
+  become: true
+  become_user: '{{ user }}'
+  file:
+      path: ~/.config/fish
+      state: directory
+      mode: 0755
+    
+- name: User | fish main configuration directories
+  tags:
+    - setup
+    - fish
+    - vscode
+    - gtk
+  become: true
+  become_user: '{{ user }}'
+  file:
+    path: '{{ item }}'
+    state: directory
+    mode: 0755
+  loop:
+    - ~/.config/fish
+    - ~/.config/fish/functions
+    - ~/.config/Code/User
+    - ~/.config/gkt-3.0
+    - ~/.config/gkt-4.0
+
+
+- name: User | setup dotfiles
+  tags:
+    - setup
+    - fish
+    - vscode
+    - gtk
+  become: true
+  become_user: '{{ user }}'
+  file:
+    src: '{{ dotfiles_dir }}/{{ item.value.src }}'
+    dest: '{{ item.value.dest }}'
+    owner: '{{ user }}'
+    group: '{{ user }}'
+    state: link
+    force: true
+  with_dict: '{{ user_links }}'
+  notify: INSTALL_VSCODE_EXTENSIONS

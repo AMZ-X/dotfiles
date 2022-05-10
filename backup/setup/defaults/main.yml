@@ -94,6 +94,7 @@ drivers:
   - libva-vdpau-driver
   - vdpauinfo
   - mesa-vulkan-drivers
+  - mesa-vulkan-devel
   - vulkan-headers
   - vulkan-loader
   - vulkan-loader-devel
@@ -108,12 +109,10 @@ libs:
   - nano
   # codecs
   - gstreamer1
-  - gstreamer1-plugins-bad-free
-  - gstreamer1-plugins-bad-freeworld
+  - gstreamer1-plugins-bad
   - gstreamer1-plugins-base
   - gstreamer1-plugins-good
   - gstreamer1-plugins-ugly
-  - gstreamer1-plugins-ugly-free
   - gstreamer1-plugins-fc
   - gstreamer1-vaapi
   - gstreamer1-libav
@@ -192,6 +191,8 @@ pantheon_desktop:
   - switchboard-plug-security-privacy
   - switchboard-plug-useraccounts
   - harvey
+  - optimizer
+  - touchegg
 
 # Pantheon LightDM
 pantheon_lightdm:

@@ -11,8 +11,6 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    - name: Setup Podman
-      run: sudo apt install podman -y
     - name: Setup Virtual Environment
       run: sudo apt install python-virtualenv -y
     - name: Install Dependencies
@@ -25,4 +23,4 @@ jobs:
       run: |
         source .virtenv/bin/activate
         cd ${{ github.workspace }}/setup
-        molecule test --destroy=never
+        molecule test

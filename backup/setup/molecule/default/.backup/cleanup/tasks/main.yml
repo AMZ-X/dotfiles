@@ -6,7 +6,6 @@
     - cleanup
   dnf:
     name:
-
     state: absent
 
 - name: Cleanup - GNOME
@@ -24,5 +23,4 @@
     - cleanup
   dnf:
     name:
-      
     state: absent

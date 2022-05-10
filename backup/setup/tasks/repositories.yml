@@ -1,6 +1,6 @@
 ---
 ## Repositories
-- name: Enable AMZ / Extras Repo
+- name: Repositories | AMZ / Extras
   become: true
   tags:
     - setup
@@ -14,35 +14,35 @@
     gpgcheck: false
     enabled: true
 
-- name: Enable Decathorpe / Pantheon Staging Repo
+- name: Repositories | Decathorpe / Pantheon Staging
   become: true
   tags:
     - setup
     - repos
     - repos-pantheon
   yum_repository:
-    name: fedora-extensions-pantheon
-    description: 'Fedora Extensions $releasever - $basearch - Pantheon'
+    name: fedora-extensions-pantheon-staging
+    description: 'Fedora Extensions $releasever - $basearch - Pantheon Staging'
     baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/fedora-$releasever-$basearch/
     gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-staging/pubkey.gpg
     gpgcheck: true
     enabled: true
 
-- name: Enable Decathorpe / Appcenter Repo
+- name: Repositories | Decathorpe / Pantheon Nightly
   become: true
   tags:
     - setup
     - repos
-    - repos-appcenter
+    - repos-pantheon
   yum_repository:
-    name: fedora-extensions-appcenter
-    description: 'Fedora Extensions $releasever - $basearch - Appcenter'
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-appcenter/fedora-$releasever-$basearch/
-    gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-appcenter/pubkey.gpg
+    name: fedora-extensions-pantheon-nightly
+    description: 'Fedora Extensions $releasever - $basearch - Pantheon Nightly'
+    baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/fedora-$releasever-$basearch/
+    gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/pubkey.gpg
     gpgcheck: true
-    enabled: true
+    enabled: false
 
-- name: Enable Negativo17 / Multimedia Repo
+- name: Repositories | Negativo17 / Multimedia
   become: true
   tags:
     - setup
@@ -56,7 +56,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Enable Microsoft / Visual Studio Code Repo
+- name: Repositories | Microsoft / Visual Studio Code
   become: true
   tags:
     - setup
@@ -70,21 +70,7 @@
     gpgcheck: true
     enabled: true
 
-- name: Enable Microsoft / .NET Core Repo
-  become: true
-  tags:
-    - setup
-    - repos
-    - repos-dotnetcore
-  yum_repository:
-    name: fedora-extensions-dotnet
-    description: 'Fedora Extensions $releasever - $basearch - .NET Core'
-    baseurl: https://packages.microsoft.com/fedora/31/prod/
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-    gpgcheck: true
-    enabled: true
-
-- name: Enable Google Chrome Repo
+- name: Repositories | Google Chrome
   become: true
   tags:
     - setup
@@ -98,12 +84,27 @@
     gpgcheck: true
     enabled: true
 
-## Update / Refresh All
-- name: Update All
+- name: Repositories | Docker
   become: true
   tags:
     - setup
-    - skip_ansible_lint # @todo
+    - repos
+    - repos-docker
+  yum_repository:
+    name: fedora-extensions-docker
+    description: 'Fedora Extensions $releasever - $basearch - Docker'
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    gpgkey: https://download.docker.com/linux/fedora/gpg
+    gpgcheck: true
+    enabled: true
+
+- name: Repositories | Update All
+  become: true
+  tags:
+    - setup
+    - repos
+    - skip_ansible_lint
   dnf:
-    name: "*"
+    name: '*'
     state: latest
+    update_cache: true

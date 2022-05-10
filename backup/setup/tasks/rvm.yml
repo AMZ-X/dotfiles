@@ -1,0 +1,27 @@
+---
+# RVM
+- name: RVM | Import GPG Keys From Key Servers
+  command: 'gpg --batch --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB'
+  become: true
+  become_user: '{{ user }}'
+  ignore_errors: true
+  tags:
+    - skip_ansible_lint
+
+- name: RVM | Download Installer
+  become: true
+  become_user: '{{ user }}'
+  get_url:
+    url: '{{ rvm_installer_url }}'
+    dest: '{{ rvm_installer_path }}'
+    mode: 0755
+  tags:
+    - skip_ansible_lint
+
+- name: RVM | Install RVM & Ruby
+  command: '{{ rvm_installer_path }} stable --ignore-dotfiles'
+  become: true
+  become_user: '{{ user }}'
+  ignore_errors: true
+  tags:
+    - skip_ansible_lint

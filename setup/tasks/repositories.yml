@@ -28,33 +28,103 @@
     gpgcheck: true
     enabled: true
 
-- name: Repositories | Decathorpe / Pantheon Nightly
-  become: true
-  tags:
-    - setup
-    - repos
-    - repos-pantheon
-  yum_repository:
-    name: fedora-extensions-pantheon-nightly
-    description: 'Fedora Extensions $releasever - $basearch - Pantheon Nightly'
-    baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/fedora-$releasever-$basearch/
-    gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/pubkey.gpg
-    gpgcheck: true
-    enabled: false
+# - name: Repositories | Decathorpe / Pantheon Nightly
+#   become: true
+#   tags:
+#     - setup
+#     - repos
+#     - repos-pantheon
+#   yum_repository:
+#     name: fedora-extensions-pantheon-nightly
+#     description: 'Fedora Extensions $releasever - $basearch - Pantheon Nightly'
+#     baseurl: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/fedora-$releasever-$basearch/
+#     gpgkey: https://copr-be.cloud.fedoraproject.org/results/decathorpe/elementary-nightly/pubkey.gpg
+#     gpgcheck: true
+#     enabled: false
 
-- name: Repositories | Negativo17 / Multimedia
+- name: Repositories | RPM Fusion Free
   become: true
   tags:
     - setup
     - repos
-    - repos-multimedia
+    - repos-rpmfusion
   yum_repository:
-    name: fedora-extensions-multimedia
-    description: 'Fedora Extensions $releasever - $basearch - Multimedia'
-    baseurl: https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
-    gpgkey: https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+    name: fedora-extensions-rpmfusion-free
+    description: 'Fedora Extensions $releasever - $basearch - RPM Fusion Free'
+    metalink: https://mirrors.rpmfusion.org/metalink?repo=free-fedora-$releasever&arch=$basearch
+    gpgkey: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020
     gpgcheck: true
     enabled: true
+
+- name: Repositories | RPM Fusion Free Updates
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-rpmfusion
+  yum_repository:
+    name: fedora-extensions-rpmfusion-free-updates
+    description: 'Fedora Extensions $releasever - $basearch - RPM Fusion Free - Updates'
+    metalink: https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-$releasever&arch=$basearch
+    gpgkey: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020
+    gpgcheck: true
+    enabled: true
+
+- name: Repositories | RPM Fusion Non-Free
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-rpmfusion
+  yum_repository:
+    name: fedora-extensions-rpmfusion-nonfree
+    description: 'Fedora Extensions $releasever - $basearch - RPM Fusion Non-Free'
+    metalink: https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-$releasever&arch=$basearch
+    gpgkey: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
+    gpgcheck: true
+    enabled: true
+
+- name: Repositories | RPM Fusion Non-Free Updates
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-rpmfusion
+  yum_repository:
+    name: fedora-extensions-rpmfusion-nonfree-updates
+    description: 'Fedora Extensions $releasever - $basearch - RPM Fusion Non-Free - Updates'
+    metalink: https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-updates-released-$releasever&arch=$basearch
+    gpgkey: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
+    gpgcheck: true
+    enabled: true
+
+- name: Repositories | RPM Fusion Steam
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-rpmfusion
+  yum_repository:
+    name: fedora-extensions-rpmfusion-nonfree-steam
+    description: 'Fedora Extensions $releasever - $basearch - RPM Fusion - Steam'
+    metalink: https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-steam-$releasever&arch=$basearch
+    gpgkey: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
+    gpgcheck: true
+    enabled: true
+
+# - name: Repositories | Negativo17 / Multimedia
+#   become: true
+#   tags:
+#     - setup
+#     - repos
+#     - repos-multimedia
+#   yum_repository:
+#     name: fedora-extensions-multimedia
+#     description: 'Fedora Extensions $releasever - $basearch - Multimedia'
+#     baseurl: https://negativo17.org/repos/multimedia/fedora-$releasever/$basearch/
+#     gpgkey: https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+#     gpgcheck: true
+#     enabled: true
 
 - name: Repositories | Microsoft / Visual Studio Code
   become: true
@@ -93,7 +163,9 @@
   yum_repository:
     name: fedora-extensions-docker
     description: 'Fedora Extensions $releasever - $basearch - Docker'
-    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    # @TODO - Wait for upstream to add new fedora 36 repo
+    # baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    baseurl: https://download.docker.com/linux/fedora/35/x86_64/stable
     gpgkey: https://download.docker.com/linux/fedora/gpg
     gpgcheck: true
     enabled: true

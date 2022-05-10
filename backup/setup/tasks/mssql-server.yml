@@ -1,0 +1,45 @@
+
+---
+##  Microsoft Production Packages (RHEL 8)
+- name: Repositories | Microsoft Production Packages
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-mssql-2019
+    - repos-ms-prod-packages
+  yum_repository:
+    name: fedora-extensions-ms-prod-packages
+    description: 'Fedora Extensions $releasever - $basearch - Microsoft Production Packages'
+    baseurl: https://packages.microsoft.com/rhel/8/prod/
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: true
+    enabled: true
+
+##  Microsoft SQL Server (RHEL 8)
+- name: Repositories | MSSQL Server 2019
+  become: true
+  tags:
+    - setup
+    - repos
+    - repos-mssql-2019
+  yum_repository:
+    name: fedora-extensions-mssql-sever-2019
+    description: 'Fedora Extensions $releasever - $basearch - Microsoft SQL Server 2019'
+    baseurl: https://packages.microsoft.com/rhel/8/mssql-server-2019/
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: true
+    enabled: true
+  notify: UPDATE
+
+- name: Packages | install MSSQL Server 2019
+  become: true
+  dnf:
+    name: '{{ mssql_libs }}'
+    state: present
+
+###########################################
+# NOTES:                                  #
+# MS SQL Server Setup:                    #
+# $ sudo /opt/mssql/bin/mssql-conf setup  #
+###########################################

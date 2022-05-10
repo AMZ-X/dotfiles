@@ -1,0 +1,29 @@
+---
+## Packages
+- name: Packages | install drivers
+  become: true
+  tags:
+    - setup
+    - development
+    - amd
+  dnf:
+    name: '{{ drivers }}'
+    state: present
+
+- name: Packages | install libaries
+  become: true
+  dnf:
+     name: '{{ libs }}'
+     state: present
+
+- name: Packages | install apps
+  become: true
+  dnf:
+    name: '{{ apps }}'
+    state: present
+
+# - name: Packages | install static apps
+#   become: true
+#   dnf:
+#     name: '{{ static_apps }}'
+#     state: present

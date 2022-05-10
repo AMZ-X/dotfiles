@@ -1,0 +1,37 @@
+---
+# Development Tools & Libraries
+- name: Development | install tools & libraries
+  become: true
+  tags:
+    - setup
+    - development
+  dnf:
+    name: '{{ dev_tools_and_libs }}'
+    state: present
+
+- name: Development | install selinux utils
+  become: true
+  dnf:
+    name: '{{ selinux_utils }}'
+    state: present
+
+- name: Development | disable selinux
+  become: true
+  selinux:
+    state: disabled
+
+- name: Development | set inotify max user watches
+  become: true
+  sysctl:
+    name: fs.inotify.max_user_watches
+    value: "524288"
+    state: present
+    reload: false
+
+- name: Development | set inotify max user instances
+  become: true
+  sysctl:
+    name: fs.inotify.max_user_instances
+    value: "524288"
+    state: present
+    reload: false

@@ -1,0 +1,35 @@
+---
+# Default Configuration
+dependency:
+  name: galaxy
+  enabled: false
+driver:
+  name: delegated
+  options:
+    managed: False
+    login_cmd_template: 'docker exec -ti {instance} bash'
+    ansible_connection_options:
+      ansible_connection: docker
+
+platforms:
+  - name: instance-docker
+    image: docker.io/fedora:36
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
+# lint:
+#   name: yamllint
+scenario:
+  name: default
+  test_sequence:
+    - lint
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - converge
+    - side_effect
+    - verify
+    - destroy

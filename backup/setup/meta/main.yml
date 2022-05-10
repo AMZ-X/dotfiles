@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: Christopher Crouse <mail@amz-x.com>
+  description: AMZ-X Dotfiles
+  license: MIT
+  min_ansible_version: "2.9"
+  platforms:
+    - name: Fedora
+      image: "feodra:35"
+  galaxy_tags: []
+dependencies: []

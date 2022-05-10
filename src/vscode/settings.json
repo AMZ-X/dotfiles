@@ -11,7 +11,8 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "ruby.useLanguageServer": true,
     "settingsSync.ignoredExtensions": [],
-    "[dart]": {
+    "dart": {
+        "openDevTools": true,
         "editor.formatOnType": true,
         "editor.selectionHighlight": false,
         "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -20,12 +21,15 @@
         "editor.wordBasedSuggestions": false
     },
     "solargraph.diagnostics": true,
-    "dart.openDevTools": "flutter",
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
-        "*": false,
-        "yaml": false,
-        "plaintext": false,
-        "markdown": false
+        "*": true,
+        "yaml": true,
+        "plaintext": true,
+        "markdown": false,
+        "tsx": true
+    },
+    "files.associations": {
+        "*.spec": "rpm-spec"
     }
 }

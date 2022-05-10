@@ -1,0 +1,24 @@
+---
+##  Docker
+- name: Docker | Install Tools & Libraries
+  become: true
+  tags:
+    - setup
+    - docker
+  dnf:
+    name: '{{ docker_libs }}'
+    state: present
+
+- name: Ensure docker group exists
+  become: true
+  group:
+    name: docker
+    state: present
+
+- name: Adding {{ user }} to group docker
+  become: true
+  user:
+    name: '{{ user }}'
+    groups:
+      - docker
+    append: true

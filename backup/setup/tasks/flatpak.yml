@@ -1,0 +1,22 @@
+---
+- name: Flatpak | Install Flatpak
+  become: true
+  dnf:
+    name: flatpak
+    state: present
+
+- name: Flatpak | Flathub Remote Repo
+  become: true
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: system
+
+# - name: Flatpak | Install Apps
+#   become: true
+#   flatpak:
+#     name: '{{ item }}'
+#     remote: flathub
+#     state: present
+#   with_items: '{{ flatpak_apps }}'

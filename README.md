@@ -69,10 +69,16 @@ Prerequisites
 - python3-pip
 - python3-virtualenv
 
-Setup
+Setup (with via Bash shell)
 
 ```bash
 virtualenv .virtenv && source .virtenv/bin/activate && pip3 install -r requirements.txt
+```
+
+Setup (with via Fish shell)
+
+```bash
+virtualenv .virtenv && source .virtenv/bin/activate.fish && pip3 install -r requirements.txt
 ```
 
 ### Testing

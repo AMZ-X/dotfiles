@@ -1,16 +1,25 @@
 {
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.insertSpaces": true,
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "all",
+    "workbench.colorTheme":"Dark (Molokai)",
+    "editor": {
+        "fontFamily": "'Roboto Mono', 'monospace', monospace",
+        "fontSize": 15,
+        "fontLigatures": false,
+        "insertSpaces": true,
+        "inlineSuggest.enabled": true,
+        "minimap.enabled": false,
+        "renderWhitespace": "all"
+    },
+    "diffEditor": {
+        "ignoreTrimWhitespace": false
+    },
+    "files.associations": {
+        "*.cs": "csharp",
+        "*.dart": "dart",
+        "*.spec": "rpm-spec"
+    },
+    "git.mergeEditor": false,
     "git.autofetch": true,
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "workbench.colorTheme": "Dark (Molokai)",
-    "mesonbuild.configureOnOpen": true,
-    "git.confirmSync": false,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "ruby.useLanguageServer": true,
-    "settingsSync.ignoredExtensions": [],
+    "git.confirmSync": true,
     "dart": {
         "openDevTools": true,
         "editor.formatOnType": true,
@@ -20,16 +29,74 @@
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": false
     },
-    "solargraph.diagnostics": true,
-    "editor.inlineSuggest.enabled": true,
-    "github.copilot.enable": {
-        "*": true,
-        "yaml": true,
-        "plaintext": true,
-        "markdown": false,
-        "tsx": true
+    "javascript": {
+        "updateImportsOnFileMove.enabled": true
     },
-    "files.associations": {
-        "*.spec": "rpm-spec"
-    }
+    "typescript": {
+        "updateImportsOnFileMove.enabled": true
+    },
+    "mesonbuild": {
+        "configureOnOpen": true
+    },
+    "omnisharp": {
+        "analyzeOpenDocumentsOnly": true,
+        "enableImportCompletion": true
+    },
+    "ruby": {
+        "useBundler": true,
+        "useLanguageServer": true,
+        "locate": {
+            "exclude": "{**/@(test|spec|tmp|.*),**/@(test|spec|tmp|.*)/**,**/*_spec.rb}",
+            "include": "**/*.rb"
+        }
+    },
+    "solargraph": {
+        "diagnostics": true,
+        "externalServer": {
+            "host": "localhost",
+            "port": 7658
+        }
+    },
+    "rust-analyzer": {
+        "server.path": "/usr/bin/rls"
+    },
+    "settingsSync.ignoredExtensions": [],
+    "editor.inlineSuggest.enabled": true,
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "aws.profile": "profile:personal",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "rust-analyzer.server.path": "/usr/bin/rls",
+    "rust-analyzer.checkOnSave.enable": false,
+    "rust-analyzer.completion.privateEditable.enable": true,
+    
 }

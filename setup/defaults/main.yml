@@ -5,24 +5,23 @@ username: "AMZ-X"
 
 # User Packages
 user_packages:
-  - fish
-  - fisher
+  - zsh
   - util-linux-user
 
 # User Links
 user_links:
-  fish_config:
-    src: src/fish/config.fish
-    dest: ~/.config/fish/config.fish
-  fish_plugins:
-    src: src/fish/fish_plugins
-    dest: ~/.config/fish/fish_plugins
-  fish_rvm_function:
-    src: src/fish/functions/rvm.fish
-    dest: ~/.config/fish/functions/rvm.fish
-  rvmrc:
-    src: src/rvmrc
-    dest: ~/.rvmrc 
+  zshrc:
+    src: src/zsh/zshrc
+    dest: ~/.zshrc
+  zsh_alias:
+    src: src/zsh/alias
+    dest: ~/.zsh/alias
+  zsh_paths:
+    src: src/zsh/paths
+    dest: ~/.zsh/paths
+  zsh_plugins:
+    src: src/zsh/plugins
+    dest: ~/.zsh/plugins
   vscode:
     src: src/vscode/settings.json
     dest: ~/.config/Code/User/settings.json
@@ -32,38 +31,17 @@ user_links:
   fedora_upn:
     src: src/fedora.upn
     dest: ~/.fedora.upn
-  gtk3:
-    src: src/config/gtk-3.0/settings.ini
-    dest: ~/.config/gtk-3.0/settings.ini
-  gtk4:
-    src: src/config/gtk-4.0/settings.ini
-    dest: ~/.config/gtk-4.0/settings.ini
-
-# RVM
-rvm_installer_url: 'https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer'
-rvm_installer_path: '/home/{{ user }}/Downloads/rvm-installer.sh' 
 
 # User VS Code Extensions
 user_vscode_extensions:
   # c#
   - 'ms-dotnettools.csharp'
-  # ruby
-  - 'rebornix.ruby'
-  - 'castwide.solargraph'
-  # nvm
-  - 'henrynguyen5-vsc.vsc-nvm'
-  # typescript
-  - 'ms-vscode.vscode-typescript-tslint-plugin'
   # vala
   - 'prince781.vala'
   # meson
   - 'asabil.meson'
-  # fish syntax
-  - 'skyapps.fish-vscode'
   # yaml
   - 'redhat.vscode-yaml'
-  # rpm spec
-  - 'laurenttreguier.rpm-spec'
   # markdown
   - 'davidanson.vscode-markdownlint'
   # editorconfig
@@ -106,6 +84,7 @@ libs:
   # basic
   - git
   - nano
+  - wget
   # codecs
   - gstreamer1
   - gstreamer1-plugins-bad-free
@@ -121,6 +100,8 @@ libs:
   - mpg123
   - x264
   - x265
+  # pipewire codecs
+  - pipewire-codec-aptx
   # fonts
   - google-roboto-fonts
   # compression libs
@@ -143,16 +124,12 @@ libs:
 # Apps
 apps:
   - code
-  - dconf-editor
-  - fragments
-  - gimp
+  - discord
   - google-chrome-stable
-  - screenfetch
 
 # Flatpak Apps
 flatpak_apps:
   - 'com.bitwarden.desktop'
-  - 'com.discordapp.Discord'
   - 'com.getpostman.Postman'
   - 'com.getmailspring.Mailspring'
   - 'com.slack.Slack'
@@ -201,9 +178,17 @@ pantheon_lightdm:
 
 # Developer Tools & Libraries
 dev_tools_and_libs:
+  # AWS CLI
+  - awscli
   # Developer Tools and Libraries
   - '@Development Tools'
   - '@C Development Tools and Libraries'
+  # .NET Core 6
+  - dotnet
+  - dotnet-host
+  - dotnet-runtime-6.0
+  - dotnet-sdk-6.0
+  - dotnet-targeting-pack-6.0
   # RPM Packaging
   - fedora-packager
   - rpmdevtools
@@ -211,24 +196,20 @@ dev_tools_and_libs:
   - meson
   - vala
   - vala-devel
-  # - vala-language-server
-  # - vala-lint
-  - granite-devel
-  - switchboard-devel
   # Python
   - python3
   - python3-devel
   - python3-pip
   - python3-virtualenv
   # Java 8
-  #- java-1.8.0-openjdk
-  #- java-1.8.0-openjdk-headless
-  # AWS CLI
-  - awscli
+  - java-1.8.0-openjdk
+  - java-1.8.0-openjdk-headless
   # Virt Libs
   - qemu
   - qemu-img
   - swtpm
+  # Other
+  - direnv
 
 # Docker
 docker_libs:

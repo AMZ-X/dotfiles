@@ -1,8 +1,29 @@
-# Plugins
-mafredri/zsh-async
-robbyrussell/oh-my-zsh
-lukechilds/zsh-nvm
-johnhamelink/rvm-zsh
+#!/usr/bin/env zsh
 
-# Theme
-denysdovhan/spaceship-prompt
+### ZPM - ZSH Plugin Manager
+if [[ ! -f ~/.zsh/zpm/zpm.zsh ]]; then
+  git clone --recursive -b v5.1 https://github.com/zpm-zsh/zpm ~/.zsh/zpm
+fi
+source ~/.zsh/zpm/zpm.zsh
+
+### ZPM - VTE
+zpm if vte load zpm-zsh/vte
+
+### ZPM - Core Plugins
+zpm load                      \
+  zpm-zsh/core-config         \
+  zpm-zsh/ignored-users,async \
+  zpm-zsh/check-deps,async    \
+  zpm-zsh/minimal-theme       \
+  zpm-zsh/ls,async            \
+  zpm-zsh/colorize,async      \
+  zpm-zsh/ssh,async           \
+  zpm-zsh/dot,async           \
+  zpm-zsh/undollar,async
+
+
+### ZPM - Localhost Plugins
+zpm if-not ssh load                         \
+  zpm-zsh/autoenv,async                     \
+  zpm-zsh/fast-syntax-highlighting,async    \
+  zsh-users/zsh-autosuggestions,async

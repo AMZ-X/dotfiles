@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+### SHELL
+export SHELL=/bin/zsh
+
+### EDITOR
+export EDITOR=nano
+
+### PATHS
+source ~/.zsh/alias
+
+### PATHS
+source ~/.zsh/paths
+
+### PLUGINS (ZPM - ZSH Plugin Manager)
+source ~/.zsh/plugins

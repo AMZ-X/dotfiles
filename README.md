@@ -2,37 +2,45 @@
 
 [![Actions Status](https://github.com/amz-x/dotfiles/workflows/DotfilesCI/badge.svg)](https://github.com/amz-x/dotfiles/actions)
 
-Personal dotfiles on Fedora Linux with Ansible & Molecule.
-
-![Screenshot](https://github.com/amz-x/dotfiles/raw/master/data/screenshot.png "Personal - Fedora 34 - Pantheon Desktop")
+Personal dotfiles on Fedora Linux 37 with ZSH & ZPM.
 
 ## Features
 
-- Fedora 35
-- Fish & Fisher
-- NVM (Node Version Manager)
-- Pantheon Desktop
+### Applications
+
+- Google Chrome Stable
+- Slack
+- Discord
+- Simplenote
+- DBeaver
+- Steam (WIP)
+
+### Development Tools
+
 - Visual Studio Code
-
-## Additional Development Features
-
-- Docker & KVM / QEMU virtualization
-- .NET Core 6
+- Android Studio
+- Docker
+- KVM / QEMU
+- NET Core 6
+- Python 3
 - Vala
+- Meson
+- RPM Packaging
+- Nix (WIP)
 
 ## Installation
 
 ### Setup Requirements
 
-Requirements for installation setup on Fedora 35
+Requirements for installation setup on Fedora
 
-- Fedora 35 Workstation
+- Fedora Workstation ISO
 - Git
 - Ansible
 
 ### Setup
 
-Install Fedora 35 Workstation
+Install Fedora Workstation
 
 Install ansible & git
 
@@ -73,12 +81,6 @@ Setup (with via Bash shell)
 
 ```bash
 virtualenv .virtenv && source .virtenv/bin/activate && pip3 install -r requirements.txt
-```
-
-Setup (with via Fish shell)
-
-```bash
-virtualenv .virtenv && source .virtenv/bin/activate.fish && pip3 install -r requirements.txt
 ```
 
 ### Testing

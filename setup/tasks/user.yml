@@ -1,9 +1,9 @@
 ---
-# User & Fish Setup
-- name: User | install fish, fisher & utilities
+# User & ZSH Setup
+- name: User | install zsh & utilities
   tags:
     - setup
-    - fish
+    - zsh
   become: true
   dnf:
     name: '{{ user_packages }}'
@@ -12,32 +12,19 @@
 - name: User | setup user account
   tags:
     - setup
-    - fish
+    - zsh
   become: true
   user:
     name: '{{ user }}'
     comment: '{{ username }}'
-    shell: /bin/fish
+    shell: /bin/zsh
     groups:
       - wheel
 
-- name: User | fish main configuration directory
+- name: User | setup configuration directories
   tags:
     - setup
-    - fish
-  become: true
-  become_user: '{{ user }}'
-  file:
-      path: ~/.config/fish
-      state: directory
-      mode: 0755
-    
-- name: User | fish main configuration directories
-  tags:
-    - setup
-    - fish
     - vscode
-    - gtk
   become: true
   become_user: '{{ user }}'
   file:
@@ -45,19 +32,15 @@
     state: directory
     mode: 0755
   loop:
-    - ~/.config/fish
-    - ~/.config/fish/functions
+    - ~/.zsh
+    - ~/.zsh/zpm
     - ~/.config/Code/User
-    - ~/.config/gkt-3.0
-    - ~/.config/gkt-4.0
-
 
 - name: User | setup dotfiles
   tags:
     - setup
-    - fish
+    - zsh
     - vscode
-    - gtk
   become: true
   become_user: '{{ user }}'
   file:

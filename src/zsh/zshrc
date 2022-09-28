@@ -1,11 +1,5 @@
 #!/usr/bin/env zsh
 
-### SHELL
-export SHELL=/bin/zsh
-
-### EDITOR
-export EDITOR=nano
-
 ### ALIASES
 source ~/.zsh/alias
 

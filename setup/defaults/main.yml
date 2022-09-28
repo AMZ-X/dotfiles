@@ -13,6 +13,9 @@ user_links:
   zshrc:
     src: src/zsh/zshrc
     dest: ~/.zshrc
+  zshenv:
+    src: src/zsh/zshenv
+    dest: ~/.zshenv
   zsh_alias:
     src: src/zsh/alias
     dest: ~/.zsh/alias
@@ -22,9 +25,15 @@ user_links:
   zsh_plugins:
     src: src/zsh/plugins
     dest: ~/.zsh/plugins
+  zsh_hooks:
+    src: src/zsh/hooks
+    dest: ~/.zsh/hooks
   vscode:
     src: src/vscode/settings.json
     dest: ~/.config/Code/User/settings.json
+  mangohud:
+    src: src/mangohud/mangohud.conf
+    dest: ~/.config/mangohud/mangohud.conf
   rpmmacros:
     src: src/rpmmacros
     dest: ~/.rpmmacros

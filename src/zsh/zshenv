@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+### SHELL
+export SHELL=/bin/zsh
+
+### EDITOR
+export EDITOR=nano
+
+### MANGOHUD
+export MANGOHUD=1
+export MANGOHUD_CONFIGFILE=$HOME/.config/mangohud/mangohud.conf

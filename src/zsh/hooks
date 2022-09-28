@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+### ZSH Hook - Direnv
+eval "$(direnv hook zsh)"

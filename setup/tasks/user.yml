@@ -24,7 +24,9 @@
 - name: User | setup configuration directories
   tags:
     - setup
+    - zsh
     - vscode
+    - configs
   become: true
   become_user: '{{ user }}'
   file:
@@ -35,12 +37,14 @@
     - ~/.zsh
     - ~/.zsh/zpm
     - ~/.config/Code/User
+    - ~/.config/mangohud
 
 - name: User | setup dotfiles
   tags:
     - setup
     - zsh
     - vscode
+    - configs
   become: true
   become_user: '{{ user }}'
   file:
